@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Exercise 3</title>
+		<style>
+			body { margin: 20px 150px;}
+			fieldset * {margin-top: 8px;}
+			.myForm {width:30%;}
+		</style>
+	</head>
+	<body>
+		<h2>Exercise 3</h2>
+		<hr>
+		<p>Scrivere in una pagina HTML il codice javascript per eseguire le quattro operazioni fondamentali su due campi input e visualizzare il risultato.</p>
+		<hr><br>
+		
+		<form class="myForm">
+			<fieldset>
+				<label for="firstNumber">1st Number:</label>
+				<input type="number" id="firstNumber" ><br>
+				<label for="secondNumber">2nd Number:</label>
+				<input type="number" id="secondNumber" ><br><br>
+				<input type="button" onClick="addTo()" Value="Add" >
+				<input type="button" onClick="subtractFrom()" Value="Subtract" >
+				<input type="button" onClick="multiplyBy()" Value="Multiply" >
+				<input type="button" onClick="divideBy()" Value="Divide" >
+			</fieldset>
+		</form>
+		<p>The Result is : <strong><span id = "result"></span></strong> </p>
+		
+		<br><br>
+		<h3>Try also this calculator!</h3>
+		<form>
+			<fieldset>
+				<label for="firstNumber">First number:</label> 
+				<input type="number" id="numberOne" name='a'>
+				<label for="mathOp">Math operator:</label>
+				<select id="mathOp" required>
+					<option value="+"> + </option>
+					<option value="-"> - </option>
+					<option value="*"> * </option>
+					<option value="/"> / </option>
+				</select>
+				<label for="secondNumber">Second number:</label>
+				<input type="number" id="numberTwo" name='b'>
+				<button type='button' onClick='myCalculator()'> = </button>
+				<output for="a b" id='result2'></output>
+			</fieldset>
+		</form>
+		
+		
+		<script src='exercise3.js'></script>
+	</body>
+</html>

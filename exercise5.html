@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 5</title>
+		<style>
+			body {margin: 20px 150px;}
+			#notice {
+				display:none;
+				background-color:LemonChiffon;
+				border: 1px solid ;
+				width: 250px;
+				margin: 7% 8px;
+				padding: 16px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Exercise 5</h2>
+		<hr>
+		<p>Realizzare una pagina con uno script che, dopo aver chiesto il nome dell'utente verifica, controllando in un array di nomi che hanno i diritti di amministratore, se l'utente è abilitato ad accedere alla pagina.</p>
+		<hr><br>
+		<p>Log in as administrator:</p>
+		<form>
+				<label for="username">Username:</label>
+				<input type="text" id="username" name='username' placeholder="Pippo &copy entra">
+				<input type="button" onClick="checkUsername()" Value="ACCEDI" >
+		</form>
+		<p id ="notice">I'm sorry! You don't have access!</p>
+		
+		<script src='exercise5.js'></script>
+	</body>
+</html>
