@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Exercise 7</title>
+		<link href='style.css' rel='stylesheet'>
+	</head>
+	
+	<body>
+	
+		<header>
+			<h2>Exercise 7</h2>
+			<hr>
+			<p>Scrivere un documento HTML contenente una form contenente i seguenti campi:
+				<ul>
+					<li>cognome e nome (casella di testo editabile lunga 50 caratteri)</li>
+					<li>sesso (selezionabile tramite due bottoni radio)</li>
+					<li>ateneo (da scegliere da un menu che riporta le 3 universit romane)</li>
+					<li>CAP (casella di testo editabile lunga 5 caratteri)</li>
+					<li>studente lavoratore (selezionabile tramite checkbox)</li>
+					<li>descrizione del lavoro svolto (casella di testo editabile lunga 80 caratteri)</li>
+					<li>bottone di invio</li>
+					<li>bottone di reset</li>
+				</ul> 
+			</p>
+			<p>Aggiungere al documento HTML una funzione JavaScript che esegue i seguenti controlli:
+				<ul>
+					<li>mentre l’utente edita i campi della form:
+						<ul>
+							<li>subito dopo che l’utente ha editato il campo CAP, deve verificare che tale campo sia un numero di 5 cifre;</li>
+							<li>subito dopo che l’utente ha editato il campo nome e cognome, deve verificare che tale campo non sia un numero;</li>
+						</ul>
+					</li>
+					<li>al momento dell’invio del messaggio:
+						<ul>
+							<li>verifica che il cognome e nome non sia vuoto;</li>
+							<li>verifica che il sesso sia stato selezionato;</li>
+							<li>verifica che sia stato selezionato un ateneo;</li>
+							<li>se l’utente ha dichiarato di essere uno studente lavoratore, la descrizione del lavoro svolto non puo essere vuota</li>
+						</ul>
+					</li>
+				</ul> 
+			</p>
+			<hr><br><br><br>
+		</header>
+		
+		<main>
+			<h2>MODULO DI ISCRIZIONE</h2>
+			<form method="post" name='moduloIscrizione'>
+				<div>
+					<label for="surnameAndName">Cognome e Nome:</label>
+					<input type="text" id="surnameAndName" name="name" placeholder="Rossi Mario" maxlength='50'>
+				</div>
+				<div>
+					<p>Sesso:</p>
+					<input type="radio" id="female" name="sex" value="female">
+					<label for="female">F</label><br>
+					<input type="radio" id="male" name="sex" value="male">
+					<label for="male">M</label><br>
+				</div>
+				<div>
+					<label for="university">Ateneo:</label>
+					<select id="university" name="university">
+						<option>  </option>
+						<option value="sapienza">Sapienza</option>
+						<option value="torVergata">Tor Vergata</option>
+						<option value="romaTre">Roma Tre</option>
+					</select>
+				</div>
+				<div>
+					<label for="CAP">CAP:</label>
+					<input type="text" id="CAP" name="CAP" maxlength='5'>
+				</div>
+				<div>
+					<input type="checkbox" id="workingStudent" name="workingStudent" value="true">
+					<label for="workingStudent"> Studente Lavoratore</label><br>
+				</div>
+				<div>
+					<label for="workDone">Descrizione del lavoro svolto:</label>
+					<input type="text" id="workDone" name="workDone" placeholder="Front End Developer" maxlength='80'>
+				</div>
+				<div>
+					<button type="submit" id='bottInvio'>Invia</button>
+					<button type="reset">Reset</button>
+				</div>
+			</form>
+		</main>
+		
+		<script src='exercise7.js'></script>
+	</body>
+</html>
