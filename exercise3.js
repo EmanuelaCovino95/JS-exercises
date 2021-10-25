@@ -1,7 +1,7 @@
 function addTo() {
 	num1 = document.getElementById("firstNumber").value;
 	num2 = document.getElementById("secondNumber").value;
-	document.getElementById("result").innerHTML = num1*1+num2*1;
+	document.getElementById("result").innerHTML = parseInt(num1) + parseInt(num2);
 }
 
 function subtractFrom() {
@@ -27,7 +27,7 @@ function myCalculator() {
 	var firNum = document.getElementById("numberOne").value;
 	var secNum = document.getElementById('numberTwo').value;
 	if (document.getElementById('mathOp').value === '+') {
-		res2 = firNum*1+secNum*1;
+		res2 = parseInt(num1) + parseInt(num2);
 	} else if (document.getElementById('mathOp').value === '-') {
 		res2 = firNum - secNum;
 	} else if (document.getElementById('mathOp').value === '*') {
