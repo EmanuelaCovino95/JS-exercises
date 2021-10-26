@@ -10,7 +10,7 @@ function checkCAP() {
 		return false;
 	} else {
 		for (i=0; i<5 ; i++) {
-			if (isNaN(document.moduloIscrizione.CAP.value.substring(i,i+1))) {
+			if (isNaN(CAP.substring(i,i+1))) {
 				alert("Attenzione:\n inserire il \"CAP\" correttamente");
 				document.moduloIscrizione.CAP.focus();
 				break;
@@ -32,33 +32,30 @@ function funzioneInvio() {
 	var nOmE = document.moduloIscrizione.name.value;
 	var sex = document.moduloIscrizione.sex.value;
 	var university = document.moduloIscrizione.university.value;
-	var workingStudent = document.moduloIscrizione.workingStudent.value;
 	var workDone = document.moduloIscrizione.workDone.value;
 	
-	if ((nOmE == "") || (nOmE == "undefined")) {
+	if (!nOmE) {
 		alert("Devi inserire Cognome e Nome");
 		document.moduloIscrizione.name.focus();
 		return false;
 	}
 	
-	else if (sex == "") {
+	else if (!sex) {
 		alert("Devi selezionare il sesso");
 		document.moduloIscrizione.sex.focus();
 		return false;
 	}
 	
-	else if (university === "") {
+	else if (!university) {
 		alert("Devi selezionare un ateneo");
 		document.moduloIscrizione.university.focus();
 		return false;
 	}
 	
-	else if (workingStudent === 'true') {
-		if ((workDone == "") || (workDone == "undefined")) {
-			alert("Devi specificare il lavoro svolto");
-			document.moduloIscrizione.workDone.focus();
-			return false;
-		}
+	else if ((document.moduloIscrizione.workingStudent.checked)&&(!workDone)) {
+		alert("Devi specificare il lavoro svolto");
+		document.moduloIscrizione.workDone.focus();
+		return false;
 	} 
 	
 	else {
