@@ -1,0 +1,40 @@
+{
+	"articoli": [
+		{
+			"titolo":"Article Title 1",
+			"immagine":"src/images/tablet.jpg",
+			"button":[
+				{"tipologia":"tech"},
+				{"tipologia":"like"}
+			],
+			"didascalia":"Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+		},
+		{
+			"titolo":"Article Title 2",
+			"immagine":"src/images/smart-working.jpeg",
+			"button":[
+				{"tipologia":"tech"},
+				{"tipologia":"like"}
+			],
+			"didascalia":"Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+		},
+		{
+			"titolo":"Article Title 3",
+			"immagine":"src/images/work-station.jfif",
+			"button":[
+				{"tipologia":"tech"},
+				{"tipologia":"like"}
+			],
+			"didascalia":"Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+		},
+		{
+			"titolo":"Article Title 4",
+			"immagine":"src/images/old-tablet.jpg",
+			"button":[
+				{"tipologia":"tech"},
+				{"tipologia":"like"}
+			],
+			"didascalia":"Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+		}
+	]
+}
