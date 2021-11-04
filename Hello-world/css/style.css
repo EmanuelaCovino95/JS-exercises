@@ -1,0 +1,93 @@
+body {
+	margin:0;
+	padding:0;
+}
+* p {
+	font-size:16px;
+}
+header {
+	padding:2% 6%;
+	margin:0px;
+	background-color:hsl(209, 20%, 23%);
+	color:hsl(209, 60%, 95%);
+	border-bottom: 1.5px solid black;
+}
+header p {
+	margin-bottom:0px;
+}
+.hero {
+	padding:4% 6% 1%;
+	margin:0px;
+	color:hsl(209, 20%, 30%);
+	background-color:hsl(209, 60%, 95%);
+}
+.hero a {
+	background-color: hsl(210, 45%, 50%);
+}
+div.row {
+	margin:auto;
+}
+div.col{
+	padding: 1% 2%;
+}
+.col img {
+	width:100%;
+}
+.col div {
+	padding:3% 0px;
+}
+button.btn-sm {
+	padding:0px 8px;
+	font-size: 13px;
+}
+.card-body button.green {
+	color: white;
+	background-color:rgb(25, 135, 84);
+}
+footer p {
+	margin-bottom:9%;
+	padding-left:0px;
+	color:hsl(209, 20%, 23%);
+	border-top: 1px solid hsl(209, 15%, 70%);
+}
+.alert[role="alert"] {
+	position: fixed;
+	bottom:0px;
+	width:100%;
+	padding:2% 6%;
+	margin:0px;
+	background-color:hsl(209, 20%, 23%);
+	color:hsl(209, 60%, 95%);
+	border:none;
+	border-radius:0px;
+}
+.alert a.alert-link {
+	color:hsl(210, 55%, 55%);
+	text-decoration:none;
+	font-weight: normal;
+	cursor: pointer;
+}
+.alert a.alert-link:hover {
+	text-shadow: 1px 1px 2px black;
+}
+@media (max-width:768px) {
+	* p {
+		font-size:13px;
+	}
+	button.btn-sm {
+		font-size: 11px;
+	}
+	footer p {
+		margin-bottom:13%;
+	}
+	.alert[role="alert"] {
+		padding:2.5% 6%;
+		font-size:13px;
+	}
+}
+@media (max-width:276px) {
+	footer p {
+		margin-bottom:25%;
+		padding:2%;
+	}
+}
