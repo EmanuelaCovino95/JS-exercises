@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+header {
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    border: 1px solid #bdbdbd;
+    color: #333333;
+}
+.redLineHeader {
+    height: 13px;
+    background-color: #e21613;
+}
+.whiteLineHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 32px;
+    background-image: linear-gradient(#ffffff 80%,#f2f2f2);
+}
+.whiteLineHeader a {
+    display: inline-flex;
+}
+.whiteLineHeader img, .redLineFooter img {
+    width: 82px;
+}
+.whiteLineHeader h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0px;
+}
+.carrelloIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    color: #333333;
+    padding: 0px 32px;
+}
+.carrelloIcon img {
+    width: 30px;
+    display: block;
+    margin: 0px auto 4px;
+}
+.carrelloIcon img[src*='hover'] {
+    display: none;
+}
+.carrelloIcon:hover {
+    color: #4cbb50;
+}
+.carrelloIcon:hover img[src$='icon.png'] {
+    display: none;
+}
+.carrelloIcon:hover img[src*='hover'] {
+    display: block;
+}
+main{
+    margin-top: 140px;
+    display: flex;
+    align-items: flex-start;
+}
+.pannelloSelezionabile {
+    flex-basis: 73%;
+}
+.colonnaDiRiepilogo {
+    flex-basis: 27%;
+    margin-left: 15px;
+}
+.riepilogoOrdine {
+    border: 1px solid #f2f2f2;
+    box-shadow: 4px 4px 8px #ededed;
+}
+.riepilogoOrdine > div {
+    padding: 16px;
+}
+.intestazioneCassa {
+    font-size: 18px;
+    background-color: #f2f2f2;
+}
+.sedeBennet div {
+    border: 1px solid #e21613;
+    border-right: 16px solid #e21613;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 16px;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+}
+.sedeBennet img {
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    left: 10px;
+}
+.sedeBennet h4 {
+    margin: 2px 0px 8px;
+}
+.sedeBennet p {
+    font-size: 13px;
+    margin: 0px;
+}
+.scontrino {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+}
+.riepilogoOrdine .scontrino {
+    padding-top: 8px;
+}
+.scontrino p {
+    margin: 8px 0px 0px;
+}
+.scontrinoDesign {
+    text-align: right;
+}
+.cassa div{
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #bdbdbd;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+}
+.alertTimeOut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 2px solid rgba(68,163,61,.4);
+    border-radius: 6px;
+    margin: 10px 15px 0 0;
+    background-color: #fff;
+}
+.alertTimeOut img {
+    height: 25px;
+    margin-right: 16px;
+}
+.imgBis {
+    display: none;
+}
+.condizioniBennet {
+    color: #757575;
+    font-size: 14px;
+    padding: 15px;
+    text-align: justify;
+}
+.redWriting {
+    color: #e74c3c;
+}
+.checkOutFooter {
+    color: #757575;
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+}
+.checkOutFooter p {
+    font-size: 11px;
+    margin: 0px;
+    text-align: justify;
+    line-height: 13px;
+}
+.help {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+.help * {
+    width: max-content;
+    padding: 6px 25px;
+}
+.help a {
+    border: 1px solid #757575;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+}
+.help a:hover {
+    border-color: #4cbb50;
+    color: #4cbb50;
+}
+.whiteLineFooter {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 16px #ededed;
+}
+.whiteLineFooter > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.divMenu {
+    flex-basis: 62%;
+    padding: 10px 40px; 
+}
+.divMenu a {
+    color: #333333;
+    padding: 0px 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.divMenu a[href]:hover {
+    color: #4cbb50;
+}
+.divSocial {
+    flex-basis: 35%;
+    padding: 10px 4% 10px 2%;
+    box-shadow: -12px 0px 36px #ededed;   
+}
+.iconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconDiv img {
+    width: 20px;
+    margin: 4px 10px;
+}
+.redLineFooter {
+    position: relative;
+    z-index: 1;
+    background-color: #e21613;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 8px 48px 12px;
+}
+.redLineFooter div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 16px;
+}
+.redLineFooter strong {
+    font-weight: 800;
+}
+.redLineFooter p{
+    font-size: 14px;
+    margin: 0px;
+}
+@media screen and (max-width:1280px) {
+    .divMenu {
+        flex-basis: 58%;
+    }
+    .divSocial {
+        flex-basis: 42%;
+        padding: 10px 2%;
+    }
+}
+@media screen and (max-width:992px) {
+    .redLineHeader {
+        height: 6px;
+    }
+    .whiteLineHeader img {
+        width: 44px;
+    }
+    .whiteLineHeader h2 {
+        font-size: 16px;
+    }
+    .carrelloIcon {
+        padding: 0px 0px;
+    }
+    .carrelloIcon img {
+        width: 25px;
+    }
+    .carrelloIcon strong {
+        display: none;
+    }
+    main{
+        margin-top: 80px;
+        display: block;
+    }
+    .colonnaDiRiepilogo {
+        margin-left: 0px;
+    }
+    button {
+        width: 50%;
+        margin: 16px 0px;
+    }
+    .alertTimeOut {
+        margin: 0px;
+        background-color: #f2f2f2;
+    }
+    .imgOriginale {
+        display: none;
+    }
+    .imgBis {
+        display: initial;
+    }
+    .condizioniBennet {
+        background-color: #f2f2f2;
+    }
+    .checkOutFooter {
+        display: block;
+        background-color: #f2f2f2;
+        padding: 0px 16px 20px;
+        box-shadow: 0 1px 8px #f0f0f0;
+    }
+    .checkOutFooter > div {
+        padding-top: 20px;
+        border-top: 0.5px solid #fff;
+    }
+    .help {
+        justify-content: flex-end;
+        margin: 24px 0px 6px;
+        font-weight: bold;
+    }
+    .help * {
+        padding: 6px 4%;
+    }
+    .whiteLineFooter {
+        display: block;
+        box-shadow: 0px 4px 16px #c0c0c0;
+    }
+    .whiteLineFooter > div {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+    }
+    .divMenu a {
+        width: 100%;
+        padding: 10px 24px;
+        border: 1px solid #f2f2f2;
+        text-align: left;
+        box-shadow: 0 1px 8px #f0f0f0;
+    }
+    .divSocial {
+        box-shadow: none;
+    }
+    .divSocial div {
+        padding: 10px 24px;
+    }
+    .iconDiv img {
+        margin: 0px 30px 0px 0px;
+    }
+    .redLineFooter {
+        display: block;
+        padding: 16px 24px;
+    }
+    .redLineFooter img {
+        width: 55px;
+    }
+    .redLineFooter div {
+        padding: 0px;
+        position: relative;
+        z-index: 1;
+    }
+    .redLineFooter strong {
+        font-size: 13px;
+        position: absolute;
+        z-index: 1;
+        top: -34px;
+        left: 79px;
+    }
+    .redLineFooter p {
+        font-size: 13px;
+        padding-top: 12px;
+    }
+    .redLineFooter p strong {
+        display: none;
+    }
+
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bennet Online</title>
+        <link rel="shortcut icon" type="image/png" href="src/images/bennet-logo.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <link href="src/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class='redLineHeader'></div>
+            <div class='whiteLineHeader'>
+                <a href="https://bennet.com/"><img src='src/images/bennet-logo.png'></a>
+                <h2>CheckOut</h2>
+                <a class='carrelloIcon' href='https://www.bennet.com/cart'>
+                    <img src='src/images/cart_icon.png'>
+                    <img src='src/images/cart_icon-hover.png'>
+                    <strong>Carrello</strong>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="pannelloSelezionabile"></div>
+            <div class="colonnaDiRiepilogo">
+                <div class="riepilogoOrdine">
+                    <div class="intestazioneCassa">
+                        Riepilogo ordine
+                    </div>
+                    <div class="sedeBennet">
+                        <div>
+                            <img src="src/images/bennet-drive-logo.png">
+                            <h4>COMACCHIO</h4>
+                            <p>via Valle Isola</p>
+                            <p>Comacchio(FE) 44022</p>
+                        </div>
+                    </div>
+                    <div class="scontrino">
+                        <div>
+                            <p>Articoli (1)</p>
+                            <p>Consegna Bennetdrive</p>
+                        </div>
+                        <div class="scontrinoDesign">
+                            <p>3.03 &euro;</p>
+                            <p>Gratuito</p>
+                        </div>
+                    </div>
+                    <div class="cassa">
+                        <div>
+                            <strong>Totale</strong>
+                            <strong>3.03 &euro;</strong>
+                        </div>
+                        <button type="submit" disabled>Concludi Ordine</button>
+                    </div>
+                </div>
+                <div class='alertTimeOut'>
+                    <div>
+                        <img class='imgOriginale' src='src/images/speaker-icon.png'>
+                        <img class='imgBis' src='src/images/speaker-icon -bis.png'>
+                    </div>
+                    <div>Hai ancora <strong>#</strong> minuti per poter opzionare la prossima fascia disponibile</div>
+                    <!-- <div><strong>Hai esaurito il tempo per poter opzionare la fascia disponibile</strong></div>  -->
+                </div>
+                <div class='condizioniBennet'>
+                    <p>
+                        <strong>Bennetdrive</strong><br>
+                        Ritiro in punto vendita sempre gratuito. Quando la tua spesa sarà pronta verrai avvisato tramite eMail e SMS ai recapiti che ci hai lasciato sul tuo profilo personale. Recati al punto vendita solo dopo aver ricevuto la notifica dell'ordine pronto al ritiro.
+                        Porta con te la mail, sia sul cellulare che stampata, per richiamare il tuo ordine al totem del Drive così da segnalare ai nostri operatori il tuo arrivo.
+                    </p>
+                    <p>
+                        <strong>Come pagare</strong><br>
+                        Pagamento al ritiro con <strong>CARTA DI CREDITO O BANCOMAT, non è consentito pagare in contanti.</strong><br>
+                        Qualora avessi a disposizione Coupon o BUONI spesa spendibili anche sugli acquisti online potrai mostrarli ai nostri operatori prima della generazione dello scontrino. Al momento non è previsto pagamento, totale o parziale, attraverso buoni pasto/ticket restaurant.
+                    </p>
+                    <p>
+                        <strong>Prezzi applicati</strong><br>
+                        Tutti i prodotti saranno valorizzati al momento della consegna. Per i prodotti a peso variabile il prezzo definitivo è determinato alla conclusione della preparazione e potranno essere leggermente superiori al valore ordinato sulla base del peso finale consegnato.
+                    </p>
+                    <p>
+                        <strong>Modifica o Annullo Ordine da parte del cliente</strong><br>
+                        Segui lo stato del tuo ordine dalla sezione "i tuoi ordini online". Fino a quando non è stato preso in carico puoi modificarlo o annullarlo.
+                    </p>
+                    <p>
+                        <strong>
+                            <span class="redWriting">!</span> Prodotti non disponibili e <span class="redWriting">Annullo Ordine da parte di Bennet</span><br>
+                            L'effettiva disponibilità dei prodotti potrà essere verificata solo all'atto della preparazione dell'ordine stesso. 
+                        </strong> 
+                        Nel caso in cui uno o più prodotti non siano più disponibili al momento del ritiro saranno proposte delle alternative analoghe che potrai scegliere di acquistare o meno. Nel caso in cui <strong>TUTTI</strong> i prodotti all'interno dell'ordine non siano disponibili, lo stesso verrà <strong>AUTOMATICAMENTE ANNULLATO</strong> dando evidenza via mail. 
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <div class="checkOutFooter">
+            <div>
+                <p>* I prezzi indicati sono validi se il giorno del ritiro della merce è il medesimo dell’ordine, diversamente il prezzo potrà variare in base alla validità delle promozioni in essere al momento del ritiro. Ricordiamo che, come previsto dalla legge 170/2016, il costo delle borse della spesa compostabili e biodegradabili è a carico del cliente e che gli articoli in promozione sono destinati ad uso famigliare. In caso uno o più prodotti non siano più disponibili, al momento del ritiro saranno proposte delle alternative analoghe che potrai scegliere di acquistare o meno.
+                    <br>** Prezzo al netto delle promozioni e riferito al costo medio del singolo pezzo.
+                    <br>*** Nel caso di prodotti a peso variabile il prezzo definito è determinato in sede di preparazione dell’ordine. Dal 1° Gennaio 2018 i prodotti dei banchi serviti saranno confezionati con sacchetti ultraleggeri delle borse della spesa compostabili il cui costo sarà a carico del cliente come da normativa UNI EN 13432 e Legge 123/2017.
+                </p>
+            </div>
+            <div class="help">
+                <label for="cliccaQui">hai qualche domanda?</label>
+                <a id='cliccaQui' href="https://bennet.com/customerCare">Clicca qui</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="whiteLineFooter">
+                <div class="divMenu">
+                    <a href="https://www.bennet.com/magazine">MAGAZINE</a>
+                    <a href="https://www.bennet.com/bennetClub">BENNET CLUB</a>
+                    <a>LINK UTILI</a>
+                    <a href="https://www.bennet.com/services">SERVIZI BENNET</a>
+                    <a href="https://www.bennet.com/company">L'AZIENDA</a>
+                </div>
+                <div class="divSocial">
+                    <div>
+                        Seguici sui nostri canali
+                    </div>
+                    <div class="iconDiv">
+                        <a href="https://www.instagram.com/bennet.unaspesadavivere/"><img src='src/images/instagram-icon.png'></a>
+                        <a href="https://www.facebook.com/Bennet.UnaSpesaDaVivere/"><img src='src/images/facebook-icon.png'></a>
+                        <a href="https://it.linkedin.com/company/bennet-s.p.a."><img src='src/images/linkedin-icon.png'></a>
+                        <a href="https://twitter.com/bennet_official"><img src='src/images/twitter-icon.png'></a>
+                        <a href="https://www.youtube.com/channel/UCw3GbUuV-xwpYpnxi36l1Lg"><img src='src/images/youTube-icon.png'></a>
+                    </div>
+                </div>
+            </div>
+            <div class="redLineFooter">
+                <a href="https://bennet.com/"><img src='src/images/bennet-logo.png'></a> 
+                <div>
+                    <strong>BENNET S.p.A.</strong>
+                    <p><strong> BENNET S.p.A. </strong>  Sede Amministrativa: 22070 Montano Lucino (CO) Via Enzo Ratti nr.2 <br> 
+                        Registro delle imprese di Milano e C.F./P.IVA 07071700152 - R.E.A. di Milano 1137002 - Capitale Sociale € 12.310.020,00 i.v., Socio unico - Bennet.com v2.0 - &copy; 1999/2021
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
