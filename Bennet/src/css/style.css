@@ -73,6 +73,93 @@ main{
 .pannelloSelezionabile {
     flex-basis: 73%;
 }
+.pannelloSelezionabile h3 {
+    margin-top: 0px;
+}
+.stepUno {
+    margin: 0px 24px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 32px 16px #ededed;
+}
+.stepUno div {
+    display: flex;
+    align-items: center;
+}
+.scegliUnGiorno div, .scegliUnaFasciaOraria > div {
+    border: 1px solid rgba(45,45,46,.4);
+    border-radius: 6px;
+    margin-right: 24px;
+}
+.scegliUnGiorno div {
+    padding: 12px;
+    font-weight: bold;
+}
+.scegliUnaFasciaOraria > div {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+.orariSelezionabili {
+    margin: 20px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.orariSelezionabili div {
+    border-radius: 4px;
+    margin: 0 16px 12px 0;
+    padding: 6px;
+    font-size: 14px;
+}
+.nonDisponibile {
+    color: #bdbdbd;
+    border: 1px solid #d5d5d5;
+}
+.disponibile {
+    color: #4cbb50;
+    border: 1px solid #5cc55f;
+}
+.legenda * {
+    margin: 0 12px 0px 0;
+    font-size: 14px;
+}
+.legenda div:first-child {
+    color: #4cbb50;
+}
+.legenda div:first-child + div {
+    color: #ff9f1c;
+}
+.legenda div:last-child {
+    color: #bdbdbd;
+}
+main .selected {
+    background-color: #44a33d;
+    border: 1px solid #44a33d;
+    color: #fff;
+}
+button {
+    width: 30%;
+    margin-left: 70%;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #44a33d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+}
+button:disabled {
+    width: 30%;
+    margin-left: 70%;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #bdbdbd;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+}
 .colonnaDiRiepilogo {
     flex-basis: 27%;
     margin-left: 15px;
@@ -132,15 +219,9 @@ main{
     display: flex;
     justify-content: space-between;
 }
-button {
+.cassa button {
     width: 100%;
-    margin-top: 16px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #bdbdbd;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
+    margin-left: 0;
 }
 .alertTimeOut {
     display: flex;
@@ -295,8 +376,8 @@ button {
     .colonnaDiRiepilogo {
         margin-left: 0px;
     }
-    button {
-        width: 50%;
+    .cassa button {
+        width: 30%;
         margin: 16px 0px;
     }
     .alertTimeOut {
