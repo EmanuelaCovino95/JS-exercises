@@ -5,10 +5,12 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito', sans-serif;
+    color: #333333;
 }
 a {
     cursor: pointer;
     text-decoration: none;
+    color: #333333;
 }
 header {
     position: fixed;
@@ -16,7 +18,6 @@ header {
     top: 0px;
     width: 100%;
     border: 1px solid #bdbdbd;
-    color: #333333;
 }
 .redLineHeader {
     height: 13px;
@@ -45,7 +46,6 @@ header {
     flex-direction: column;
     justify-content: center;
     font-size: 13px;
-    color: #333333;
     padding: 0px 32px;
 }
 .carrelloIcon img {
@@ -76,15 +76,21 @@ main{
 .pannelloSelezionabile h3 {
     margin-top: 0px;
 }
-.stepUno {
-    margin: 0px 24px;
+.nascosto {
+    display: none;
+}
+.stepUnoInCorso, .stepUnoCompletato, .stepDue, .stepDueInCorso, .stepDueCompletato, .stepTre, .stepTreInCorso {
+    margin: 0px 24px 24px;
     padding: 24px;
     border-radius: 12px;
     box-shadow: 0 0 32px 16px #ededed;
 }
-.stepUno div {
+.stepUnoInCorso div {
     display: flex;
     align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .scegliUnGiorno div, .scegliUnaFasciaOraria > div {
     border: 1px solid rgba(45,45,46,.4);
@@ -92,14 +98,15 @@ main{
     margin-right: 24px;
 }
 .scegliUnGiorno div {
-    padding: 12px;
+    padding: 16px 32px;
     font-weight: bold;
+    text-align: center;
 }
 .scegliUnaFasciaOraria > div {
-    padding: 16px;
+    padding: 16px 24px;
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 180px;
 }
 .orariSelezionabili {
     margin: 20px 0px 0px;
@@ -120,6 +127,10 @@ main{
     color: #4cbb50;
     border: 1px solid #5cc55f;
 }
+.disponibile:hover {
+    cursor: pointer;
+    border-color: #28a02c;
+}
 .legenda * {
     margin: 0 12px 0px 0;
     font-size: 14px;
@@ -132,6 +143,10 @@ main{
 }
 .legenda div:last-child {
     color: #bdbdbd;
+}
+.scegliUnGiorno div:hover, .scegliUnaFasciaOraria > div:hover {
+    cursor: pointer;
+    border-color: #37b13b;
 }
 main .selected {
     background-color: #44a33d;
@@ -149,6 +164,9 @@ button {
     border-radius: 6px;
     padding: 10px;
 }
+button:hover {
+    cursor: pointer;
+}
 button:disabled {
     width: 30%;
     margin-left: 70%;
@@ -159,6 +177,144 @@ button:disabled {
     border: none;
     border-radius: 6px;
     padding: 10px;
+    cursor: default;
+}
+.stepUnoCompletato div, .stepDueCompletato div {
+    display: flex;
+    justify-content: space-between;
+}
+.stepUnoCompletato svg:hover {
+    cursor: pointer;
+}
+.stepUnoCompletato h3, .stepDueCompletato h3 {
+    margin-bottom: 0;
+}
+.opzioniSelezionate {
+    color: #757575;
+    padding-top: 8px;
+}
+.stepDue h3, .stepTre h3 {
+    color:#bdbdbd;
+    margin-bottom: 0;
+}
+
+form > div {
+    display: flex;
+    padding: 15px 0px 0px;
+}
+.stepDueInCorso label, .stepTreInCorso label {
+    margin: 0 0 0 32px;
+}
+div:hover > .checkboxChecked ~ label {
+    cursor: pointer;
+    color: #4cbb50;
+}
+.checkboxChecked {
+    position: relative;
+    z-index: 1;
+}
+.checkboxChecked input {
+    position: relative;
+    z-index: 2;
+    height: 16px;
+    width: 16px;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    outline: 0.5px solid #757575;
+}
+div:hover > .checkboxChecked .checkmark {
+    border-color: #4cbb50;
+    outline-color: #4cbb50;
+}
+.checkboxChecked input:checked ~ .checkmark {
+    background-color: #4cbb50;
+    border-color: #4cbb50;
+    outline-color: #4cbb50;
+}
+.checkboxChecked input:checked ~ .checkmark::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 3px;
+    top: -1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+.toggleSwitch + label {
+    margin: 0 0 8px;
+}
+.toggleSwitch {
+    position: relative;
+    z-index: 1;
+    margin: 3% 36px 0 16px;
+}
+.toggleSwitch input {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    width: 60px;
+    height: 34px;
+    cursor: pointer;
+}
+.slider {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    left: 4px;
+    width: 60px;
+    height: 34px;
+    border: 2px solid #757575;
+    border-radius: 34px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    z-index: 1;
+    left: 2.5px;
+    bottom: 2.5px;
+    content: "";
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #757575;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.toggleSwitch input:checked + .slider {
+    background-color: #4cbb50;
+    border: none;
+}
+.toggleSwitch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: #fff;
+    height: 28px;
+    width: 28px;
+    left: 3px;
+    bottom: 3px;
+}
+.stepTreInCorso div {
+    display: flex;
+}
+.stepTreInCorso a {
+    text-decoration: underline;
 }
 .colonnaDiRiepilogo {
     flex-basis: 27%;
@@ -200,7 +356,6 @@ button:disabled {
 }
 .scontrino {
     font-size: 14px;
-    color: #333;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #f2f2f2;
@@ -275,7 +430,6 @@ button:disabled {
     border: 1px solid #757575;
     border-radius: 5px;
     font-weight: bold;
-    color: #333;
     background-color: #fff;
 }
 .help a:hover {
@@ -297,7 +451,6 @@ button:disabled {
     padding: 10px 40px; 
 }
 .divMenu a {
-    color: #333333;
     padding: 0px 8px;
     font-weight: bold;
     text-align: center;
@@ -348,6 +501,13 @@ button:disabled {
     .divSocial {
         flex-basis: 42%;
         padding: 10px 2%;
+    }
+    .scegliUnGiorno div {
+        padding: 12px 8px;
+    }
+    .scegliUnaFasciaOraria > div {
+        padding: 8px 16px;
+        width: 160px;
     }
 }
 @media screen and (max-width:992px) {

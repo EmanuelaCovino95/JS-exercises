@@ -1,4 +1,4 @@
-const dataToday = new Date("2021-11-25T16:00:00Z");
+const dataToday = new Date();
 const days = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
 const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 
@@ -56,7 +56,7 @@ fasciaOraria.forEach(function (item) {
             }
         }
         item.classList.add('selected');
-        document.querySelector('.stepUno button').removeAttribute('disabled');
+        document.querySelector('.stepUnoInCorso button').removeAttribute('disabled');
     })
 });
 
@@ -95,4 +95,40 @@ amPm.forEach(function (item) {
             });
         }
     })
+});
+
+document.querySelector('.stepUnoInCorso button').addEventListener("click", function () {
+    if (!document.querySelector('.stepUnoInCorso button').hasAttribute('disabled')) {
+        document.querySelector('.stepUnoInCorso').classList.add('nascosto');
+        document.querySelector('.stepUnoCompletato').classList.remove('nascosto');
+        document.querySelector('.stepDue').classList.add('nascosto');
+        document.querySelector('.stepDueInCorso').classList.remove('nascosto');
+        document.querySelector('.opzioniSelezionate').innerHTML = 'Ritiro ';
+    }
+});
+
+document.querySelector('.stepUnoCompletato svg').addEventListener("click", function () {
+    document.querySelector('.stepUnoCompletato').classList.add('nascosto');
+    document.querySelector('.stepUnoInCorso').classList.remove('nascosto');
+});
+
+document.querySelector('.stepDueInCorso button').addEventListener("click", function () {
+    document.querySelector('.stepDueInCorso').classList.add('nascosto');
+    document.querySelector('.stepDueCompletato').classList.remove('nascosto');
+    document.querySelector('.stepTre').classList.add('nascosto');
+    document.querySelector('.stepTreInCorso').classList.remove('nascosto');
+    document.querySelector('.stepDueCompletato .opzioniSelezionate').innerHTML = 'Nessun sacchetto ';
+});
+
+document.querySelector('.stepDueCompletato svg').addEventListener("click", function () {
+    document.querySelector('.stepDueCompletato').classList.add('nascosto');
+    document.querySelector('.stepDueInCorso ').classList.remove('nascosto');
+});
+
+document.querySelector('.stepTreInCorso input').addEventListener("click", function () {
+    if (document.querySelector('.stepTreInCorso input').checked) {
+        document.querySelector('.cassa button').disabled = false;
+    } else {
+        document.querySelector('.cassa button').disabled = true;
+    }
 });
