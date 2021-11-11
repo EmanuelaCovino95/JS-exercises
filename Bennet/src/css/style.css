@@ -5,6 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito', sans-serif;
+    letter-spacing: -0.5px;
     color: #333333;
 }
 a {
@@ -38,7 +39,6 @@ header {
 }
 .whiteLineHeader h2 {
     font-size: 24px;
-    font-weight: 800;
     margin: 0px;
 }
 .carrelloIcon {
@@ -75,6 +75,7 @@ main{
 }
 .pannelloSelezionabile h3 {
     margin-top: 0px;
+    font-size: 20px;
 }
 .nascosto {
     display: none;
@@ -154,8 +155,8 @@ main .selected {
     color: #fff;
 }
 button {
-    width: 30%;
-    margin-left: 70%;
+    width: 20%;
+    margin-left: 80%;
     margin-top: 16px;
     font-size: 16px;
     color: #fff;
@@ -163,20 +164,10 @@ button {
     border: none;
     border-radius: 6px;
     padding: 10px;
-}
-button:hover {
     cursor: pointer;
 }
 button:disabled {
-    width: 30%;
-    margin-left: 70%;
-    margin-top: 16px;
-    font-size: 16px;
-    color: #fff;
     background-color: #bdbdbd;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
     cursor: default;
 }
 .stepUnoCompletato div, .stepDueCompletato div {
@@ -197,13 +188,66 @@ button:disabled {
     color:#bdbdbd;
     margin-bottom: 0;
 }
-
+.bustePerSpesa {
+    display: block;
+    padding: 0;
+}
+.bustePerSpesa > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 16px 0px;
+}
+.bustePerSpesa div:first-child {
+    margin: 0 0 16px;
+}
+.tipoDiBorsa {
+    flex-basis: 40%;
+}
+.prezzoDellaBorsa {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.contatore {
+    flex-basis: 20%;
+    max-width: 150px;
+    margin-left: 32px;
+    display: flex;
+}
+.meno, .piu {
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    font-size: 28px;
+    color: #4cbb50;
+    cursor: pointer;
+}
+.meno {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    padding: 0px 12px;
+}
+.piu {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 0px 9px;
+}
+.piu:hover, .meno:hover {
+    border-color: #858585;
+}
+.nBuste {
+    flex-basis: 50%;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    user-select: none;
+    padding: 12px 0px;
+}
 form > div {
     display: flex;
     padding: 15px 0px 0px;
 }
 .stepDueInCorso label, .stepTreInCorso label {
-    margin: 0 0 0 32px;
+    margin: 0 0 0 18px;
 }
 div:hover > .checkboxChecked ~ label {
     cursor: pointer;
@@ -319,6 +363,7 @@ div:hover > .checkboxChecked .checkmark {
 .colonnaDiRiepilogo {
     flex-basis: 27%;
     margin-left: 15px;
+    letter-spacing: 0px;
 }
 .riepilogoOrdine {
     border: 1px solid #f2f2f2;
@@ -386,7 +431,7 @@ div:hover > .checkboxChecked .checkmark {
     font-size: 14px;
     border: 2px solid rgba(68,163,61,.4);
     border-radius: 6px;
-    margin: 10px 15px 0 0;
+    margin: 15px 15px 0 0;
     background-color: #fff;
 }
 .alertTimeOut img {
@@ -410,6 +455,7 @@ div:hover > .checkboxChecked .checkmark {
     display: flex;
     align-items: center;
     padding: 20px 25px;
+    letter-spacing: 0px;
 }
 .checkOutFooter p {
     font-size: 11px;
@@ -511,6 +557,9 @@ div:hover > .checkboxChecked .checkmark {
     }
 }
 @media screen and (max-width:992px) {
+    body {
+        letter-spacing: 0px;
+    }
     .redLineHeader {
         height: 6px;
     }
@@ -532,6 +581,33 @@ div:hover > .checkboxChecked .checkmark {
     main{
         margin-top: 80px;
         display: block;
+    }
+    .stepUnoInCorso, .stepUnoCompletato, .stepDue, .stepDueInCorso, .stepDueCompletato, .stepTre, .stepTreInCorso {
+        margin: 0px 0px 24px;
+        border-radius: 0px;
+        font-size: 14px;
+    }
+    .bustePerSpesa div:first-child {
+        display: none;
+    }
+    .bustePerSpesa > div {
+        align-items: center;
+    }
+    .tipoDiBorsa {
+        flex-basis: 50%;
+    }
+    .prezzoDellaBorsa {
+        flex-basis: 25%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contatore {
+        flex-basis: 25%;
+        min-width: 100px;
+    }
+    .pannelloSelezionabile h3 {
+        margin: 0px;
+        font-size: 16px;
     }
     .colonnaDiRiepilogo {
         margin-left: 0px;
@@ -619,8 +695,4 @@ div:hover > .checkboxChecked .checkmark {
         font-size: 13px;
         padding-top: 12px;
     }
-    .redLineFooter p strong {
-        display: none;
-    }
-
 }

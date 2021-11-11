@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bennet Online</title>
     <link rel="shortcut icon" type="image/png" href="src/images/bennet-logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
 </head>
 
@@ -106,7 +106,52 @@
             <div class="stepDueInCorso nascosto">
                 <h3>Altri servizi</h3>
                 <form>
-
+                    <div class="bustePerSpesa">
+                        <div>
+                            <span class="tipoDiBorsa"></span>
+                            <div class="prezzoDellaBorsa">
+                                <span><strong>Prezzo Totale</strong></span>
+                                <span>Prezzo Unitario</span>
+                            </div>
+                            <div class="contatore"></div>
+                        </div>
+                        <div>
+                            <span class="tipoDiBorsa"><strong>BORSA TERMICA BENNET</strong></span>
+                            <div class="prezzoDellaBorsa">
+                                <span><strong>0,00 &euro;</strong></span>
+                                <span>1,10 &euro;</span>
+                            </div>
+                            <div class="contatore">
+                                <span class="meno termiche"> - </span>
+                                <span class="nBuste termiche"></span>
+                                <span class="piu termiche"> + </span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="tipoDiBorsa"><strong>SHOPPER BIODEGRADABILE</strong></span>
+                            <div class="prezzoDellaBorsa">
+                                <span><strong>0,00 &euro;</strong></span>
+                                <span>0,10 &euro;</span>
+                            </div>
+                            <div class="contatore">
+                                <span class="meno bio"> - </span>
+                                <span class="nBuste bio"></span>
+                                <span class="piu bio"> + </span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="tipoDiBorsa"><strong>BORSA PORTA TUTTO</strong></span>
+                            <div class="prezzoDellaBorsa">
+                                <span><strong>0,00 &euro;</strong></span>
+                                <span>0,99 &euro;</span>
+                            </div>
+                            <div class="contatore">
+                                <span class="meno riuso"> - </span>
+                                <span class="nBuste riuso"></span>
+                                <span class="piu riuso"> + </span>
+                            </div>
+                        </div>
+                    </div>
                     <div>
                         <div class="toggleSwitch">
                             <input type="checkbox" id="sacchetto" name="sacchetto" checked>
@@ -164,9 +209,11 @@
             </div>
             <div class="stepTreInCorso nascosto">
                 <h3>Pagamento e regolamento</h3>
-                <p>Al momento del <strong>ritiro</strong> con Carta di Credito (VISA, MasterCard, Maestro), Bancomat, Carta Prepagata,
+                <p>Al momento del <strong>ritiro</strong> con Carta di Credito (VISA, MasterCard, Maestro), Bancomat,
+                    Carta Prepagata,
                     Buoni Regalo Bennet. Non è previsto l’uso di Contanti.
-                    <br>E' possibile utilizzare <strong>buoni sconto</strong> emessi da Bennet presentandoli al momento del ritiro.
+                    <br>E' possibile utilizzare <strong>buoni sconto</strong> emessi da Bennet presentandoli al momento
+                    del ritiro.
                 </p>
                 <div>
                     <div class="checkboxChecked">
@@ -174,7 +221,8 @@
                         <span class="checkmark"></span>
                     </div>
                     <label for="condizioniDiVendita">
-                        Ho letto e accettato le  <a href="https://bennet.com/Condizioni-di-vendita"><strong> condizioni generali di vendita</strong></a>  
+                        Ho letto e accettato le <a href="https://bennet.com/Condizioni-di-vendita"><strong> condizioni
+                                generali di vendita</strong></a>
                     </label>
                 </div>
             </div>
@@ -312,7 +360,8 @@
             <a href="https://bennet.com/"><img src='src/images/bennet-logo.png'></a>
             <div>
                 <strong>BENNET S.p.A.</strong>
-                <p><strong> BENNET S.p.A. </strong> Sede Amministrativa: 22070 Montano Lucino (CO) Via Enzo Ratti nr.2
+                <p>
+                    Sede Amministrativa: 22070 Montano Lucino (CO) Via Enzo Ratti nr.2
                     <br>
                     Registro delle imprese di Milano e C.F./P.IVA 07071700152 - R.E.A. di Milano 1137002 - Capitale
                     Sociale € 12.310.020,00 i.v., Socio unico - Bennet.com v2.0 - &copy; 1999/2021
