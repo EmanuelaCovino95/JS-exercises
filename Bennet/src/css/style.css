@@ -68,7 +68,6 @@ header {
 main{
     margin-top: 140px;
     display: flex;
-    align-items: flex-start;
 }
 .pannelloSelezionabile {
     flex-basis: 73%;
@@ -86,39 +85,42 @@ main{
     border-radius: 12px;
     box-shadow: 0 0 32px 16px #ededed;
 }
-.stepUnoInCorso div {
-    display: flex;
-    align-items: center;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+.slick-track {
+    margin: 0px;
 }
-.scegliUnGiorno div, .scegliUnaFasciaOraria > div {
+.giornoEdata {
     border: 1px solid rgba(45,45,46,.4);
     border-radius: 6px;
     margin-right: 24px;
-}
-.scegliUnGiorno div {
-    padding: 16px 32px;
+    padding: 12px 8px;
     font-weight: bold;
     text-align: center;
 }
-.scegliUnaFasciaOraria > div {
-    padding: 16px 24px;
+.mattinaEpomeriggio {
+    border: 1px solid rgba(45,45,46,.4);
+    border-radius: 6px;
+    margin-right: 16px;
+    padding: 12px 16px;
+    max-width: 170px;
+}
+.mattinaEpomeriggio:nth-child(2), .mattinaEpomeriggio:last-child {
     display: flex;
     justify-content: space-between;
-    width: 180px;
 }
 .orariSelezionabili {
     margin: 20px 0px 0px;
     display: flex;
     flex-wrap: wrap;
 }
-.orariSelezionabili div {
+.orologio {
     border-radius: 4px;
     margin: 0 16px 12px 0;
-    padding: 6px;
+    padding: 6px 12px;
     font-size: 14px;
+    width: 108px;
+}
+.orologio span {
+    display: inline-block;
 }
 .nonDisponibile {
     color: #bdbdbd;
@@ -132,20 +134,32 @@ main{
     cursor: pointer;
     border-color: #28a02c;
 }
-.legenda * {
-    margin: 0 12px 0px 0;
+div.slick-list.draggable.nonDisponibile {
+    border: none;
+}
+.legenda {
+    display: flex;
+}
+.legenda label {
+    margin: 0 24px 2px 8px;
     font-size: 14px;
 }
 .legenda div:first-child {
+    display: flex;
+    align-items: center;
     color: #4cbb50;
 }
-.legenda div:first-child + div {
+.legenda div:nth-child(2) {
+    display: flex;
+    align-items: center;
     color: #ff9f1c;
 }
 .legenda div:last-child {
+    display: flex;
+    align-items: center;
     color: #bdbdbd;
 }
-.scegliUnGiorno div:hover, .scegliUnaFasciaOraria > div:hover {
+.giornoEdata:hover, .mattinaEpomeriggio:hover {
     cursor: pointer;
     border-color: #37b13b;
 }
@@ -154,9 +168,12 @@ main .selected {
     border: 1px solid #44a33d;
     color: #fff;
 }
+.posizionaButton {
+    display: flex;
+    justify-content: flex-end;
+}
 button {
-    width: 20%;
-    margin-left: 80%;
+    width: 200px;
     margin-top: 16px;
     font-size: 16px;
     color: #fff;
@@ -240,7 +257,7 @@ button:disabled {
     text-align: center;
     border: 1px solid #f2f2f2;
     user-select: none;
-    padding: 12px 0px;
+    padding: 10px 0px;
 }
 form > div {
     display: flex;
@@ -298,12 +315,12 @@ div:hover > .checkboxChecked .checkmark {
     transform: rotate(45deg);
 }
 .toggleSwitch + label {
-    margin: 0 0 8px;
+    margin: 0 0 8px 3%;
 }
 .toggleSwitch {
     position: relative;
     z-index: 1;
-    margin: 3% 36px 0 16px;
+    margin: auto;
 }
 .toggleSwitch input {
     position: relative;
@@ -548,13 +565,6 @@ div:hover > .checkboxChecked .checkmark {
         flex-basis: 42%;
         padding: 10px 2%;
     }
-    .scegliUnGiorno div {
-        padding: 12px 8px;
-    }
-    .scegliUnaFasciaOraria > div {
-        padding: 8px 16px;
-        width: 160px;
-    }
 }
 @media screen and (max-width:992px) {
     body {
@@ -580,12 +590,46 @@ div:hover > .checkboxChecked .checkmark {
     }
     main{
         margin-top: 80px;
-        display: block;
+        flex-direction: column;
+    }
+    .pannelloSelezionabile h3 {
+        margin: 0px;
+        font-size: 16px;
     }
     .stepUnoInCorso, .stepUnoCompletato, .stepDue, .stepDueInCorso, .stepDueCompletato, .stepTre, .stepTreInCorso {
         margin: 0px 0px 24px;
         border-radius: 0px;
         font-size: 14px;
+    }
+    .giornoEdata {
+        padding: 10px 8px;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+    .mattinaEpomeriggio {
+        margin-right: 12px;
+        padding: 6px 12px;
+        max-width: 140px;
+    }
+    .orariSelezionabili {
+        display: block;
+    }
+    .orologio {
+        max-width: 64px;
+    }
+    .orologio span {
+        display: block;
+    }
+    .orologio span:nth-child(2) {
+        display: none;
+    }
+    .legenda label {
+        margin: 0 16px 1px 4px;
+        font-size: 11px;
+    }
+    button {
+        margin-top: 24px;
+        max-width: 200px;
     }
     .bustePerSpesa div:first-child {
         display: none;
@@ -605,16 +649,8 @@ div:hover > .checkboxChecked .checkmark {
         flex-basis: 25%;
         min-width: 100px;
     }
-    .pannelloSelezionabile h3 {
-        margin: 0px;
-        font-size: 16px;
-    }
     .colonnaDiRiepilogo {
         margin-left: 0px;
-    }
-    .cassa button {
-        width: 30%;
-        margin: 16px 0px;
     }
     .alertTimeOut {
         margin: 0px;
@@ -694,5 +730,22 @@ div:hover > .checkboxChecked .checkmark {
     .redLineFooter p {
         font-size: 13px;
         padding-top: 12px;
+    }
+}
+@media screen and (max-width:425px) {
+    .legenda {
+        flex-direction: column;
+    }
+    .tipoDiBorsa {
+        min-width: 150px;
+    }
+    .contatore {
+        min-width: 72px;
+        margin-left: 6px;
+    }
+    .meno, .piu {
+        padding: 4px 4px 0px;
+        width: 24px;
+        font-size: 20px;
     }
 }

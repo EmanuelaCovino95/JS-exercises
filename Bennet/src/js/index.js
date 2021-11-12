@@ -1,3 +1,59 @@
+window.addEventListener("load", function () {
+    $('.scegliUnGiorno').slick({
+        infinite: false,
+        slidesToShow: 5.5,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 993,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    })
+});
+
+window.addEventListener("load", function () {
+    $('.scegliUnaFasciaOraria').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 993,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    })
+});
+
+function tabellaDiOrari() {
+    $('.orariSelezionabili').slick({
+        infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+        mobileFirst: true,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: 'unslick',
+            }
+        ]
+    });
+    window.addEventListener('resize', function() {
+        $('.orariSelezionabili').slick('resize');
+    });
+};
+tabellaDiOrari();
+
 const dataToday = new Date();
 const days = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
 const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
@@ -168,8 +224,8 @@ document.querySelector('#sacchetto').addEventListener("click", function () {
     }
 });
 
-document.querySelectorAll('.contatore').forEach(function(item){
-    item.addEventListener("click", function(){
+document.querySelectorAll('.contatore').forEach(function (item) {
+    item.addEventListener("click", function () {
         if (contaTermiche !== 0) {
             document.querySelector('.bustePerSpesa div:nth-child(2) div strong').innerHTML = (contaTermiche * 1.10).toFixed(2) + '&euro;';
         }
@@ -222,21 +278,21 @@ document.querySelector('.stepDueInCorso button').addEventListener("click", funct
     document.querySelector('.stepTreInCorso').classList.remove('nascosto');
     if (document.querySelector('#sacchetto').checked) {
         document.querySelector('.stepDueCompletato .opzioniSelezionate').innerHTML = 'Nessun sacchetto. I sacchetti utilizzati per la preparazione delle spese sono a pagamento (Euro 0,10 cad.)' +
-        ' e vengono addebitati in modo commisurato in funzione della necessità di ogni singola spesa. Qualora scegliessi di non ricevere sacchetti da parte di Bennet la tua spesa ti verr\à ' +
-        'consegnata utilizzando solo i dispositivi idonei all\'imbustamento dei prodotti freschissimi e surgelati e non verr\à richiesta alcuna spesa aggiuntiva.';
+            ' e vengono addebitati in modo commisurato in funzione della necessità di ogni singola spesa. Qualora scegliessi di non ricevere sacchetti da parte di Bennet la tua spesa ti verr\à ' +
+            'consegnata utilizzando solo i dispositivi idonei all\'imbustamento dei prodotti freschissimi e surgelati e non verr\à richiesta alcuna spesa aggiuntiva.';
     } else {
         if (contaTermiche !== 0) {
             busteTermiche = 'BORSA TERMICA BENNET (' + contaTermiche + ') <br>';
-        } else {busteTermiche = ' ';}
+        } else { busteTermiche = ' '; }
         if (contaBio !== 0) {
             busteBio = 'SHOPPER BIODEGRADABILE (' + contaBio + ') <br>';
-        } else {busteBio = ' ';}
+        } else { busteBio = ' '; }
         if (contaRiuso !== 0) {
             busteRiuso = 'BORSA PORTA TUTTO (' + contaRiuso + ') <br>';
-        } else {busteRiuso = ' ';}
-        document.querySelector('.stepDueCompletato .opzioniSelezionate').innerHTML = busteTermiche + busteBio  + busteRiuso;
+        } else { busteRiuso = ' '; }
+        document.querySelector('.stepDueCompletato .opzioniSelezionate').innerHTML = busteTermiche + busteBio + busteRiuso;
     }
-    document.querySelector('.scontrino p:first-child').innerHTML = 'Articoli (' + (1+contaTermiche+ contaBio + contaRiuso).toFixed(0) + ')';
+    document.querySelector('.scontrino p:first-child').innerHTML = 'Articoli (' + (1 + contaTermiche + contaBio + contaRiuso).toFixed(0) + ')';
     document.querySelector('.scontrinoDesign p:first-child').innerHTML = (3.03 + contaTermiche * 1.10 + contaBio * 0.10 + contaRiuso * 0.99) + '&euro;';
     document.querySelector('.cassa strong:last-child').innerHTML = (3.03 + contaTermiche * 1.10 + contaBio * 0.10 + contaRiuso * 0.99).toFixed(2) + '&euro;';
 });

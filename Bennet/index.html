@@ -7,6 +7,8 @@
     <title>Bennet Online</title>
     <link rel="shortcut icon" type="image/png" href="src/images/bennet-logo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
 </head>
 
@@ -30,15 +32,15 @@
                 <h3>Data e orario di consegna</h3>
                 <h4>Scegli un giorno:</h4>
                 <div class="scegliUnGiorno">
-                    <div class="selected"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="giornoEdata selected"></div>
+                    <div class="giornoEdata"></div>
+                    <div class="giornoEdata"></div>
+                    <div class="giornoEdata"></div>
                 </div>
                 <h4>Scegli una fascia oraria:</h4>
                 <div class="scegliUnaFasciaOraria">
-                    <div class="selected">Tutte le fasce</div>
-                    <div>
+                    <div class="mattinaEpomeriggio selected">Tutte le fasce</div>
+                    <div class="mattinaEpomeriggio">
                         <div>Mattina</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-sun" viewBox="0 0 16 16">
@@ -46,7 +48,7 @@
                                 d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                         </svg>
                     </div>
-                    <div>
+                    <div class="mattinaEpomeriggio">
                         <div>Pomeriggio</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-sunset" viewBox="0 0 16 16">
@@ -56,13 +58,41 @@
                     </div>
                 </div>
                 <div class="orariSelezionabili">
-                    <div class="nonDisponibile">07:30 - 09:30</div>
-                    <div class="disponibile">09:30 - 11:30</div>
-                    <div class="disponibile">11:30 - 13:30</div>
-                    <div class="disponibile">13:30 - 15:30</div>
-                    <div class="disponibile">15:30 - 17:30</div>
-                    <div class="disponibile">17:30 - 19:30</div>
-                    <div class="nonDisponibile">19:30 - 21:30</div>
+                    <div class="orologio nonDisponibile">
+                        <span> 07:30 </span>
+                        <span> - </span>
+                        <span >09:30 </span>
+                    </div>
+                    <div class="orologio disponibile">
+                        <span> 09:30 </span>
+                        <span> - </span>
+                        <span >11:30 </span>
+                    </div>
+                    <div class="orologio disponibile">
+                        <span> 11:30 </span>
+                        <span> - </span>
+                        <span >13:30 </span>
+                    </div>
+                    <div class="orologio disponibile">
+                        <span> 13:30 </span>
+                        <span> - </span>
+                        <span >15:30 </span>
+                    </div>
+                    <div class="orologio disponibile">
+                        <span> 15:30 </span>
+                        <span> - </span>
+                        <span >17:30 </span>
+                    </div>
+                    <div class="orologio disponibile">
+                        <span> 17:30 </span>
+                        <span> - </span>
+                        <span >19:30 </span>
+                    </div>
+                    <div class="orologio nonDisponibile">
+                        <span> 19:30 </span>
+                        <span> - </span>
+                        <span >21:30 </span>
+                    </div>
                 </div>
                 <div class="legenda">
                     <div>
@@ -87,7 +117,9 @@
                         <label>Non disponibile</label>
                     </div>
                 </div>
-                <button disabled>Continua</button>
+                <div class="posizionaButton">
+                    <button disabled>Continua</button>
+                </div>
             </div>
             <div class="stepUnoCompletato nascosto">
                 <div>
@@ -191,7 +223,9 @@
                         </label>
                     </div>
                 </form>
-                <button>Continua</button>
+                <div class="posizionaButton">
+                    <button>Continua</button>
+                </div>
             </div>
             <div class="stepDueCompletato nascosto">
                 <div>
@@ -369,6 +403,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="src/js/index.js"></script>
 </body>
 
