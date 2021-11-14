@@ -34,7 +34,7 @@ window.addEventListener("load", function () {
     })
 });
 
-function tabellaDiOrari() {
+window.addEventListener("load", function () {
     $('.orariSelezionabili').slick({
         infinite: false,
 		slidesToShow: 1,
@@ -48,23 +48,24 @@ function tabellaDiOrari() {
             }
         ]
     });
-    window.addEventListener('resize', function() {
-        $('.orariSelezionabili').slick('resize');
-    });
-};
-tabellaDiOrari();
+});
+
+window.addEventListener('resize', function() {
+    $('.orariSelezionabili').slick('resize');
+});
 
 const dataToday = new Date();
 const days = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
 const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 const collectionIntervals = ["07:30 - 09:30", "09:30 - 11:30", "11:30 - 13:30", "13:30 - 15:30", "15:30 - 17:30", "17:30 - 19:30", "19:30 - 21:30"];
 
-const giornoCorrente = document.querySelector('.scegliUnGiorno div');
-const divArray = document.querySelectorAll('.scegliUnGiorno div');
-const fasciaOraria = document.querySelectorAll('.orariSelezionabili div');
+const giornoCorrente = document.querySelector('.giornoEdata');
+const giorni = document.querySelectorAll('.giornoEdata');
+const amPm = document.querySelectorAll('.mattinaEpomeriggio');
+const fasciaOraria = document.querySelectorAll('.orario');
 
 let j = 0;
-divArray.forEach(function (item) {
+giorni.forEach(function (item) {
     dataToday.setDate(dataToday.getDate() + j);
     let dayOfWeek = days[dataToday.getDay()];
     let day = dataToday.getDate();
@@ -74,18 +75,21 @@ divArray.forEach(function (item) {
     j = 1;
 });
 
-let ora = 8;
-fasciaOraria.forEach(function (item) {
-    item.value = ora;
-    ora += 2;
-});
+function valoreFasciaOraria() {
+    let ora = 8;
+    fasciaOraria.forEach(function (item) {
+        item.value = ora;
+        ora += 2;
+    });
+}
+valoreFasciaOraria();
 
 fasciaOraria.forEach(function (item) {
     if ((giornoCorrente.classList.contains('selected')) && (dataToday.getHours() > item.value)) {
         item.classList.remove('disponibile');
         item.classList.add('nonDisponibile');
     }
-    divArray.forEach(function (option) {
+    giorni.forEach(function (option) {
         option.addEventListener("click", function () {
             if (option !== giornoCorrente) {
                 if ((item.value < 20) && (item.value > 8)) {
@@ -102,11 +106,11 @@ fasciaOraria.forEach(function (item) {
     });
 });
 
-divArray.forEach(function (item) {
+giorni.forEach(function (item) {
     item.addEventListener("click", function () {
-        for (let i = 0; i < divArray.length; i++) {
-            if (divArray[i] !== item) {
-                divArray[i].classList.remove('selected');
+        for (let i = 0; i < giorni.length; i++) {
+            if (giorni[i] !== item) {
+                giorni[i].classList.remove('selected');
             }
         }
         item.classList.add('selected');
@@ -127,7 +131,6 @@ fasciaOraria.forEach(function (item) {
     })
 });
 
-const amPm = document.querySelectorAll('.scegliUnaFasciaOraria > div');
 amPm.forEach(function (item) {
     item.addEventListener("click", function () {
         for (let i = 0; i < amPm.length; i++) {
@@ -138,7 +141,7 @@ amPm.forEach(function (item) {
         item.classList.add('selected');
         if (amPm[0].classList.contains('selected')) {
             fasciaOraria.forEach(function (option) {
-                option.style.display = 'flex';
+                option.style.display = 'block';
             })
         }
         if (amPm[1].classList.contains('selected')) {
@@ -147,7 +150,7 @@ amPm.forEach(function (item) {
                     option.style.display = 'none';
                 }
                 if (option.value < 13) {
-                    option.style.display = 'flex';
+                    option.style.display = 'block';
                 }
             });
         }
@@ -157,11 +160,46 @@ amPm.forEach(function (item) {
                     option.style.display = 'none';
                 }
                 if (option.value > 13) {
-                    option.style.display = 'flex';
+                    option.style.display = 'block';
                 }
             });
         }
     })
+});
+
+let x = 0;
+let giornoSelezionato;
+let orarioSelezionato;
+document.querySelector('.stepUnoInCorso button').addEventListener("click", function () {
+    if (!document.querySelector('.stepUnoInCorso button').hasAttribute('disabled')) {
+        document.querySelector('.stepUnoInCorso').classList.add('nascosto');
+        document.querySelector('.stepUnoCompletato').classList.remove('nascosto');
+        document.querySelector('.stepDue').classList.add('nascosto');
+        document.querySelector('.stepDueInCorso').classList.remove('nascosto');
+        document.querySelector('.stepDueCompletato').classList.add('nascosto');
+        giorni.forEach(function (item) {
+            if (item.classList.contains('selected')) {
+                giornoSelezionato = item.value;
+            }
+        });
+        fasciaOraria.forEach(function (item) {
+            item.value = collectionIntervals[x];
+            x++;
+            if (item.classList.contains('selected')) {
+                orarioSelezionato = item.value;
+            }
+        })
+        document.querySelector('.opzioniSelezionate').innerHTML = 'Ritiro ' + giornoSelezionato + ' ' + orarioSelezionato;
+    }
+});
+
+document.querySelector('.stepUnoCompletato svg').addEventListener("click", function () {
+    document.querySelector('.stepUnoCompletato').classList.add('nascosto');
+    document.querySelector('.stepUnoInCorso').classList.remove('nascosto');
+    x = 0;
+    giornoSelezionato = 0;
+    orarioSelezionato = 0;
+    valoreFasciaOraria();
 });
 
 let contaTermiche = 0;
@@ -211,6 +249,20 @@ document.querySelectorAll('.piu').forEach(function (item) {
     })
 });
 
+document.querySelectorAll('.meno').forEach(function (item) {
+    item.addEventListener("click", function () {
+        if (document.querySelector('#sacchetto').checked === false) {
+            if (contaTermiche === 0) {
+                if (contaBio === 0) {
+                    if (contaRiuso === 0) {
+                        document.querySelector('#sacchetto').checked = true;
+                    }
+                }
+            }
+        }
+    })
+});
+
 document.querySelector('#sacchetto').addEventListener("click", function () {
     if (document.querySelector('#sacchetto').checked) {
         contaTermiche = 0;
@@ -219,6 +271,9 @@ document.querySelector('#sacchetto').addEventListener("click", function () {
         document.querySelector('.nBuste.termiche').innerHTML = contaTermiche;
         document.querySelector('.nBuste.bio').innerHTML = contaBio;
         document.querySelector('.nBuste.riuso').innerHTML = contaRiuso;
+        document.querySelector('.bustePerSpesa div:nth-child(2) div strong').innerHTML = (contaTermiche * 1.10).toFixed(2) + '&euro;';
+        document.querySelector('.bustePerSpesa div:nth-child(3) div strong').innerHTML = (contaBio * 0.10).toFixed(2) + '&euro;';
+        document.querySelector('.bustePerSpesa div:last-child div strong').innerHTML = (contaRiuso * 0.99).toFixed(2) + '&euro;';
     } else {
         document.querySelector('#sacchetto').checked = true;
     }
@@ -226,46 +281,10 @@ document.querySelector('#sacchetto').addEventListener("click", function () {
 
 document.querySelectorAll('.contatore').forEach(function (item) {
     item.addEventListener("click", function () {
-        if (contaTermiche !== 0) {
             document.querySelector('.bustePerSpesa div:nth-child(2) div strong').innerHTML = (contaTermiche * 1.10).toFixed(2) + '&euro;';
-        }
-        if (contaBio !== 0) {
             document.querySelector('.bustePerSpesa div:nth-child(3) div strong').innerHTML = (contaBio * 0.10).toFixed(2) + '&euro;';
-        }
-        if (contaRiuso !== 0) {
             document.querySelector('.bustePerSpesa div:last-child div strong').innerHTML = (contaRiuso * 0.99).toFixed(2) + '&euro;';
-        }
     })
-});
-
-let x = 0;
-let giornoSelezionato;
-let orarioSelezionato;
-document.querySelector('.stepUnoInCorso button').addEventListener("click", function () {
-    if (!document.querySelector('.stepUnoInCorso button').hasAttribute('disabled')) {
-        document.querySelector('.stepUnoInCorso').classList.add('nascosto');
-        document.querySelector('.stepUnoCompletato').classList.remove('nascosto');
-        document.querySelector('.stepDue').classList.add('nascosto');
-        document.querySelector('.stepDueInCorso').classList.remove('nascosto');
-        divArray.forEach(function (item) {
-            if (item.classList.contains('selected')) {
-                giornoSelezionato = item.value;
-            }
-        });
-        fasciaOraria.forEach(function (item) {
-            item.value = collectionIntervals[x];
-            x++;
-            if (item.classList.contains('selected')) {
-                orarioSelezionato = item.value;
-            }
-        })
-        document.querySelector('.opzioniSelezionate').innerHTML = 'Ritiro ' + giornoSelezionato + ' ' + orarioSelezionato;
-    }
-});
-
-document.querySelector('.stepUnoCompletato svg').addEventListener("click", function () {
-    document.querySelector('.stepUnoCompletato').classList.add('nascosto');
-    document.querySelector('.stepUnoInCorso').classList.remove('nascosto');
 });
 
 let busteTermiche = ' ';

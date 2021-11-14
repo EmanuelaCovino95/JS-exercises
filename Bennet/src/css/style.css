@@ -112,14 +112,14 @@ main{
     display: flex;
     flex-wrap: wrap;
 }
-.orologio {
+.orario {
     border-radius: 4px;
     margin: 0 16px 12px 0;
     padding: 6px 12px;
     font-size: 14px;
     width: 108px;
 }
-.orologio span {
+.orario span {
     display: inline-block;
 }
 .nonDisponibile {
@@ -133,9 +133,6 @@ main{
 .disponibile:hover {
     cursor: pointer;
     border-color: #28a02c;
-}
-div.slick-list.draggable.nonDisponibile {
-    border: none;
 }
 .legenda {
     display: flex;
@@ -614,13 +611,13 @@ div:hover > .checkboxChecked .checkmark {
     .orariSelezionabili {
         display: block;
     }
-    .orologio {
+    .orario {
         max-width: 64px;
     }
-    .orologio span {
+    .orario span {
         display: block;
     }
-    .orologio span:nth-child(2) {
+    .orario span:nth-child(2) {
         display: none;
     }
     .legenda label {
@@ -639,11 +636,12 @@ div:hover > .checkboxChecked .checkmark {
     }
     .tipoDiBorsa {
         flex-basis: 50%;
+        min-width: 123px;
     }
     .prezzoDellaBorsa {
         flex-basis: 25%;
         flex-direction: column;
-        justify-content: center;
+        text-align: center;
     }
     .contatore {
         flex-basis: 25%;
@@ -736,11 +734,8 @@ div:hover > .checkboxChecked .checkmark {
     .legenda {
         flex-direction: column;
     }
-    .tipoDiBorsa {
-        min-width: 150px;
-    }
     .contatore {
-        min-width: 72px;
+        min-width: 40px;
         margin-left: 6px;
     }
     .meno, .piu {
