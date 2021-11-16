@@ -71,13 +71,21 @@ main{
 }
 .pannelloSelezionabile {
     flex-basis: 73%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
 }
 .pannelloSelezionabile h3 {
     margin-top: 0px;
     font-size: 20px;
 }
-.nascosto {
-    display: none;
+div.nascosto {
+    position: absolute;
+    top:0;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    opacity: 0;
 }
 .stepUnoInCorso, .stepUnoCompletato, .stepDue, .stepDueInCorso, .stepDueCompletato, .stepTre, .stepTreInCorso {
     margin: 0px 24px 24px;
@@ -88,6 +96,9 @@ main{
 .slick-track {
     margin: 0px;
 }
+.scegliUnGiorno {
+    display: flex;
+}
 .giornoEdata {
     border: 1px solid rgba(45,45,46,.4);
     border-radius: 6px;
@@ -96,16 +107,31 @@ main{
     font-weight: bold;
     text-align: center;
 }
+.scegliUnaFasciaOraria {
+    display: flex;
+}
+.scegliUnaFasciaOraria .slick-slide {
+    max-width: fit-content;
+}
 .mattinaEpomeriggio {
     border: 1px solid rgba(45,45,46,.4);
     border-radius: 6px;
     margin-right: 16px;
     padding: 12px 16px;
-    max-width: 170px;
+    width: 156px;
 }
-.mattinaEpomeriggio:nth-child(2), .mattinaEpomeriggio:last-child {
+.mattinaEpomeriggio > div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.bi-sun {
+    display: block;
+    margin-left: 32px;
+}
+.bi-sunset {
+    display: block;
+    margin-left: 16px;
 }
 .orariSelezionabili {
     margin: 20px 0px 0px;
@@ -214,6 +240,9 @@ button:disabled {
 }
 .bustePerSpesa div:first-child {
     margin: 0 0 16px;
+}
+.bustePerSpesa div:first-child .contatore{
+    visibility: hidden;
 }
 .tipoDiBorsa {
     flex-basis: 40%;
@@ -589,6 +618,9 @@ div:hover > .checkboxChecked .checkmark {
         margin-top: 80px;
         flex-direction: column;
     }
+    .pannelloSelezionabile, .colonnaDiRiepilogo {
+        flex-basis: 100%;
+    }
     .pannelloSelezionabile h3 {
         margin: 0px;
         font-size: 16px;
@@ -598,24 +630,31 @@ div:hover > .checkboxChecked .checkmark {
         border-radius: 0px;
         font-size: 14px;
     }
+    .scegliUnGiorno {
+        display: block;
+    }
+    .slick-slide {
+        margin-right: 16px;
+    }
+    .slick-track {
+        display: flex;
+    }
     .giornoEdata {
-        padding: 10px 8px;
+        padding: 10px 4px;
         font-weight: 700;
-        margin-right: 8px;
     }
     .mattinaEpomeriggio {
-        margin-right: 12px;
-        padding: 6px 12px;
+        padding: 6px 8px;
         max-width: 140px;
     }
-    .orariSelezionabili {
-        display: block;
+    .orariSelezionabili .slick-slide {
+        max-width: 60px;
     }
     .orario {
+        padding: 6px;
         max-width: 64px;
-    }
-    .orario span {
-        display: block;
+        margin-right: 0px;
+        text-align: center;
     }
     .orario span:nth-child(2) {
         display: none;
@@ -731,6 +770,9 @@ div:hover > .checkboxChecked .checkmark {
     }
 }
 @media screen and (max-width:425px) {
+    .noSvg {
+        display: none;
+    }
     .legenda {
         flex-direction: column;
     }

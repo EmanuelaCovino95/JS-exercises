@@ -1,0 +1,38 @@
+{
+    "titolo": "Altri servizi",
+    "sacchetti": [
+        {
+            "prezzo": ["Prezzo Totale", "Prezzo Unitario"]
+        },
+        {
+            "tipo":"BORSA TERMICA BENNET",
+            "prezzo": ["0,00 €", "1,10 €"],
+            "contatore": [" - ", " + "]
+        },
+        {
+            "tipo":"SHOPPER BIODEGRADABILE",
+            "prezzo": ["0,00 €", "0,10 €"],
+            "contatore": [" - ", " + "]
+        },
+        {
+            "tipo":"BORSA PORTA TUTTO",
+            "prezzo": ["0,00 €", "0,99 €"],
+            "contatore": [" - ", " + "]
+        }
+    ],
+    "label": [
+        {
+            "pre": "Nessun sacchetto",
+            "post":"I sacchetti utilizzati per la preparazione delle spese sono a pagamento (Euro 0,10 cad.) e vengono addebitati in modo commisurato in funzione della necessità di ogni singola spesa. Qualora scegliessi di non ricevere sacchetti da parte di Bennet la tua spesa ti verrà consegnata utilizzando solo i dispositivi idonei all'imbustamento dei prodotti freschissimi e surgelati e non verrà richiesta alcuna spesa aggiuntiva."
+        },
+        {
+            "pre": "Richiedi la fattura",
+            "post":"l'emissione della fattura non è obbligatoria e scegliendo questa opzione Bennet verificherà che il tuo nome sia già; inserito nel nostro database per emettere il documento. Qualora non fosse disponibile potrà; essere richiesta al momento al personale del punto vendita che vi indicheranno la procedura per ottenere la fattura."
+        },
+        {
+            "pre": "Richiedi tax free",
+            "post":"scegliendo questa opzione il personale addetto alla consegna vi indicherà la procedura per ottenere il documento."
+        }
+    ],
+    "button": "Continua"
+}
