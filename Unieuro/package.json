@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mustache": "^4.2.0",
+    "npm": "^8.1.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-babel": "^8.0.0",
+    "grunt-browserify": "^6.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-serve": "^0.1.6"
+  }
+}

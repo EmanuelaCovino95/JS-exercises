@@ -1,0 +1,879 @@
+@color-bg: #fff;
+@color-text:#3c4043;
+@color-grigio: #999;
+@color-shadow: #f1f1f1;
+@color-border:#e0e1e5;
+@color-indicatore: #f93;
+@color-selezione: #4385f4;
+@color-errore: #DD2727;
+@border: 1px solid @color-border;
+.flex(@esterni:space-between; @center:center){
+    display: flex;
+    justify-content: @esterni;
+    align-items: @center;
+}
+.position(@pos:relative; @z:1){
+    position: @pos;
+    z-index: @z;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: @color-text;
+    font-family: "Roboto", sans-serif;
+}
+a {
+    cursor: pointer;
+    color: @color-text;
+    text-decoration: none;
+}
+header {
+    .flex(space-between; center);
+
+    div {
+        margin: 20px 7%;
+        text-align: center;
+        display: flex;
+
+        @media (max-width: 767px){
+            margin: 12px 4%;
+        }
+    }
+    div:nth-child(2) {
+        border: @border;
+        border-radius: 5px;
+        padding: 8px 12px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+
+        @media (max-width: 1023px){
+            font-size: 11px;
+        }
+    }
+}
+.logo {
+    border: @border;
+    border-radius: 48px;
+    padding: 8px 12px 4px ; 
+    margin-right: 12px;
+    box-shadow: 0 2px 4px 0 #d6d6d6;
+
+    @media (max-width: 767px){
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    img {
+        
+        @media (max-width: 767px){
+            width: 40px;
+        }
+    }
+}
+.bi-arrow-left {
+    margin: 0 12px 1px 0;
+}
+.carrello:hover a {
+    color: @color-indicatore;
+}
+main {
+    margin-left: 7%;
+    .flex(space-between; initial);
+
+    @media (max-width: 767px){
+        flex-direction: column;
+        margin: 0;
+    }
+}
+.colonnaDeiProdotti {
+    flex-basis: 23%;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 24px;
+    box-shadow: inset 16px 0px 24px 2px @color-shadow;
+
+    @media (max-width: 1023px) and (min-width: 768px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 767px){
+        margin: 48px 0;
+        padding: 0 25% 56px;
+        box-shadow: none;
+        background-image: linear-gradient(hsla(0, 0%, 95%, 0) 75%, #f6f6f6);
+    }
+}
+.colonnaDeiProdotti > img {
+    display: block;
+    margin: auto;
+}
+.colonnaDeiProdotti > span {
+    color: @color-selezione;
+    cursor: pointer;
+    font-size: 13px;
+
+    @media (max-width: 1023px) and (min-width: 768px) {
+        font-size: 11px;
+    }
+}
+.scontrino {
+    .flex(space-between; initial);
+    text-align: left;
+    padding: 24px 0 24px;
+    border-bottom: @border;
+}
+.scontrino span {
+    display: flex;
+    flex-direction: column;
+}
+.grigio {
+    color: @color-grigio;
+    margin: 16px 0 0;
+}
+.scontrino div:last-child {
+    text-align: right;
+}
+.scontrino div:last-child span {
+    margin: 16px 0 0;
+}
+.totale span:first-child {
+    font-size: 16px;
+
+    @media (max-width: 1023px) and (min-width: 768px) {
+        font-size: 14px;
+    }
+}
+.totale span:nth-child(2) {
+    font-size: 11px;
+
+    @media (max-width: 1023px) and (min-width: 768px) {
+        font-size: 10px;
+    }
+}
+.totale div:nth-child(2) {
+    font-size: 20px;
+    align-self: center;
+
+    @media (max-width: 1023px){
+        font-size: 18px;
+    }
+}
+.linkUtili {
+    margin-top: 32px;
+}
+.linkUtili a {
+    text-decoration: underline;
+    color: @color-grigio;
+    font-size: 13px;
+
+    @media (max-width: 1023px){
+        font-size: 11px;
+    }
+}
+.stepContainer {
+    flex-basis: 70%;
+    .flex(space-between; flex-start);
+    font-size: 15px;
+
+    @media (max-width: 1023px){
+        font-size: 12px;
+    }
+
+    @media (max-width: 767px){
+        margin: 16px 24px 24px 7%;
+        justify-content: flex-start;
+    }
+}
+.stepColumn {
+    flex-basis: 30%;
+    margin-bottom: 40%;
+
+    h4{
+
+        @media (max-width: 767px){
+            display: none;;
+        }
+    }
+
+    @media (max-width: 767px){
+        margin-bottom: 24px;
+        flex-basis: initial;
+    }
+}
+.stepN {
+    .flex(initial; flex-start);
+    font-weight: bold;
+    color: @color-text;
+    opacity: 0.3;
+
+    > span:first-child {
+        border: 2px solid @color-text;
+        border-radius: 48px;
+        padding: 6px 18px; 
+        margin-right: 12px;
+        font-size: 18px;
+
+        @media (max-width: 1023px){
+            font-size: 15px;
+            padding: 4px 13px;
+            margin-right: 24px; 
+        }
+    }
+    > span:last-child{
+
+        @media (max-width: 767px){
+            display: none;
+        }
+    }
+}
+.modifica {
+    display: none;
+    color: @color-text;
+    cursor: pointer;
+    margin-top: -8px;
+}
+.indicatore {
+    color: @color-indicatore;
+    opacity: 1;
+
+    > span:first-child {
+        border-color: @color-indicatore;
+    }
+}
+.lineaVerticale {
+    width: 1px;
+    height: 48px;
+    background-color: @color-text;
+    opacity: 0.3;
+    margin: 20px 25px;
+
+    @media (max-width: 767px){
+        height: 24px;
+        margin: 10px 19px;
+    }
+}
+.bloccoCentrale {
+    margin: 10% 5% 10% 7%;
+    width: 100%;
+
+    @media (max-width: 767px){
+        margin: 0 5%;
+    }
+}
+.matitaModificaMobile {
+    margin: 8px 0 32px 32px;
+    display: none;
+    font-size: 14px;
+}
+div.matitaModificaMobile.ricomparsa {
+
+    @media (max-width: 767px){
+        display: block;
+    }
+}
+.step {
+    box-shadow: 0 2px 24px 12px hsla(0, 0%, 95%, 0.6);
+    border-radius: 12px;
+    padding: 6% 7%;
+    h2 {
+        margin: 8px 0 20px;
+        font-size: 20px;
+
+        @media (max-width: 1023px){
+            font-size: 17px;
+        }
+
+        @media (max-width: 767px){
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 767px){
+        width: 100%;
+        margin: 0;
+        background-color: #f5f5f5;
+        box-shadow: none;
+    }
+}
+.stepUno > div {
+    .flex(space-between; initial);
+    padding: 16px 0;
+}
+.radioButton {
+    display: flex;
+    > span {
+        .position(relative; 1);
+    }
+    input {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        .position(relative; 2);
+        opacity: 0;
+    }
+    .checkmark {
+        .position(absolute; 1);
+        top: 2px;
+        left: 2px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        box-shadow: 3px 3px 8px 2px hsla(0, 0%, 85%, 0.5);
+    }
+    input:checked ~ .checkmark::after {
+        content: "";
+        .position(absolute; 1);
+        left: 11px;
+        top: 11px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: @color-selezione;
+    }
+    span.scelto {
+        color: @color-selezione;
+        font-weight: 700;
+    }
+    p.scelto {
+        color: @color-selezione;
+        font-weight: bold;
+    }
+    label {
+        cursor: pointer;
+        padding: 0px 10px;
+        margin-top: 10px;
+
+        span:first-child {
+            font-size: 16px;
+
+            @media (max-width: 1023px){
+                font-size: 13px;
+            }
+        }
+        span:last-child {
+            font-size: 12px;
+
+            @media (max-width: 1023px){
+                font-size: 11px;
+            }
+        }
+    }
+    p {
+        font-size: 12px;
+        color: #50475e;
+
+        @media (max-width: 1023px){
+            font-size: 11px;
+        }
+    }
+    + p{
+        visibility: hidden;
+        color: @color-errore;
+        font-size: 10px;
+        margin: 12px 0 0 0;
+    }
+}
+.radioButton + span {
+    margin: 16px 0;
+    text-align: right;
+}
+.tooltip {
+    .position(relative; 1);
+    display: inline-block;
+    
+    .tooltiptext {
+        display: none;
+        width: 190px;
+        background-color: @color-bg;
+        color: @color-selezione;
+        font-size: 11px;
+        border: @border;
+        border-radius: 4px;
+        box-shadow: 1px 1px 7px 0px hsla(0, 0%, 80%, 0.5);
+        padding: 6px 12px 12px;
+        .position(absolute; 1);
+        top:150%;
+        left: -108px;
+        ol {
+            padding-inline-start: 12px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+        li {
+            margin: 4px 2px 0;
+        }
+        &:after {
+            content: "";
+            .position(absolute; 1);
+            bottom: 95%;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: @color-bg;
+            border: solid @color-border;
+            border-width: 0 0 1px 1px;
+            transform: rotate(135deg);
+        }
+    }
+    &:hover .tooltiptext {
+        display: block;
+    }
+}
+.divContinua {
+    .flex(space-between; initial);
+    padding: 16px 0;
+    margin-top: 32px;
+    border-top: @border;
+}
+.continua {
+    cursor: pointer;
+    color: @color-selezione;
+    font-weight: 500;
+
+    @media (max-width: 767px){
+        font-size: 15px;
+    }
+
+    span:last-child {
+        margin-left: 10px;
+        padding: 0px 10px 2px;
+        color: @color-bg;
+        font-size: 24px;
+        font-weight: 100;
+        background-color: @color-selezione;
+        border-radius: 16px;
+
+        @media (max-width: 1023px){
+            font-size: 18px;
+            padding: 0px 8px 2px;
+        }
+    }
+}
+.stepDue {
+    display: none;
+
+    .radioButton p {
+        color: #847e8e;
+    }
+}
+svg.bi-pencil, svg.bi-trash {
+    margin: 12px 0 80% 12px;
+    cursor: pointer;
+}
+.errore {
+    color: @color-errore;
+    display: none;
+}
+.flexBox {
+    .flex(space-between; center);
+
+    .radioButton + div {
+        display: flex;
+    }
+}
+.inserireDatiPersonali {
+    display: none;
+}
+form {
+    margin: 20px 0 40px;
+
+    > div {
+        margin-top: 14px;
+    }
+    .flexBox > div:first-child {
+        margin: 0 60px 0 0;
+    }
+    .flexBox > div:last-child {
+        margin: 0 24px 0 0;
+    }
+}
+input[type=text], input[type=number], input[type=email], select {
+    margin: 4px 0;
+    width: 90%;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: @border;
+    background-color: @color-bg;
+    color: #60676c;
+    font-style: italic;
+}
+.stepTre {
+    display: none; 
+
+    .radioButton {
+        cursor: pointer;
+
+        img + p {
+            text-decoration: underline;
+            font-size: 15px;
+
+            @media (max-width: 992px){
+                font-size: 13px;
+            }
+        }
+        img + p.scelto {
+            text-decoration: none;
+        }
+
+        + p {
+            visibility: visible;
+            font-size: 10px;
+            color: #50475e;
+        }
+    }
+    img {
+        margin-right: 8px;
+    }
+}
+div.flexBox span:last-child {
+    font-size: 14px;
+
+    @media (max-width: 1023px){
+        font-size: 11px;
+    }
+}
+.stepQuattro {
+    display: none;
+}
+.nomeEcognome, .indirizzo, .citta {
+    color: @color-selezione;
+}
+.alert {
+    color: #847e8e;
+    border: 1px solid @color-text;
+    padding: 6px 16px;
+    margin: 24px 0px 48px;
+    span {
+        color: @color-selezione;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.selezionaOpzioniParticolari {
+    display: none;
+
+    > .radioButton {
+        margin: 24px 0 8px;
+    }
+    .radioButton label span {
+        font-size: 14px;
+    }
+}
+.segnalazione {
+    color: @color-errore;
+}
+.datiFatturazione {
+    display: none;
+    font-size: 12px;
+
+    h4 {
+        margin: 0;
+    }
+}
+.tipoDiCliente {
+    .flex(center; center);
+    padding: 6px 0 12px;
+    border-bottom: @border;
+
+    .radioButton {
+        .flex(center; center);
+
+        label {
+            margin: 0 24px 0 2px;
+            padding: 0;
+        }
+    }
+
+    .checkmark {
+        width: 20px;
+        height: 20px;
+        box-shadow: none;
+        border: 1.5px solid @color-bg;
+        outline: 1.5px solid @color-text;
+
+    }
+
+    input {
+        width: 20px;
+        height: 20px;
+
+        &:checked ~ .checkmark {
+            outline-color: @color-selezione;
+            background-color: @color-selezione;
+
+            &:after {
+                content: " ✓";
+                color: @color-bg;
+                text-align: center;
+                left: 1px;
+                top: 1px;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: transparent;
+            }
+        }
+    }
+}
+.pIva, .ragioneSociale {
+    display: none;
+}
+.doveInviareLaFattura {
+    margin-bottom: 24px;
+
+    > span {
+        margin: 2px 0 16px;
+        display: block;
+        font-size: 13px;
+        text-align: left;
+    }
+}
+.stepCinque {
+    display: none;
+
+    label[for="accettaCondizioni"] {
+        margin-top: 0px;
+        padding: 0 0 0 8px;
+
+        span:first-child {
+            font-size: 12px;
+
+            @media (max-width: 1023px){
+                font-size: 11px;
+            }
+        }
+        span:last-child {
+        text-decoration: underline;
+        }
+    }
+}
+.pagamento {
+    display: flex;
+
+    @media (max-width: 767px){
+        display: block;
+    }
+
+    .radioButton span:first-child {
+        display: none;
+
+        @media (max-width: 767px){
+            display: flex;
+        }
+    }
+    > div {
+        cursor: pointer;
+        flex-basis: 20%;
+        flex-direction: column;
+        .flex(center; initial);
+        text-align: center;
+        margin: 12px 4px 24px;
+        padding: 16px 12px;
+        border: @border;
+        border-radius: 6px;
+        font-size: 11px;
+
+        @media (max-width: 1023px){
+            font-size: 10px;
+        }
+
+        @media (max-width: 767px){
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0;
+            padding: 12px 0 6px;
+            border: none;
+            border-bottom: @border;
+        }
+    }
+    label {
+        padding: 0;
+        text-transform: uppercase;
+
+        @media (max-width: 767px){
+            flex-basis: 85%;
+            .flex(space-between; center);
+            flex-direction: row-reverse;
+            text-transform: none;
+            margin: 0%;
+        }
+    }
+    img {
+        width: 100%;
+        margin-bottom: 12px;
+
+        @media (max-width: 767px){
+            width: 60px;
+            margin: 0;
+        }
+    }
+    + p{
+        visibility: hidden;
+        color: @color-errore;
+        font-size: 10px;
+        margin: 0 0 16px 0;
+    }
+}
+div.bordoBlu {
+    border: 2px solid hsla(218, 89%, 61%, 0.7);
+}
+.grassetto {
+    font-weight: bold;
+}
+.condizioniGeneraliDiVendita {
+    .flex(center; center);
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31,31,31,.25);
+    margin: 0;
+
+    > div {
+        background-color: @color-bg;
+        margin: 0 25%;
+        border-radius: 12px;
+        padding: 24px;
+        font-size: 12px;
+
+        @media (max-width: 767px){
+            margin: 12px 10%;
+        }
+    }
+    .titoloContratto {
+        .flex(space-between; center);
+    }
+    h3 {
+        font-size: 14px;
+    }
+    .close {
+        font-size: 24px;
+        font-weight: 100;
+    }
+    .contratto {
+        margin: 48px;
+        padding: 0;
+        height: 400px;
+        overflow-y: scroll;
+
+        @media (max-width: 992px){
+            margin: 8px 24px 0;
+        }
+
+        @media (max-width: 320px){
+            margin: 0;
+        }
+    }
+} 
+.selezionato{
+    display: block;
+}
+.deselezionato {
+    display: none;
+}
+.stepDue:nth-child(10) h2 {
+    margin: 8px 0 4px;
+    + span {
+        font-size: 12px;
+    }
+}
+form.selezionareUnaProvincia {
+    padding: 12px 0 24px;
+    > div {
+        .flex(space-between; center);
+    }
+    .localizzami {
+        color: @color-selezione;
+        margin-left: 12px;
+        font-size: 12px;
+    }
+}
+.itemContainer {
+    padding: 0 12px;
+    height: auto;
+    max-height: 300px;
+    overflow-y: scroll;
+    h4 {
+        margin: 0px;
+        font-weight: 500;
+    }
+    span {
+        font-size: 12px;
+        color: @color-grigio;
+    }
+    img {
+        margin: 16px 12px 0 0;
+    }
+    > div {
+        border-radius: 12px;
+        box-shadow: 0 2px 14px 0 #e0e0e0;
+        background-color: #fff;
+        padding: 25px;
+        margin: 4px auto 24px;
+        max-width: 280px;
+    }
+}
+.stepTre:nth-child(12){
+    h3 {
+        margin-bottom: 0px;
+    }
+    p {
+        font-size: 13px;
+        margin: 10px 0 20px;
+    }
+    label {
+        font-size: 12px;
+    }
+    div:nth-child(3) {
+        padding-bottom: 24px;
+    }
+}
+.divProdotto {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-color: @color-bg;
+    padding: 20px 30px;
+    height: 250%;
+    max-width: 350px;
+    .position(absolute; 2);
+    top:0;
+    right: 0;
+    box-shadow: -300px 0 0 3000px hsla(0, 0%, 60%, 0.3);
+    display: none;
+
+    .logo {
+        cursor: pointer;
+        padding: 0px 16px 4px;
+        font-size: 24px;
+        color: #888;
+        margin-left: 300px;
+
+        @media (max-width: 1023px){
+            font-size: 20px;
+        }
+    } 
+}
+.prodottoScelto {
+    .flex(initial; flex-start);
+    font-size: 14px;
+    padding: 40px 0;
+    border-bottom: @border;
+
+    @media (max-width: 1023px){
+        font-size: 13px;
+    }
+}
+.riepilogoProdotto {
+    .flex(space-between; flex-start);
+
+    * {
+        padding: 16px 12px 16px 0;
+    }
+}

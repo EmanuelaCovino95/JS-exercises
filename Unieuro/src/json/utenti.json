@@ -1,0 +1,45 @@
+{
+    "utenti": [
+        {
+            "email":"emanuela.covino@unieuro.it",
+            "nome":"Emanuela",
+            "cognome":"Covino",
+            "telefono":"123 4567890",
+            "citta":"Ariano Irpino",
+            "indirizzo":"via Camporeale",
+            "nCivico":"1",
+            "provincia":"Avellino",
+            "abbreviazione":"AV",
+            "cap":"83031",
+            "presso":"Biogem",
+            "contatore":"1"
+        },
+        {
+            "email":"roberto.speranza@unieuro.it",
+            "nome":"Roberto",
+            "cognome":"Speranza",
+            "telefono":"09 87654321",
+            "citta":"Roma",
+            "indirizzo":"Lungotevere Ripa",
+            "nCivico":"1",
+            "provincia":"Roma",
+            "abbreviazione":"RM",
+            "cap":"00153",
+            "presso":"Ministero della Salute",
+            "contatore":"2"
+        },
+        {
+            "email":"alessandro.siani@unieuro.it",
+            "nome":"Alessandro",
+            "cognome":"Siani",
+            "telefono":"032 44237",
+            "citta":"Napoli",
+            "indirizzo":"Fuorigrotta",
+            "nCivico":"snc",
+            "provincia":"Napoli",
+            "abbreviazione":"NA",
+            "cap":"80125",
+            "contatore":"31"
+        }
+    ]
+}
