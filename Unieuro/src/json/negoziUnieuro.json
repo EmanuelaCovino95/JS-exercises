@@ -1,0 +1,60 @@
+{
+    "negozi": [
+        {
+            "Avellino": [
+                {
+                    "nome": "Unieuro Montoro",
+                    "via": "Via Leone, 2",
+                    "citta": "83025, Montoro, Avellino",
+                    "tel": "0825503300",
+                    "fax": "0825503300"
+                },
+                {
+                    "nome": "Unieuro Avellino",
+                    "via": "Via Appia, 124",
+                    "citta": "83042, Atripalda, Avellino",
+                    "tel": "0825610260",
+                    "fax": "0825628037"
+                }
+            ]
+        },
+        {
+            "Napoli": [
+                {
+                    "nome": "Unieuro Giugliano in Campania",
+                    "via": "Via Santa Maria a Cubito centro commerciale Grande Sud",
+                    "citta": "80014, Giuliano in Campania, NA",
+                    "tel": "0818181210"
+                },
+                {
+                    "nome": "Unieuro Sant Antonio Abate",
+                    "via": "Via Scafati, 241",
+                    "citta": "80057, Sant'Antonio Abate, Napoli",
+                    "tel": "0818735352",
+                    "fax": "0818738935"
+                },
+                {
+                    "nome": "Unieuro Napoli - via Brin",
+                    "via": "Via Benedetto Brin, 53C",
+                    "citta": "80142, Napoli",
+                    "tel": "08119708550",
+                    "fax": "08119708550"
+                },
+                {
+                    "nome": "Unieuro Cardito",
+                    "via": "Via Giacomo Matteotti, 18",
+                    "citta": "80024, Cardito, Napoli",
+                    "tel": "0818313074",
+                    "fax": "0818306960"
+                },
+                {
+                    "nome": "Unieuro Somma Vesuviana",
+                    "via": "Via Marigliano, 26",
+                    "citta": "80049, Somma Vesuviana, Napoli",
+                    "tel": "0818992226",
+                    "fax": "0813080614"
+                }
+            ]
+        }
+    ]
+}

@@ -39,7 +39,22 @@
             "provincia":"Napoli",
             "abbreviazione":"NA",
             "cap":"80125",
-            "contatore":"31"
+            "contatore":"3"
+        },
+        {
+            "nuovoCampo": "Aggiungi nuovo indirizzo",
+            "indicazione": "Compila i campi sottostanti e potrai utilizzarlo per i prossimi ordini",
+            "email":"nome.cognome@unieuro.it",
+            "nome":"",
+            "cognome":"",
+            "telefono":"",
+            "citta":"",
+            "indirizzo":"",
+            "nCivico":"",
+            "provincia":"",
+            "abbreviazione":"",
+            "cap":"",
+            "contatore":"0"
         }
     ]
 }

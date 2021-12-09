@@ -106,18 +106,18 @@ main {
         box-shadow: none;
         background-image: linear-gradient(hsla(0, 0%, 95%, 0) 75%, #f6f6f6);
     }
-}
-.colonnaDeiProdotti > img {
-    display: block;
-    margin: auto;
-}
-.colonnaDeiProdotti > span {
-    color: @color-selezione;
-    cursor: pointer;
-    font-size: 13px;
-
-    @media (max-width: 1023px) and (min-width: 768px) {
-        font-size: 11px;
+    > img {
+        display: block;
+        margin: auto;
+    }
+    > span {
+        color: @color-selezione;
+        cursor: pointer;
+        font-size: 13px;
+    
+        @media (max-width: 1023px) and (min-width: 768px) {
+            font-size: 11px;
+        }
     }
 }
 .scontrino {
@@ -321,8 +321,14 @@ div.matitaModificaMobile.ricomparsa {
         left: 2px;
         height: 32px;
         width: 32px;
+        background-color: @color-bg;
         border-radius: 50%;
         box-shadow: 3px 3px 8px 2px hsla(0, 0%, 85%, 0.5);
+
+        @media (max-width: 767px){
+            height: 24px;
+            width: 24px;
+        }
     }
     input:checked ~ .checkmark::after {
         content: "";
@@ -333,6 +339,13 @@ div.matitaModificaMobile.ricomparsa {
         height: 10px;
         border-radius: 50%;
         background-color: @color-selezione;
+
+        @media (max-width: 767px){
+            left: 8px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+        }
     }
     span.scelto {
         color: @color-selezione;
@@ -346,6 +359,9 @@ div.matitaModificaMobile.ricomparsa {
         cursor: pointer;
         padding: 0px 10px;
         margin-top: 10px;
+        @media (max-width: 767px){
+            margin-top: 6px;
+        }
 
         span:first-child {
             font-size: 16px;
@@ -657,51 +673,6 @@ div.flexBox span:last-child {
     @media (max-width: 767px){
         display: block;
     }
-
-    .radioButton span:first-child {
-        display: none;
-
-        @media (max-width: 767px){
-            display: flex;
-        }
-    }
-    > div {
-        cursor: pointer;
-        flex-basis: 20%;
-        flex-direction: column;
-        .flex(center; initial);
-        text-align: center;
-        margin: 12px 4px 24px;
-        padding: 16px 12px;
-        border: @border;
-        border-radius: 6px;
-        font-size: 11px;
-
-        @media (max-width: 1023px){
-            font-size: 10px;
-        }
-
-        @media (max-width: 767px){
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 0;
-            padding: 12px 0 6px;
-            border: none;
-            border-bottom: @border;
-        }
-    }
-    label {
-        padding: 0;
-        text-transform: uppercase;
-
-        @media (max-width: 767px){
-            flex-basis: 85%;
-            .flex(space-between; center);
-            flex-direction: row-reverse;
-            text-transform: none;
-            margin: 0%;
-        }
-    }
     img {
         width: 100%;
         margin-bottom: 12px;
@@ -711,15 +682,90 @@ div.flexBox span:last-child {
             margin: 0;
         }
     }
+    .radioType {
+        position: relative;
+        z-index: 0;
+        flex-basis: 25%;
+
+        input {
+            cursor: pointer;
+            width: 90%;
+            height: 100%;
+            .position(absolute; 2);
+            opacity: 0;
+
+            @media (max-width: 767px){
+                width: 32px;
+                height: 32px;
+                margin: 8px 0 0 0;
+
+                &:checked ~ .checkmark:after {
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                    background-color: @color-selezione;
+                    border: 8px solid @color-bg;
+                    border-radius: 50%;
+                    box-shadow: 3px 3px 8px 2px hsla(0, 0%, 85%, 0.5);
+                    margin: 0 12px 0 2px;
+                }
+            }
+
+        }
+        .checkmark {
+            cursor: pointer;
+            .flex(center; center);
+            flex-direction: column;
+            text-align: center;
+            height: 60%;
+            margin: 12px 4px;
+            padding: 16px 12px;
+            border: @border;
+            border-radius: 6px;
+            font-size: 11px;
+            text-transform: uppercase;
+    
+            @media (max-width: 1023px){
+                font-size: 10px;
+            }
+    
+            @media (max-width: 767px){
+                flex-basis: 85%;
+                .flex(space-between; center);
+                flex-direction: row-reverse;
+                margin: 0;
+                padding: 12px 0 6px;
+                border: none;
+                border-bottom: @border;
+                text-transform: none;
+                &:after {
+                    content: "";
+                    height: 24px;
+                    width: 24px;
+                    background-color: @color-bg;
+                    border-radius: 50%;
+                    box-shadow: 3px 3px 8px 2px hsla(0, 0%, 85%, 0.5);
+                    margin: 0 12px 0 2px;
+                }
+            }
+        }
+        .bordoBlu {
+            border: 2px solid hsla(218, 89%, 61%, 0.7);
+            color: @color-selezione;
+            font-weight: 700;
+    
+            @media (max-width: 767px){
+                border: none;
+                border-bottom: 1px solid #e0e1e5;
+            }
+        }
+    }
     + p{
         visibility: hidden;
         color: @color-errore;
         font-size: 10px;
-        margin: 0 0 16px 0;
+        margin: 8px 0 16px 0;
     }
-}
-div.bordoBlu {
-    border: 2px solid hsla(218, 89%, 61%, 0.7);
 }
 .grassetto {
     font-weight: bold;
@@ -846,7 +892,6 @@ form.selezionareUnaProvincia {
     top:0;
     right: 0;
     box-shadow: -300px 0 0 3000px hsla(0, 0%, 60%, 0.3);
-    display: none;
 
     .logo {
         cursor: pointer;
