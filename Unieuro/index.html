@@ -207,9 +207,9 @@
                                         <div class="tooltiptext">
                                             <ol>
                                                 <li>Scegli il servizio Ritira in negozio</li>
-                                                <li>Trova il negozio più vicino a te</li>
-                                                <li>Attendi la mail della disponibilità al ritiro prima di recarti in negozio</li>
-                                                <li>Hai ricevuto l’email? Il tuo prodotto ti sta aspettando, vieni a ritirarlo!</li>
+                                                <li>Trova il negozio pi&ugrave; vicino a te</li>
+                                                <li>Attendi la mail della disponibilit&agrave; al ritiro prima di recarti in negozio</li>
+                                                <li>Hai ricevuto l'email? Il tuo prodotto ti sta aspettando, vieni a ritirarlo!</li>
                                             </ol>
                                         </div>
                                     </div>
@@ -269,7 +269,7 @@
                                 <span class="js-scelto">&euro; 19,99</span>
                             </div>
                             <p>
-                                I prodotti saranno lasciati fuori dalla soglia di ingresso. Pensato per chi abita ad un piano alto o per chi vuole aspettare in tutta comodità i propri acquisti.
+                                I prodotti saranno lasciati fuori dalla soglia di ingresso. Pensato per chi abita ad un piano alto o per chi vuole aspettare in tutta comodit&agrave; i propri acquisti.
                             </p>
                         </label>
                     </div>
@@ -295,8 +295,8 @@
                         </div>
                         <div class="alert">
                             <p>
-                                Lo <strong>scontrino digitale</strong> è valido per l'esercizio del diritto di recesso e garanzia, ma non ai fini fiscali.<br>
-                                Se hai necessità di richiedere <strong>fattura</strong> clicca <span class="js-alert"><strong>qui</strong></span>
+                                Lo <strong>scontrino digitale</strong> &egrave; valido per l'esercizio del diritto di recesso e garanzia, ma non ai fini fiscali.<br>
+                                Se hai necessit&agrave; di richiedere <strong>fattura</strong> clicca <span class="js-alert"><strong>qui</strong></span>
                             </p>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
                                 <span class="checkmark"></span>
                             </span>
                             <label for="fattura">
-                                    <span class="js-scelto">Fattura allo stesso indirizzo della spedizione</span>
+                                    <span class="js-checked">Fattura allo stesso indirizzo della spedizione</span>
                             </label>
                         </div>
                         <div class="datiFatturazione">
@@ -332,50 +332,50 @@
                                 </div>
                             </div>
                             <form>
-                                <div class="codiceFiscale">
+                                <div class="codiceFiscale js-controllo">
                                     <label for="codiceFiscale-0">Codice fiscale</label><br>
                                     <input type="text" name="codiceFiscale" id="codiceFiscale-0" minlength='16' maxlength='16' required>
                                     <span class="errore">Campo mancante</span>
                                 </div>
-                                <div class="nomeCognome">
+                                <div class="nomeCognome js-controllo">
                                     <label for="nomeEcognome-0">Nome e Cognome</label><br>
                                     <input type="text" name="nomeEcognome" id="nomeEcognome-0" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
-                                <div class="pIva">
+                                <div class="pIva js-controllo deselezionato">
                                     <label for="pIva-0">P.Iva</label><br>
                                     <input type="text" name="pIva" id="pIva-0" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo mancante</span>
                                 </div>
-                                <div class="ragioneSociale">
+                                <div class="ragioneSociale js-controllo deselezionato">
                                     <label for="ragioneSociale-0">Ragione sociale</label><br>
                                     <input type="text" name="ragioneSociale" id="ragioneSociale-0" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
-                                <div>
+                                <div class="js-controllo">
                                     <label for="cittadina-0">Citt&agrave;</label><br>
                                     <input type="text" name="citta" id="cittadina-0" maxlength='20' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
                                 <div class="flexBox">
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="via-0">Indirizzo</label><br>
                                         <input type="text" name="indirizzo" id="via-0" maxlength='20' required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="civico-0">N. Civico</label><br>
                                         <input type="text" name="nCivico" id="civico-0" maxlength='10' required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
                                 </div>
                                 <div class="flexBox">
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="prov-0">Provincia</label><br>
                                         <input type="text" name="provincia" id="prov-0" required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="CAP-0">CAP</label><br>
                                         <input type="number" name="cap" id="CAP-0" required>
                                         <span class="errore">Campo obbligatorio</span>
@@ -416,7 +416,7 @@
                                 <span class="checkmark"></span>
                             </span>
                             <label for="indirizzoFattura">
-                                    <span class="js-scelto">Fattura ad un indirizzo diverso da quello di spedizione</span>
+                                    <span class="js-checked">Fattura ad un indirizzo diverso da quello di spedizione</span>
                             </label>
                         </div>
                         <div class="datiFatturazione">
@@ -441,50 +441,50 @@
                                 </div>
                             </div>
                             <form>
-                                <div class="codiceFiscale">
+                                <div class="codiceFiscale js-controllo">
                                     <label for="codiceFiscale-1">Codice fiscale</label><br>
                                     <input type="text" name="codiceFiscale" id="codiceFiscale-1" minlength='16' maxlength='16' required>
                                     <span class="errore">Campo mancante</span>
                                 </div>
-                                <div class="nomeCognome">
+                                <div class="nomeCognome js-controllo">
                                     <label for="nomeEcognome-1">Nome e Cognome</label><br>
                                     <input type="text" name="nomeEcognome" id="nomeEcognome-1" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
-                                <div class="pIva">
+                                <div class="pIva js-controllo deselezionato">
                                     <label for="pIva-1">P.Iva</label><br>
                                     <input type="text" name="pIva" id="pIva-1" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo mancante</span>
                                 </div>
-                                <div class="ragioneSociale">
+                                <div class="ragioneSociale js-controllo deselezionato">
                                     <label for="ragioneSociale-1">Ragione sociale</label><br>
                                     <input type="text" name="ragioneSociale" id="ragioneSociale-1" minlength='2' maxlength='40' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
-                                <div>
+                                <div class="js-controllo">
                                     <label for="cittadina-1">Citt&agrave;</label><br>
                                     <input type="text" name="citta" id="cittadina-1" maxlength='20' required>
                                     <span class="errore">Campo obbligatorio</span>
                                 </div>
                                 <div class="flexBox">
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="via-1">Indirizzo</label><br>
                                         <input type="text" name="indirizzo" id="via-1" maxlength='20' required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="civico-1">N. Civico</label><br>
                                         <input type="text" name="nCivico" id="civico-1" maxlength='10' required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
                                 </div>
                                 <div class="flexBox">
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="prov-1">Provincia</label><br>
                                         <input type="text" name="provincia" id="prov-1" required>
                                         <span class="errore">Campo obbligatorio</span>
                                     </div>
-                                    <div>
+                                    <div class="js-controllo">
                                         <label for="CAP-1">CAP</label><br>
                                         <input type="number" name="cap" id="CAP-1" required>
                                         <span class="errore">Campo obbligatorio</span>
@@ -525,7 +525,7 @@
                                 <span class="checkmark"></span>
                             </span>
                             <label for="scontrino">
-                                    <span class="js-scelto">Continua con lo scontrino digitale, non necessito la fattura</span>
+                                    <span class="js-checked">Continua con lo scontrino digitale, non necessito la fattura</span>
                             </label>
                         </div>
                     </div>
@@ -539,7 +539,7 @@
                 </div>
                 <div class="step stepCinque">
                     <span class="indicatore"><strong>STEP 5</strong></span>
-                    <h2>Seleziona una modalità di pagamento</h2>
+                    <h2>Seleziona una modalit&agrave; di pagamento</h2>
                     <div class="pagamento">
                         <div class="radioType js-metodoDiPagamento">
                             <input type="radio" name="pagamento" value="carta" id="pagamentoConCarta">
@@ -590,9 +590,9 @@
                             <div class="tooltiptext">
                                 <ol>
                                     <li>Scegli il servizio Ritira in negozio</li>
-                                    <li>Trova il negozio più vicino a te</li>
-                                    <li>Attendi la mail della disponibilità al ritiro prima di recarti in negozio</li>
-                                    <li>Hai ricevuto l’email? Il tuo prodotto ti sta aspettando, vieni a ritirarlo!</li>
+                                    <li>Trova il negozio pi&ugrave; vicino a te</li>
+                                    <li>Attendi la mail della disponibilit&agrave; al ritiro prima di recarti in negozio</li>
+                                    <li>Hai ricevuto l'email? Il tuo prodotto ti sta aspettando, vieni a ritirarlo!</li>
                                 </ol>
                             </div>
                         </div>
@@ -626,7 +626,8 @@
                         <p class="riepilogoInfo"></p>
                         <div>
                             <label for="recapito">Telefono</label><br>
-                            <input type="number" name="recapito" id="recapito">
+                            <input type="text" name="recapito" id="recapito" required>
+                            <span class="errore">Inserire numero valido</span>
                         </div>
                     </div>
                     <div class="divContinua"> 
@@ -678,123 +679,123 @@
                 <span class="close"> x </span>
             </div>
             <div class="contratto">
-                <p><strong>ARTICOLO 1 –DEFINIZIONI, OGGETTO E NORMATIVA APPLICABILE</strong></p>
+                <p><strong>ARTICOLO 1 &mdash; DEFINIZIONI, OGGETTO E NORMATIVA APPLICABILE</strong></p>
                 <strong>1.1&nbsp;<u>Definizioni</u></strong>
                 <p>Nelle presenti condizioni generali di vendita:</p>
-                <p>“Cliente” significa qualsiasi persona, abbia essa terminato o meno la procedura di registrazione, che
-                    acquisti uno o più prodotti attraverso il Sito, sia esso consumatore (“Cliente Consumatore”) o
-                    professionista (“Cliente Professionista”).</p>
-                <p>“Unieuro” significa il negozio di vendita on-line, pubblicato sul sito www.unieuro.it, denominato
-                    “Unieuro” e gestito da Unieuro S.P.A. Sede legale e amministrativa: Palazzo Hercolani - Via Piero Maroncelli n. 10 - Forlì(FC) C.F. e P.IVA 00876320409 - REA: FO- 177115 - Capitale sociale Euro 4.137.974,20 i.v. iscritta al Registro delle Imprese di
-                    Forlì/Cesena. Telefono: 02-97070680&nbsp;
+                <p>&ldquo;Cliente&rdquo; significa qualsiasi persona, abbia essa terminato o meno la procedura di registrazione, che
+                    acquisti uno o pi&ugrave; prodotti attraverso il Sito, sia esso consumatore (&ldquo;Cliente Consumatore&rdquo;) o
+                    professionista (&ldquo;Cliente Professionista&rdquo;).</p>
+                <p>&ldquo;Unieuro&rdquo; significa il negozio di vendita on-line, pubblicato sul sito www.unieuro.it, denominato
+                    &ldquo;Unieuro&rdquo; e gestito da Unieuro S.P.A. Sede legale e amministrativa: Palazzo Hercolani - Via Piero Maroncelli n. 10 - Forl&igrave;(FC) C.F. e P.IVA 00876320409 - REA: FO- 177115 - Capitale sociale Euro 4.137.974,20 i.v. iscritta al Registro delle Imprese di
+                    Forl&igrave;/Cesena. Telefono: 02-97070680&nbsp;
                     E-mail:<a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a></p>
-                <p>“Sito” significa, il sito Internet&nbsp;<a href="http://www.unieuro.it/">www.unieuro.it</a>.</p>
+                <p>&ldquo;Sito&rdquo; significa, il sito Internet&nbsp;<a href="http://www.unieuro.it/">www.unieuro.it</a>.</p>
                 <p><strong>1.2&nbsp;<u>Parte Venditrice e normativa applicabile a questo contratto di vendita</u></strong></p>
-                <p>Unieuro S.p.A. agirà come parte venditrice di tutti i prodotti e servizi che il Cliente scelga di acquistare
+                <p>Unieuro S.p.A. agir&agrave; come parte venditrice di tutti i prodotti e servizi che il Cliente scelga di acquistare
                     attraverso il Sito e di ricevere al proprio domicilio. La compravendita di prodotti e la fornitura di Servizi
-                    acquistati attraverso il Sito è disciplinata dalle presenti condizioni generali oltre che, in quanto
+                    acquistati attraverso il Sito &egrave; disciplinata dalle presenti condizioni generali oltre che, in quanto
                     applicabili, dalle disposizioni del Codice del Consumo e del D.Lgs. n. 70/2003 e dalle previsioni del codice civile,
                     per quanto qui non previsto.</p>
                 <p><strong><u>1.3 Prenotazione dei prodotti attraverso il Sito con ritiro e acquisto presso il Punto
                             Vendita</u></strong></p>
-                <p>In aggiunta ed in alternativa a quanto previsto al paragrafo 1.2 che precede, il Sito consente all’utente anche
+                <p>In aggiunta ed in alternativa a quanto previsto al paragrafo 1.2 che precede, il Sito consente all&rsquo;utente anche
                     di scegliere di ritirare e acquistare i prodotti presso un Punto Vendita. In tal caso la prenotazione effettuata
-                    attraverso il Sito non configurerà alcuna vendita online, costituendo la stessa un mero servizio, offerto
-                    gratuitamente da Unieuro S.p.A., per consentire all’utente, quando si recherà presso il Punto Vendita,
+                    attraverso il Sito non configurer&agrave; alcuna vendita online, costituendo la stessa un mero servizio, offerto
+                    gratuitamente da Unieuro S.p.A., per consentire all&rsquo;utente, quando si recher&agrave; presso il Punto Vendita,
                     di avere la certezza di trovare il/i prodotto/i desiderato/i.</p>
-                <p>In tal caso, il contratto per l’acquisto del prodotto sarà perfezionato dall’utente direttamente
-                    presso il Punto Vendita presso il quale il prodotto sarà ritirato. Il venditore, Unieuro o altro soggetto
-                    affiliato ad Unieuro S.p.A. a seconda del caso, sarà chiaramente indicato nello scontrino e/o nella fattura
-                    d’acquisto rilasciati dal Punto Vendita stesso.&nbsp;<strong>II relativo contratto di vendita sarà
+                <p>In tal caso, il contratto per l&rsquo;acquisto del prodotto sar&agrave; perfezionato dall&rsquo;utente direttamente
+                    presso il Punto Vendita presso il quale il prodotto sar&agrave; ritirato. Il venditore, Unieuro o altro soggetto
+                    affiliato ad Unieuro S.p.A. a seconda del caso, sar&agrave; chiaramente indicato nello scontrino e/o nella fattura
+                    d&rsquo;acquisto rilasciati dal Punto Vendita stesso.&nbsp;<strong>II relativo contratto di vendita sar&agrave;
                         regolamentato dalle norme e dalle condizioni applicabili alla compravendita</strong>, non necessariamente
-                    coincidenti con le presenti condizioni generali di acquisto e/o con le leggi applicabili all’acquisto di
+                    coincidenti con le presenti condizioni generali di acquisto e/o con le leggi applicabili all&rsquo;acquisto di
                     prodotti attraverso il Sito.<strong>&nbsp;</strong></p>
                 <p>Nel caso in cui il Cliente abbia scelto di prenotare i prodotti attraverso il Sito per poi effettuarne il ritiro e
-                    l’acquisto presso un Punto Vendita, Unieuro S.p.A. si limiterà a comunicare all’utente, entro i 7
-                    giorni successivi, il giorno in cui potrà recarsi al Punto Vendita selezionato per il ritiro e
-                    l’acquisto dei prodotti prenotati con i metodi di pagamento disponibili presso il Punto Vendita stesso. Nel
+                    l&rsquo;acquisto presso un Punto Vendita, Unieuro S.p.A. si limiter&agrave; a comunicare all&rsquo;utente, entro i 7
+                    giorni successivi, il giorno in cui potr&agrave; recarsi al Punto Vendita selezionato per il ritiro e
+                    l&rsquo;acquisto dei prodotti prenotati con i metodi di pagamento disponibili presso il Punto Vendita stesso. Nel
                     caso in cui, entro 10 giorni lavorativi dal giorno in cui i prodotti sono resi disponibili presso il Punto Vendita,
-                    l’utente non proceda al ritiro, la prenotazione sarà automaticamente annullata, senza alcun obbligo a
-                    carico dell’utente e/o di Unieuro S.p.A.. In caso di difficoltà di approvvigionamento o
-                    indisponibilità del prodotto desiderato, l’utente sarà avvisato da Unieuro tramite mail o
+                    l&rsquo;utente non proceda al ritiro, la prenotazione sar&agrave; automaticamente annullata, senza alcun obbligo a
+                    carico dell&rsquo;utente e/o di Unieuro S.p.A.. In caso di difficolt&agrave; di approvvigionamento o
+                    indisponibilit&agrave; del prodotto desiderato, l&rsquo;utente sar&agrave; avvisato da Unieuro tramite mail o
                     telefono.</p>
                 <p>Il Sito contiene un elenco di tutti i Punti Vendita Unieuro e dei Punti Vendita Affiliati a insegna
-                    “Unieuro” i quali, anche se non gestiti direttamente da Unieuro S.p.A., sono convenzionati con
-                    quest’ultima. In caso di prenotazione e acquisto di un prodotto presso un Punto Vendita Affiliato Unieuro, il
-                    Cliente titolare di Unieuro Club potrà in ogni caso accumulare e spendere i punti accumulati con la stessa
-                    carta fedeltà presso il Punto Vendita selezionato solo se lo stesso risulterà tra quelli aderenti
-                    all’iniziativa; i punti maturati con l’acquisto di ciascun Prodotto verranno comunque accreditati sulla
-                    Unieuro Club in modo automatico, e il Cliente potrà verificare l’accredito dei punti on-line presso la
-                    sezione ‘Unieuro Club’.</p>
+                    &ldquo;Unieuro&rdquo; i quali, anche se non gestiti direttamente da Unieuro S.p.A., sono convenzionati con
+                    quest&rsquo;ultima. In caso di prenotazione e acquisto di un prodotto presso un Punto Vendita Affiliato Unieuro, il
+                    Cliente titolare di Unieuro Club potr&agrave; in ogni caso accumulare e spendere i punti accumulati con la stessa
+                    carta fedelt&agrave; presso il Punto Vendita selezionato solo se lo stesso risulter&agrave; tra quelli aderenti
+                    all&rsquo;iniziativa; i punti maturati con l&rsquo;acquisto di ciascun Prodotto verranno comunque accreditati sulla
+                    Unieuro Club in modo automatico, e il Cliente potr&agrave; verificare l&rsquo;accredito dei punti on-line presso la
+                    sezione &lsquo;Unieuro Club&rsquo;.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 2 – ORDINE DI ACQUISTO, CONCLUSIONE DEL CONTRATTO, STATO DELL’ORDINE</strong></p>
+                <p><strong>ARTICOLO 2 &mdash;  ORDINE DI ACQUISTO, CONCLUSIONE DEL CONTRATTO, STATO DELL&rsquo;ORDINE</strong></p>
                 <p><strong>2.1</strong>&nbsp;<u>Offerta dei prodotti e dei servizi sul Sito</u></p>
-                <p>L’offerta dei prodotti acquistabili attraverso il Sito costituisce invito ad offrire e l’ordine inviato
-                    dal Cliente attraverso il Sito varrà quale proposta contrattuale di acquisto, soggetta a conferma e/o
+                <p>L&rsquo;offerta dei prodotti acquistabili attraverso il Sito costituisce invito ad offrire e l&rsquo;ordine inviato
+                    dal Cliente attraverso il Sito varr&agrave; quale proposta contrattuale di acquisto, soggetta a conferma e/o
                     accettazione da parte di Unieuro secondo quanto descritto in appresso.</p>
                 <p>Le caratteristiche dei prodotti e dei servizi offerti sul Sito sono descritte nelle apposite schede informative
                     pubblicate sul Sito. Vi invitiamo a leggerle con attenzione e a comprendere che taluni prodotti, anche se presenti
                     sul Sito, potrebbero non essere sempre o immediatamente disponibili.&nbsp;<strong>Nella scheda informativa di
-                        ciascun prodotto viene chiaramente indicato se il prodotto che avete selezionato è:</strong></p>
-                <p>- “<strong>disponibile</strong>”: significa che il prodotto è fisicamente presente nel magazzino
+                        ciascun prodotto viene chiaramente indicato se il prodotto che avete selezionato &egrave;:</strong></p>
+                <p>- &ldquo;<strong>disponibile</strong>&rdquo;: significa che il prodotto &egrave; fisicamente presente nel magazzino
                     centrale di Unieuro S.p.A..</p>
-                <p>&nbsp;In tal caso il Cliente potrà procedere immediatamente all’acquisto del relativo prodotto inviando
-                    la proposta di acquisto, secondo le modalità indicate nel Sito.</p>
-                <p>- “<strong>disponibile salvo esaurimento scorte</strong>”: significa che il prodotto non è
-                    fisicamente presente nel magazzino centrale Unieuro, ma che può essere disponibile presso i magazzini dei
-                    Punti Vendita<strong>. In tal caso l’ordine inviato dal cliente potrà essere accettato solo
-                        all’esito positivo della verifica della disponibilità del prodotto che Unieuro S.p.A.
-                        comunicherà al cliente a mezzo e-mail entro 4 giorni lavorativi dalla ricezione della proposta di
-                        acquisto. In caso di mancato riscontro da parte del Cliente, l’ordine si intenderà automaticamente
-                        annullato e il cliente riceverà l’integrale rimborso del prezzo eventualmente anticipato secondo la
-                        modalità di pagamento prescelta.</strong></p>
-                <p><strong>2.2 &nbsp;<u>Conferma di ricezione dell’ordine e relativa accettazione</u></strong></p>
-                <p>Dopo aver inviato la proposta di acquisto, il Cliente riceverà immediatamente una e-mail contenente la
+                <p>&nbsp;In tal caso il Cliente potr&agrave; procedere immediatamente all&rsquo;acquisto del relativo prodotto inviando
+                    la proposta di acquisto, secondo le modalit&agrave; indicate nel Sito.</p>
+                <p>- &ldquo;<strong>disponibile salvo esaurimento scorte</strong>&rdquo;: significa che il prodotto non &egrave;
+                    fisicamente presente nel magazzino centrale Unieuro, ma che pu&ograve; essere disponibile presso i magazzini dei
+                    Punti Vendita<strong>. In tal caso l&rsquo;ordine inviato dal cliente potr&agrave; essere accettato solo
+                        all&rsquo;esito positivo della verifica della disponibilit&agrave; del prodotto che Unieuro S.p.A.
+                        comunicher&agrave; al cliente a mezzo e-mail entro 4 giorni lavorativi dalla ricezione della proposta di
+                        acquisto. In caso di mancato riscontro da parte del Cliente, l&rsquo;ordine si intender&agrave; automaticamente
+                        annullato e il cliente ricever&agrave; l&rsquo;integrale rimborso del prezzo eventualmente anticipato secondo la
+                        modalit&agrave; di pagamento prescelta.</strong></p>
+                <p><strong>2.2 &nbsp;<u>Conferma di ricezione dell&rsquo;ordine e relativa accettazione</u></strong></p>
+                <p>Dopo aver inviato la proposta di acquisto, il Cliente ricever&agrave; immediatamente una e-mail contenente la
                     conferma di ricezione da parte di Unieuro e il numero identificativo assegnato alla proposta di acquisto.</p>
-                <p>Nel caso di prodotti “disponibili” la proposta di acquisto del Cliente si considererà
-                    immediatamente accettata da Unieuro S.p.A. Pertanto, la e-mail di conferma di ricezione varrà come anche come
-                    conferma di accettazione. Unieuro procederà direttamente alla spedizione dei prodotti acquistati dal Cliente
+                <p>Nel caso di prodotti &ldquo;disponibili&rdquo; la proposta di acquisto del Cliente si considerer&agrave;
+                    immediatamente accettata da Unieuro S.p.A. Pertanto, la e-mail di conferma di ricezione varr&agrave; come anche come
+                    conferma di accettazione. Unieuro proceder&agrave; direttamente alla spedizione dei prodotti acquistati dal Cliente
                     nei tempi e nei modi indicati nelle presenti condizioni generali.</p>
-                <p>Nel caso di prodotti “disponibili salvo esaurimento scorte”, Unieuro S.p.A. invierà al Cliente nei
-                    4 giorni successivi al ricevimento della proposta di acquisto una seconda e-mail con l’esito della verifica
-                    sulla disponibilità.</p>
-                <p>Si precisa che&nbsp;<strong>nel caso di ordine misto, contenente cioè sia prodotti “disponibili”
-                        che prodotti “disponibili salvo esaurimento scorte” (qui di seguito “Ordine Misto”),
-                        l’intero ordine rimarrà sospeso fino all’esito positivo della verifica di
-                        disponibilità dei prodotti indicati nella relativa scheda informativa come “disponibili salvo
-                        esaurimento scorte”</strong>.</p>
-                <p><strong>2.3&nbsp;<u>Esito positivo della verifica di disponibilità e conclusione del contratto</u></strong>
+                <p>Nel caso di prodotti &ldquo;disponibili salvo esaurimento scorte&rdquo;, Unieuro S.p.A. invier&agrave; al Cliente nei
+                    4 giorni successivi al ricevimento della proposta di acquisto una seconda e-mail con l&rsquo;esito della verifica
+                    sulla disponibilit&agrave;.</p>
+                <p>Si precisa che&nbsp;<strong>nel caso di ordine misto, contenente cio&egrave; sia prodotti &ldquo;disponibili&rdquo;
+                        che prodotti &ldquo;disponibili salvo esaurimento scorte&rdquo; (qui di seguito &ldquo;Ordine Misto&rdquo;),
+                        l&rsquo;intero ordine rimarr&agrave; sospeso fino all&rsquo;esito positivo della verifica di
+                        disponibilit&agrave; dei prodotti indicati nella relativa scheda informativa come &ldquo;disponibili salvo
+                        esaurimento scorte&rdquo;</strong>.</p>
+                <p><strong>2.3&nbsp;<u>Esito positivo della verifica di disponibilit&agrave; e conclusione del contratto</u></strong>
                 </p>
-                <p>All’esito positivo della verifica circa la disponibilità del prodotto, il Cliente riceverà una
-                    e-mail da parte di Unieuro con la quale quest’ultima comunicherà al Cliente che i prodotti sono
-                    disponibili e la proposta di acquisto si considererà a quel punto accettata.</p>
-                <p><strong>2.4&nbsp;<u>Esito negativo della verifica di disponibilità</u></strong></p>
-                <p>In caso di esito negativo della verifica circa la disponibilità del prodotto<strong>, il cliente
-                        riceverà una e-mail da parte di Unieuro S.p.A. con la quale quest’ultima comunicherà al
-                        Cliente che i Prodotti non sono disponibili e che la proposta di acquisto non può pertanto essere
-                        accettata. In tal caso il cliente riceverà immediatamente l’integrale rimborso del prezzo
-                        eventualmente anticipato secondo la modalità di pagamento prescelta.</strong></p>
-                <p><strong>In caso di Ordine Misto, il Cliente potrà scegliere se procedere lo stesso con l’acquisto del/i
-                        Prodotto/i disponibile/i, oppure se annullare l’intero ordine. In assenza di istruzioni da parte del
-                        Cliente, Unieuro S.p.A. procederà all’annullamento dell’intero ordine e invierà
-                        immediata richiesta di rimborso dell’importo eventualmente anticipato dal Cliente tramite il circuito di
-                        pagamento utilizzato dal Cliente in fase di invio dell’ordine.</strong></p>
-                <p><strong>2.5&nbsp;<u>Aggiornamenti in merito allo stato dell’ordine</u></strong></p>
-                <p>In aggiunta agli aggiornamenti che saranno inviati da Unieuro via e-mail, il Cliente potrà verificare in
-                    qualsiasi momento lo stato del proprio ordine anche nell’apposita sezione dedicata del Sito.</p>
+                <p>All&rsquo;esito positivo della verifica circa la disponibilit&agrave; del prodotto, il Cliente ricever&agrave; una
+                    e-mail da parte di Unieuro con la quale quest&rsquo;ultima comunicher&agrave; al Cliente che i prodotti sono
+                    disponibili e la proposta di acquisto si considerer&agrave; a quel punto accettata.</p>
+                <p><strong>2.4&nbsp;<u>Esito negativo della verifica di disponibilit&agrave;</u></strong></p>
+                <p>In caso di esito negativo della verifica circa la disponibilit&agrave; del prodotto<strong>, il cliente
+                        ricever&agrave; una e-mail da parte di Unieuro S.p.A. con la quale quest&rsquo;ultima comunicher&agrave; al
+                        Cliente che i Prodotti non sono disponibili e che la proposta di acquisto non pu&ograve; pertanto essere
+                        accettata. In tal caso il cliente ricever&agrave; immediatamente l&rsquo;integrale rimborso del prezzo
+                        eventualmente anticipato secondo la modalit&agrave; di pagamento prescelta.</strong></p>
+                <p><strong>In caso di Ordine Misto, il Cliente potr&agrave; scegliere se procedere lo stesso con l&rsquo;acquisto del/i
+                        Prodotto/i disponibile/i, oppure se annullare l&rsquo;intero ordine. In assenza di istruzioni da parte del
+                        Cliente, Unieuro S.p.A. proceder&agrave; all&rsquo;annullamento dell&rsquo;intero ordine e invier&agrave;
+                        immediata richiesta di rimborso dell&rsquo;importo eventualmente anticipato dal Cliente tramite il circuito di
+                        pagamento utilizzato dal Cliente in fase di invio dell&rsquo;ordine.</strong></p>
+                <p><strong>2.5&nbsp;<u>Aggiornamenti in merito allo stato dell&rsquo;ordine</u></strong></p>
+                <p>In aggiunta agli aggiornamenti che saranno inviati da Unieuro via e-mail, il Cliente potr&agrave; verificare in
+                    qualsiasi momento lo stato del proprio ordine anche nell&rsquo;apposita sezione dedicata del Sito.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 3 – PREZZI E CARATTERISTICHE DEI PRODOTTI</strong></p>
+                <p><strong>ARTICOLO 3 &mdash;  PREZZI E CARATTERISTICHE DEI PRODOTTI</strong></p>
                 <p><strong>3.1&nbsp;<u>Prodotti in offerta</u></strong></p>
-                <p>L’eventuale acquisto da parte del Cliente di prodotti pubblicati nell’apposita sezione
-                    “offerta” ovvero espressamente indicati come “in offerta limitata” (o sinonimi) è
+                <p>L&rsquo;eventuale acquisto da parte del Cliente di prodotti pubblicati nell&rsquo;apposita sezione
+                    &ldquo;offerta&rdquo; ovvero espressamente indicati come &ldquo;in offerta limitata&rdquo; (o sinonimi) &egrave;
                     soggetto ad un limite di acquisto giornaliero di un solo articolo per ciascun Cliente al giorno.</p>
                 <p>Per alcune particolari promozioni si rinvia al relativo regolamento riportato sul Sito.</p>
                 <p><strong>3.2&nbsp;<u>Prezzi</u></strong></p>
                 <p>I prezzi dei prodotti offerti sul Sito sono comprensivi di IVA, mentre non includono eventuali spese di trasporto e/o
                     altri servizi aggiuntivi che dovessero essere richiesti dal Cliente.</p>
-                <p>Il prezzo dei servizi e dei prodotti illustrato sul Sito nelle relative schede tecniche è quello in vigore
-                    all’atto dell’invio della proposta di acquisto da parte del Cliente, quale visualizzabile dal Cliente
-                    sul Sito al momento della scelta del prodotto nonché all’interno della proposta stessa.</p>
+                <p>Il prezzo dei servizi e dei prodotti illustrato sul Sito nelle relative schede tecniche &egrave; quello in vigore
+                    all&rsquo;atto dell&rsquo;invio della proposta di acquisto da parte del Cliente, quale visualizzabile dal Cliente
+                    sul Sito al momento della scelta del prodotto nonch&eacute; all&rsquo;interno della proposta stessa.</p>
                 <p>Fermo restando tutto quanto precede, Unieuro si riserva il diritto di modificare in qualsiasi momento, a sua
                     esclusiva discrezione e senza preavviso, il prezzo dei prodotti e dei servizi di volta in volta presenti sul Sito,
                     senza fornire pertanto alcuna garanzia in merito al fatto che il prezzo di vendita dei prodotti o servizi rimanga
@@ -802,14 +803,14 @@
                 <p><strong>3.3&nbsp;<u>Descrizione dei Prodotti</u></strong></p>
                 <p>Le schede tecniche dei prodotti presenti sul Sito, contenenti la descrizione delle funzioni e delle caratteristiche
                     di ciascun prodotto, sono redatte direttamente dal produttore di ciascun prodotto interessato.</p>
-                <p>Unieuro non assume alcuna responsabilità per eventuali errori nelle schede tecniche e/o inesattezze e/o per
+                <p>Unieuro non assume alcuna responsabilit&agrave; per eventuali errori nelle schede tecniche e/o inesattezze e/o per
                     difetti di corrispondenza tra le descrizioni dei prodotti e le effettive funzioni e caratteristiche dei prodotti
                     medesimi; le immagini e le foto utilizzate a corredo di ciascuna scheda descrittiva dei prodotti sono meramente
                     indicative e possono non essere perfettamente rappresentative delle caratteristiche del prodotto medesimo, potendo
-                    questo differire per colore, dimensioni o accessori non presenti nell’immagine e nelle foto utilizzate a
+                    questo differire per colore, dimensioni o accessori non presenti nell&rsquo;immagine e nelle foto utilizzate a
                     corredo.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 4 – PAGAMENTO</strong></p>
+                <p><strong>ARTICOLO 4 &mdash;  PAGAMENTO</strong></p>
                 <p><strong><u>4.1 Metodi di pagamento accettati</u></strong></p>
                 <p>I prodotti acquistati dal Cliente attraverso il Sito potranno essere pagati alternativamente, con:</p>
                 <ul>
@@ -818,238 +819,238 @@
                     <li>Finanziamento Agos.</li>
                 </ul>
                 <p><strong>(1) Carta di credito</strong></p>
-                <p>Nel caso in cui il metodo di pagamento scelto dal Cliente sia l’addebito sulla carta di credito, al momento
-                    della conclusione dell’ordine non si procederà ad alcun addebito, ma solamente al rilascio di
-                    un’autorizzazione per l’importo necessario all’acquisto. L’addebito effettivo avverrà
+                <p>Nel caso in cui il metodo di pagamento scelto dal Cliente sia l&rsquo;addebito sulla carta di credito, al momento
+                    della conclusione dell&rsquo;ordine non si proceder&agrave; ad alcun addebito, ma solamente al rilascio di
+                    un&rsquo;autorizzazione per l&rsquo;importo necessario all&rsquo;acquisto. L&rsquo;addebito effettivo avverr&agrave;
                     solo al momento della spedizione del/i prodotto/i.</p>
-                <p>In nessun momento della procedura di pagamento, Unieuro è in grado di conoscere le informazioni relative alla
+                <p>In nessun momento della procedura di pagamento, Unieuro &egrave; in grado di conoscere le informazioni relative alla
                     carta di credito, al numero di carta di credito o informazioni finanziarie, patrimoniali e personali del cliente.
-                    L’ordine di pagamento viene, infatti, trasmesso – tramite una connessione protetta – direttamente
-                    al portale della banca o società finanziaria espressamente indicata, al momento della conferma del Cliente.
+                    L&rsquo;ordine di pagamento viene, infatti, trasmesso &mdash;  tramite una connessione protetta &mdash;  direttamente
+                    al portale della banca o societ&agrave; finanziaria espressamente indicata, al momento della conferma del Cliente.
                 </p>
-                <p>Unieuro in nessun caso è responsabile e non può essere ritenuta responsabile dell'eventuale uso
-                    fraudolento e illecito delle carte di credito che può essere fatto da parte di terzi durante la procedura di
+                <p>Unieuro in nessun caso &egrave; responsabile e non pu&ograve; essere ritenuta responsabile dell'eventuale uso
+                    fraudolento e illecito delle carte di credito che pu&ograve; essere fatto da parte di terzi durante la procedura di
                     acquisto e pagamento dei prodotti.</p>
-                <p>Unieuro si riserva la facoltà di non accettare proposta di acquisto ovvero di sospendere l’esecuzione di
-                    proposte già confermate in caso di anomalie o irregolarità nel pagamento. In tale ipotesi Unieuro si
-                    riserva la facoltà di richiedere al cliente informazioni integrative e/o l’invio di copie di documenti
-                    comprovanti la titolarità della carta di credito utilizzata per l’acquisto. In mancanza della
-                    documentazione richiesta, Unieuro si riserva la facoltà di non accettare la proposta di acquisto ovvero di
-                    risolvere l’eventuale contratto già concluso, senza che ciò dia alcun diritto al Cliente di
+                <p>Unieuro si riserva la facolt&agrave; di non accettare proposta di acquisto ovvero di sospendere l&rsquo;esecuzione di
+                    proposte gi&agrave; confermate in caso di anomalie o irregolarit&agrave; nel pagamento. In tale ipotesi Unieuro si
+                    riserva la facolt&agrave; di richiedere al cliente informazioni integrative e/o l&rsquo;invio di copie di documenti
+                    comprovanti la titolarit&agrave; della carta di credito utilizzata per l&rsquo;acquisto. In mancanza della
+                    documentazione richiesta, Unieuro si riserva la facolt&agrave; di non accettare la proposta di acquisto ovvero di
+                    risolvere l&rsquo;eventuale contratto gi&agrave; concluso, senza che ci&ograve; dia alcun diritto al Cliente di
                     richiedere il risarcimento di danni o di far valere altre pretese.</p>
                 <p><strong>(2) PayPal</strong></p>
                 <p> Nel caso in cui il metodo di pagamento scelto sia <em>PayPal</em>, il Cliente viene indirizzato alla
-                    pagina di login di <em>PayPal </em>ed il pagamento viene gestito con le modalità ed in
+                    pagina di login di <em>PayPal </em>ed il pagamento viene gestito con le modalit&agrave; ed in
                     base alle norme che disciplinano il rapporto tra il Cliente e<em> PayPal</em> stessa, rapporto al quale
-                    Unieuro è completamente estranea.</p> 
-                <p>L’importo per l’acquisto del prodotto viene addebitato solo al momento
-                    dell’evasione dell’ultimo prodotto/servizio dell’Ordine.
+                    Unieuro &egrave; completamente estranea.</p> 
+                <p>L&rsquo;importo per l&rsquo;acquisto del prodotto viene addebitato solo al momento
+                    dell&rsquo;evasione dell&rsquo;ultimo prodotto/servizio dell&rsquo;Ordine.
                 </p>
-                <p>Paypal può essere selezionato in due modi:</p>
-                <p>– Premendo il tasto <em>“Cassa Veloce PayPal”</em>, che indirizza immediatamente alla
-                    pagina di login di <em>PayPal </em> (cd. “Processo corto”); oppure</p>
-                <p>– Premendo il tasto <em>“Vai alla cassa”</em>, impostando quindi tutti i dati richiesti e
-                    selezionando infine come modalità di pagamento <em>“PayPal”</em> (cd “Processo
-                    lungo”).
+                <p>Paypal pu&ograve; essere selezionato in due modi:</p>
+                <p>&mdash;  Premendo il tasto <em>&ldquo;Cassa Veloce PayPal&rdquo;</em>, che indirizza immediatamente alla
+                    pagina di login di <em>PayPal </em> (cd. &ldquo;Processo corto&rdquo;); oppure</p>
+                <p>&mdash;  Premendo il tasto <em>&ldquo;Vai alla cassa&rdquo;</em>, impostando quindi tutti i dati richiesti e
+                    selezionando infine come modalit&agrave; di pagamento <em>&ldquo;PayPal&rdquo;</em> (cd &ldquo;Processo
+                    lungo&rdquo;).
                 </p>
                 <p>&nbsp;<strong>(3) Finanziamento Agos</strong></p>
-                <p>Se il Cliente ha scelto di acquistare i prodotti attraverso la modalità di pagamento rateale, a conclusione
-                    dell’ordine il Cliente sarà indirizzato sul sito di Agos Ducato dove potrà selezionare la rata,
+                <p>Se il Cliente ha scelto di acquistare i prodotti attraverso la modalit&agrave; di pagamento rateale, a conclusione
+                    dell&rsquo;ordine il Cliente sar&agrave; indirizzato sul sito di Agos Ducato dove potr&agrave; selezionare la rata,
                     scaricare la documentazione precontrattuale, compilare on-line il form di richiesta finanziamento e seguire le
                     indicazioni per inoltrare la documentazione ad Agos Ducato.</p>
-                <p>Il Cliente riceverà via e-mail gli aggiornamenti della richiesta di finanziamento non impegnativa. Una volta
-                    ricevuta tutta la documentazione, Agos Ducato rilascerà l'approvazione definitiva, inviando una e-mail di
-                    conferma. SGM evaderà l’ordine solo in seguito al ricevimento dell’approvazione definitiva.</p>
-                <p>L'approvazione del finanziamento è assoggettata alla valutazione discrezionale di Agos Ducato, del cui operato
-                    - anche con riguardo alla tempistica dell'iter di approvazione – Unieuro non risponde nei riguardi del
+                <p>Il Cliente ricever&agrave; via e-mail gli aggiornamenti della richiesta di finanziamento non impegnativa. Una volta
+                    ricevuta tutta la documentazione, Agos Ducato rilascer&agrave; l'approvazione definitiva, inviando una e-mail di
+                    conferma. SGM evader&agrave; l&rsquo;ordine solo in seguito al ricevimento dell&rsquo;approvazione definitiva.</p>
+                <p>L'approvazione del finanziamento &egrave; assoggettata alla valutazione discrezionale di Agos Ducato, del cui operato
+                    - anche con riguardo alla tempistica dell'iter di approvazione &mdash;  Unieuro non risponde nei riguardi del
                     Cliente. A seguito dell'approvazione definitiva del finanziamento da parte di Agos Ducato, le rate del prezzo di
-                    acquisto saranno addebitate al Cliente con la tempistica e le modalità indicate nel contratto di
+                    acquisto saranno addebitate al Cliente con la tempistica e le modalit&agrave; indicate nel contratto di
                     finanziamento concluso tra il Cliente e Agos Ducato stessa. In caso di mancata approvazione del finanziamento da
-                    parte di Agos Ducato, l'ordine del Cliente sarà automaticamente annullato. Il Cliente ha peraltro
-                    facoltà di inoltrare una nuova proposta di acquisto optando per una delle ulteriori modalità di
+                    parte di Agos Ducato, l'ordine del Cliente sar&agrave; automaticamente annullato. Il Cliente ha peraltro
+                    facolt&agrave; di inoltrare una nuova proposta di acquisto optando per una delle ulteriori modalit&agrave; di
                     pagamento messe a disposizione sul Sito e previste in queste condizioni generali di vendita.</p>
                 <p><strong>4.2&nbsp;<u>Sicurezza dei pagamenti</u></strong></p>
-                <p>Nel caso di pagamenti effettuati on-line, i dati forniti dal Cliente sono trasmessi con modalità sicure che
+                <p>Nel caso di pagamenti effettuati on-line, i dati forniti dal Cliente sono trasmessi con modalit&agrave; sicure che
                     impediscono ad altri la lettura.</p>
-                <p>Il Sito è certificato dalla società Thawte Consulting (così come potrà essere verificato
-                    dal Cliente tramite il certificato che apparirà cliccando sull’immagine del lucchetto chiuso visibile
+                <p>Il Sito &egrave; certificato dalla societ&agrave; Thawte Consulting (cos&igrave; come potr&agrave; essere verificato
+                    dal Cliente tramite il certificato che apparir&agrave; cliccando sull&rsquo;immagine del lucchetto chiuso visibile
                     nella barra inferiore del browser).</p>
-                <p>In aggiunta a quanto precede, il software applicativo utilizzato per la gestione del Sito è il protocollo SSL
+                <p>In aggiunta a quanto precede, il software applicativo utilizzato per la gestione del Sito &egrave; il protocollo SSL
                     (Secure Socket Layer), per criptare i dati inviati su Internet e VerifiedByVISA e SecureCard per la sicurezza nelle
                     transazioni.</p>
                 <p>Per essere certi di avere una connessione sicura occorre utilizzare un browser come Internet Explorer (5.x e succ.),
                     Netscape Navigator (4.x e succ.), Mozilla Firefox (1.x e succ.), Opera, Safari o Chrome capaci di trasmettere dati
                     criptati attraverso il server di Unieuro.</p>
-                <p>Per sapere se ci si trova in una connessione protetta è sufficiente controllare che ci sia il prefisso "https"
-                    invece di "http" nell'indirizzo della pagina, e che l’immagine del lucchetto visibile nella barra in basso del
-                    browser sia “chiuso”.</p>
+                <p>Per sapere se ci si trova in una connessione protetta &egrave; sufficiente controllare che ci sia il prefisso "https"
+                    invece di "http" nell'indirizzo della pagina, e che l&rsquo;immagine del lucchetto visibile nella barra in basso del
+                    browser sia &ldquo;chiuso&rdquo;.</p>
                 <p><strong>4.3&nbsp;<u>Pagamento dei prodotti prenotati attraverso il Sito</u></strong></p>
                 <p>Il Cliente che ha scelto di ritirare e acquistare i prodotti prenotati attraverso il Sito presso uno dei Punti
-                    Vendita Unieuro e/o in uno dei Punti Vendita Affiliati indicati sul Sito, dovrà invece effettuare il relativo
-                    pagamento presso il Punto Vendita selezionato al momento dell’acquisto mediante i mezzi di pagamento messi a
+                    Vendita Unieuro e/o in uno dei Punti Vendita Affiliati indicati sul Sito, dovr&agrave; invece effettuare il relativo
+                    pagamento presso il Punto Vendita selezionato al momento dell&rsquo;acquisto mediante i mezzi di pagamento messi a
                     disposizione dal Punto Vendita medesimo.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 5 ­– CONSEGNA DEI PRODOTTI ACQUISTATI ATTRAVERSO IL SITO</strong></p>
+                <p><strong>ARTICOLO 5 &mdash; CONSEGNA DEI PRODOTTI ACQUISTATI ATTRAVERSO IL SITO</strong></p>
                 <p><strong>5.1&nbsp;<u>Luogo di consegna</u></strong></p>
                 <p>Salvo che il Cliente non abbia scelto di ritirare personalmente il prodotto prenotato online presso un Punto
-                    Vendita Unieuro e/o un Punto Vendita di un Affiliato, Unieuro consegnerà il bene (prodotto e/o
-                    servizio) acquistato all’indirizzo indicato dallo stesso Cliente.</p>
-                <p>Le modalità per impostare i dati di spedizione della merce dipendono dal metodo di pagamento
+                    Vendita Unieuro e/o un Punto Vendita di un Affiliato, Unieuro consegner&agrave; il bene (prodotto e/o
+                    servizio) acquistato all&rsquo;indirizzo indicato dallo stesso Cliente.</p>
+                <p>Le modalit&agrave; per impostare i dati di spedizione della merce dipendono dal metodo di pagamento
                     selezionato:</p>
-                <p>– Cassa Veloce PayPal (“Processo corto”): i dati vengono impostati dal cliente
-                    all’interno della
+                <p>&mdash;  Cassa Veloce PayPal (&ldquo;Processo corto&rdquo;): i dati vengono impostati dal cliente
+                    all&rsquo;interno della
                     sua pagina di autorizzazione al pagamento <em>PayPal</em>. I dati vengono quindi inoltrati ad Unieuro
                     che li
-                    utilizzerà nell’ambito dell’ordinario processo di vendita.</p>
+                    utilizzer&agrave; nell&rsquo;ambito dell&rsquo;ordinario processo di vendita.</p>
                     <p>I dati di spedizione impostati dal cliente nel proprio account PayPal non sono modificabili da Unieuro.</p>
-                <p>– PayPal (“Processo lungo”), carte di pagamento e finanziamento Agos: i dati vengono
+                <p>&mdash;  PayPal (&ldquo;Processo lungo&rdquo;), carte di pagamento e finanziamento Agos: i dati vengono
                     impostati sul sito di Unieuro ed inoltrati quindi al fornitore dello strumento di pagamento selezionato.</p>
-                <p>Unieuro non è responsabile per mancato recapito del prodotto e/o servizio acquistato determinato da
-                    errori del Cliente nell’indicazione dell’indirizzo (es: mancanza del numero civico, indirizzo sconosciuto,
+                <p>Unieuro non &egrave; responsabile per mancato recapito del prodotto e/o servizio acquistato determinato da
+                    errori del Cliente nell&rsquo;indicazione dell&rsquo;indirizzo (es: mancanza del numero civico, indirizzo sconosciuto,
                     indirizzo non corretto, ecc.).</p>
                 <p>Unieuro non effettua consegne al di fuori del territorio nazionale; eventuali ordini con dati di spedizione
-                    incompleti o con luogo di consegna all’estero saranno automaticamente cancellati.
+                    incompleti o con luogo di consegna all&rsquo;estero saranno automaticamente cancellati.
                 </p>
                 <p><strong>5.2 &nbsp;<u>Tempi di consegna e giacenza</u></strong></p>
-                <p>I Prodotti indicati come “disponibili” verranno consegnati entro il termine indicato nella relativa
-                    scheda prodotto e/o nell’e-mail di conferma di accettazione della proposta di acquisto, e comunque entro e non
-                    oltre 10 (dieci) giorni lavorativi dall’invio dell’e-mail di conferma di accettazione della proposta di
+                <p>I Prodotti indicati come &ldquo;disponibili&rdquo; verranno consegnati entro il termine indicato nella relativa
+                    scheda prodotto e/o nell&rsquo;e-mail di conferma di accettazione della proposta di acquisto, e comunque entro e non
+                    oltre 10 (dieci) giorni lavorativi dall&rsquo;invio dell&rsquo;e-mail di conferma di accettazione della proposta di
                     acquisto.</p>
-                <p>A parziale deroga di quanto precede, qualora il Cliente unitamente all’acquisto di prodotti abbia richiesto
-                    anche la fornitura di servizi di installazione e di ritiro dell’usato (RAEE), i prodotti verranno consegnati
-                    entro 15 (quindici) giorni lavorativi dall’invio della e-mail di conferma dell’ordine.</p>
-                <p>Per i prodotti indicati come “disponibili salvo esaurimento scorte”, così come nel caso di Ordine
-                    Misto, il tempo indicativo di consegna a domicilio, sarà quello indicato nell’e-mail di accettazione
-                    della proposta di acquisto dei prodotti indicati come “disponibili salvo esaurimento scorte”. In ogni
-                    caso, ai sensi dell’art. 61, comma 1 del Codice del Consumo, Unieuro effettuerà la consegna entro e non
+                <p>A parziale deroga di quanto precede, qualora il Cliente unitamente all&rsquo;acquisto di prodotti abbia richiesto
+                    anche la fornitura di servizi di installazione e di ritiro dell&rsquo;usato (RAEE), i prodotti verranno consegnati
+                    entro 15 (quindici) giorni lavorativi dall&rsquo;invio della e-mail di conferma dell&rsquo;ordine.</p>
+                <p>Per i prodotti indicati come &ldquo;disponibili salvo esaurimento scorte&rdquo;, cos&igrave; come nel caso di Ordine
+                    Misto, il tempo indicativo di consegna a domicilio, sar&agrave; quello indicato nell&rsquo;e-mail di accettazione
+                    della proposta di acquisto dei prodotti indicati come &ldquo;disponibili salvo esaurimento scorte&rdquo;. In ogni
+                    caso, ai sensi dell&rsquo;art. 61, comma 1 del Codice del Consumo, Unieuro effettuer&agrave; la consegna entro e non
                     oltre il termine di trenta giorni decorrenti dal giorno successivo a quello in cui il Cliente ha trasmesso la
                     proposta di acquisto a Unieuro S.p.A.</p>
                 <p><strong>Nel caso in cui i prodotti non possano essere consegnati entro i termini indicati nei paragrafi che
-                        precedono, Unieuro contatterà il cliente, entro 2 (due) giorni lavorativi dalla scadenza del termine
+                        precedono, Unieuro contatter&agrave; il cliente, entro 2 (due) giorni lavorativi dalla scadenza del termine
                         indicato fornendo le informazioni sullo stato della spedizione, fermo restando il diritto del Cliente
-                        all’ottenimento del rimborso e agli ulteriori rimedi previsti dall’art. 61, commi 3-7 del Codice del
+                        all&rsquo;ottenimento del rimborso e agli ulteriori rimedi previsti dall&rsquo;art. 61, commi 3-7 del Codice del
                         Consumo.</strong></p>
-                <p>In caso di acquisto di più prodotti di diversa tipologia, Unieuro si riserva la facoltà di consegnare i
-                    singoli prodotti con tempi e consegne differenti. Tale scelta di Unieuro non comporterà, per il Cliente,
+                <p>In caso di acquisto di pi&ugrave; prodotti di diversa tipologia, Unieuro si riserva la facolt&agrave; di consegnare i
+                    singoli prodotti con tempi e consegne differenti. Tale scelta di Unieuro non comporter&agrave;, per il Cliente,
                     alcun aggravio di costi.</p>
                 <p><strong><u>5.3 Verifica dei prodotti da parte del Cliente</u></strong></p>
-                <p><strong>Il cliente è tenuto a verificare</strong>, all'atto del ricevimento dei prodotti ordinati:</p>
+                <p><strong>Il cliente &egrave; tenuto a verificare</strong>, all'atto del ricevimento dei prodotti ordinati:</p>
                 <p><strong>(a) se il numero dei colli in consegna corrisponde a quello indicato sul documento di trasporto;</strong></p>
-                <p><strong>(b) se l’imballo è integro;</strong></p>
-                <p><strong>(c) se il prodotto consegnato è conforme al suo ordine di acquisto</strong>.</p>
-                <p>Il cliente dovrà sottoscrivere la bolla di consegna indicando ''con riserva di controllo sull'integrità
-                    dei prodotti”;&nbsp;<strong>qualora ciò non avvenga, il cliente non potrà contestare,
-                        successivamente, la non conformità esterna del Prodotto e la sua quantità rispetto a quanto
+                <p><strong>(b) se l&rsquo;imballo &egrave; integro;</strong></p>
+                <p><strong>(c) se il prodotto consegnato &egrave; conforme al suo ordine di acquisto</strong>.</p>
+                <p>Il cliente dovr&agrave; sottoscrivere la bolla di consegna indicando ''con riserva di controllo sull'integrit&agrave;
+                    dei prodotti&rdquo;;&nbsp;<strong>qualora ci&ograve; non avvenga, il cliente non potr&agrave; contestare,
+                        successivamente, la non conformit&agrave; esterna del Prodotto e la sua quantit&agrave; rispetto a quanto
                         ordinato.</strong></p>
                 <p><strong>&nbsp;<u>5.4 Servizi aggiuntivi</u></strong></p>
-                <p>Il Cliente potrà scegliere alcuni servizi aggiuntivi da eseguirsi contestualmente alla consegna dei prodotti
+                <p>Il Cliente potr&agrave; scegliere alcuni servizi aggiuntivi da eseguirsi contestualmente alla consegna dei prodotti
                     e, in particolare:</p>
                 <p><strong>(a)</strong>&nbsp;il servizio di installazione del prodotto acquistato;</p>
-                <p><strong>(b)</strong>&nbsp;il ritiro dell’usato (RAEE). Ai soli fini di chiarezza tale servizio è
+                <p><strong>(b)</strong>&nbsp;il ritiro dell&rsquo;usato (RAEE). Ai soli fini di chiarezza tale servizio &egrave;
                     gratuito.</p>
                 <p>Detti servizi saranno effettuati da installatori autorizzati,&nbsp;<strong>motivo per il quale i tempi di consegna
-                        potrebbero in tal caso richiedere tempi più lunghi, come sopra indicato.</strong></p>
-                <p>Per la consegna a domicilio dei prodotti, il cliente potrà scegliere anche i seguenti ulteriori servizi a
+                        potrebbero in tal caso richiedere tempi pi&ugrave; lunghi, come sopra indicato.</strong></p>
+                <p>Per la consegna a domicilio dei prodotti, il cliente potr&agrave; scegliere anche i seguenti ulteriori servizi a
                     pagamento come indicato nel carrello:</p>
                 <p>- Consegna al sabato mattina;</p>
-                <p>- Consegna entro le ore 12 del giorno successivo al ricevimento della e-mail di accettazione dell’Ordine di
+                <p>- Consegna entro le ore 12 del giorno successivo al ricevimento della e-mail di accettazione dell&rsquo;Ordine di
                     Acquisto;</p>
                 <p>- Consegna con appuntamento telefonico;</p>
                 <p>- Consegna al piano.</p>
                 <p><strong>5.5 &nbsp;<u>Fattura</u></strong></p>
-                <p>La fattura relativa ai prodotti (e ai relativi servizi) acquistati attraverso il Sito sarà emessa al momento
-                    della spedizione e sarà messa a disposizione del Cliente direttamente on-line. I Clienti registrati potranno
-                    scaricarla dalla scheda “I miei ordini” della dashboard del proprio account, mentre i clienti guest
-                    potranno scaricarla inserendo, nell’apposita sezione denominata ‘stato dell’ordinÈ, il
-                    numero dell’ordine e la propria e-mail.</p>
-                <p>Per ordini aventi ad oggetto più prodotti, potranno essere emesse fatture distinte in base alle spedizioni
+                <p>La fattura relativa ai prodotti (e ai relativi servizi) acquistati attraverso il Sito sar&agrave; emessa al momento
+                    della spedizione e sar&agrave; messa a disposizione del Cliente direttamente on-line. I Clienti registrati potranno
+                    scaricarla dalla scheda &ldquo;I miei ordini&rdquo; della dashboard del proprio account, mentre i clienti guest
+                    potranno scaricarla inserendo, nell&rsquo;apposita sezione denominata &lsquo;stato dell&rsquo;ordin&egrave;, il
+                    numero dell&rsquo;ordine e la propria e-mail.</p>
+                <p>Per ordini aventi ad oggetto pi&ugrave; prodotti, potranno essere emesse fatture distinte in base alle spedizioni
                     effettuate.</p>
-                <p>La fattura relativa ai prodotti prenotati attraverso il Sito ma ritirati e acquistati dall’utente presso un
-                    Punto Vendita sarà invece emessa dal venditore al momento dell’acquisto stesso e sarà consegnata
+                <p>La fattura relativa ai prodotti prenotati attraverso il Sito ma ritirati e acquistati dall&rsquo;utente presso un
+                    Punto Vendita sar&agrave; invece emessa dal venditore al momento dell&rsquo;acquisto stesso e sar&agrave; consegnata
                     al cliente direttamente presso il Punto Vendita medesimo.</p>
                 <p><strong>5.6&nbsp;<u>Spese di spedizione</u></strong></p>
-                <p>Al prezzo del prodotto acquistato dal Cliente attraverso il Sito potrà essere aggiunto un importo a titolo di
-                    spese di spedizione. Tale importo è calcolato in modo automatico dal sistema di Unieuro, avuto riguardo, tra
+                <p>Al prezzo del prodotto acquistato dal Cliente attraverso il Sito potr&agrave; essere aggiunto un importo a titolo di
+                    spese di spedizione. Tale importo &egrave; calcolato in modo automatico dal sistema di Unieuro, avuto riguardo, tra
                     gli altri, al peso e alle dimensioni dei prodotti, ma senza distinzioni legate al luogo di consegna nel territorio
-                    italiano. Tale importo verrà indicato nell’ordine di acquisto prima del suo invio da parte del cliente.
+                    italiano. Tale importo verr&agrave; indicato nell&rsquo;ordine di acquisto prima del suo invio da parte del cliente.
                 </p>
                 <p><strong>5.7.&nbsp;<u>Ritiro RAEE</u></strong></p>
-                <p>Per le informazioni relative al ritiro RAEE al momento dell’acquisto di un Prodotto, si rinvia
-                    all’apposita sezione RAEE consultabile al link&nbsp;<a href="http://www.unieuro.it/online/eco-contributo-raee">eco-contributo-raee</a>&nbsp;nella versione
+                <p>Per le informazioni relative al ritiro RAEE al momento dell&rsquo;acquisto di un Prodotto, si rinvia
+                    all&rsquo;apposita sezione RAEE consultabile al link&nbsp;<a href="http://www.unieuro.it/online/eco-contributo-raee">eco-contributo-raee</a>&nbsp;nella versione
                     costantemente aggiornata</p>
-                <p><strong>5.8&nbsp;<u>Mancata disponibilità di un prodotto</u></strong></p>
+                <p><strong>5.8&nbsp;<u>Mancata disponibilit&agrave; di un prodotto</u></strong></p>
                 <p>Unieuro si impegna a fare quanto possibile per la soddisfazione dei propri Clienti e per un disbrigo celere ed
-                    efficiente degli ordini inviati attraverso il Sito.&nbsp; Può tuttavia eccezionalmente accadere che un
-                    prodotto indicato come “disponibile” e per il quale il Cliente abbia effettuato il pagamento al momento
-                    dell’invio dell’ordine, risulti non più disponibile al momento della presa in carico della
-                    proposta di acquisto da parte di Unieuro. In tal caso Unieuro provvederà a darne immediatamente comunicazione
-                    via e-mail al Cliente. A fronte di tale disservizio, ed in aggiunta ai rimedi di legge, il Cliente riceverà
+                    efficiente degli ordini inviati attraverso il Sito.&nbsp; Pu&ograve; tuttavia eccezionalmente accadere che un
+                    prodotto indicato come &ldquo;disponibile&rdquo; e per il quale il Cliente abbia effettuato il pagamento al momento
+                    dell&rsquo;invio dell&rsquo;ordine, risulti non pi&ugrave; disponibile al momento della presa in carico della
+                    proposta di acquisto da parte di Unieuro. In tal caso Unieuro provveder&agrave; a darne immediatamente comunicazione
+                    via e-mail al Cliente. A fronte di tale disservizio, ed in aggiunta ai rimedi di legge, il Cliente ricever&agrave;
                     da Unieuro anche un coupon .<strong>&nbsp;In tal caso, la determinazione del valore del coupon e/o delle categorie
-                        di prodotti per i quali esso è valido verranno valutate da Unieuro in relazione alle circostanze del
-                        singolo acquisto.&nbsp;</strong>&nbsp;La medesima procedura si applicherà anche agli Ordini Misti e agli
-                    ordini aventi ad oggetto prodotti “disponibili salvo esaurimento scorte”, per i quali il Cliente abbia
-                    effettuato il pagamento una volta ricevuta la accettazione della proposta d’acquisto da parte di Unieuro, in
-                    caso successivamente risulti che uno o più prodotti oggetto dell’ordine siano diventati indisponibili.
+                        di prodotti per i quali esso &egrave; valido verranno valutate da Unieuro in relazione alle circostanze del
+                        singolo acquisto.&nbsp;</strong>&nbsp;La medesima procedura si applicher&agrave; anche agli Ordini Misti e agli
+                    ordini aventi ad oggetto prodotti &ldquo;disponibili salvo esaurimento scorte&rdquo;, per i quali il Cliente abbia
+                    effettuato il pagamento una volta ricevuta la accettazione della proposta d&rsquo;acquisto da parte di Unieuro, in
+                    caso successivamente risulti che uno o pi&ugrave; prodotti oggetto dell&rsquo;ordine siano diventati indisponibili.
                 </p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 6 – GARANZIA LEGALE DI CONFORMITÀ</strong></p>
-                <p>Tutti i prodotti acquistati tramite il Sito godono della garanzia legale di conformità ai sensi del Codice del
+                <p><strong>ARTICOLO 6 &mdash;  GARANZIA LEGALE DI CONFORMIT&agrave;</strong></p>
+                <p>Tutti i prodotti acquistati tramite il Sito godono della garanzia legale di conformit&agrave; ai sensi del Codice del
                     Consumo e del Codice Civile, come applicabili.</p>
                 <p><strong>6.1&nbsp;<u>Cliente Professionista</u></strong></p>
                 <p>I prodotti acquistati da un Cliente Professionista (ossia una persona fisica o giuridica che agisce nell'esercizio
-                    della propria attività imprenditoriale, commerciale, artigianale o professionale, ovvero un suo
+                    della propria attivit&agrave; imprenditoriale, commerciale, artigianale o professionale, ovvero un suo
                     intermediario) sono coperti dalla garanzia per vizi ai sensi dell'art. 1490 e ss. c.c.; l'azione del Cliente
                     Professionista volta a far valere la garanzia per vizi si prescrive decorso 1 (uno) anno dalla consegna del prodotto
                     acquistato e i relativi vizi dovranno essere denunciati nei termini di cui all'art. 1495 c.c.</p>
                 <p><strong>&nbsp;</strong></p>
                 <p><strong>6.2&nbsp;<u>Cliente Consumatore</u></strong></p>
                 <p>I prodotti acquistati da un Cliente Consumatore beneficiano invece - gratuitamente - della garanzia legale di
-                    conformità (“Garanzia Legale”) prevista dagli articoli 128 e ss. del Codice del Consumo.</p>
-                <p>La Garanzia Legale del venditore si applica per i difetti di conformità che si manifestino entro 24 mesi dalla
+                    conformit&agrave; (&ldquo;Garanzia Legale&rdquo;) prevista dagli articoli 128 e ss. del Codice del Consumo.</p>
+                <p>La Garanzia Legale del venditore si applica per i difetti di conformit&agrave; che si manifestino entro 24 mesi dalla
                     data di consegna del prodotto e che siano denunciati dal consumatore entro i 2 mesi successivi dalla data della
-                    scoperta dei difetti stessi, in conformità all'art. 132 del Codice del Consumo.</p>
-                <p>Si precisa che un difetto di conformità sussiste quando ricorra una delle seguenti situazioni: (i) il prodotto
-                    non è idoneo all’uso al quale deve servire abitualmente; (ii) non è conforme alla descrizione o
-                    non possiede le qualità promesse dal venditore; (iii) non offre le qualità e le prestazioni abituali
-                    di un bene dello stesso tipo; (iv) non è idoneo all’uso particolare voluto dal consumatore se portato a
-                    conoscenza del venditore al momento dell’acquisto ed accettato dal venditore.</p>
-                <p>Il Cliente Consumatore rimarrà in ogni caso titolare dei diritti derivanti dalla Garanzia Legale sopra
+                    scoperta dei difetti stessi, in conformit&agrave; all'art. 132 del Codice del Consumo.</p>
+                <p>Si precisa che un difetto di conformit&agrave; sussiste quando ricorra una delle seguenti situazioni: (i) il prodotto
+                    non &egrave; idoneo all&rsquo;uso al quale deve servire abitualmente; (ii) non &egrave; conforme alla descrizione o
+                    non possiede le qualit&agrave; promesse dal venditore; (iii) non offre le qualit&agrave; e le prestazioni abituali
+                    di un bene dello stesso tipo; (iv) non &egrave; idoneo all&rsquo;uso particolare voluto dal consumatore se portato a
+                    conoscenza del venditore al momento dell&rsquo;acquisto ed accettato dal venditore.</p>
+                <p>Il Cliente Consumatore rimarr&agrave; in ogni caso titolare dei diritti derivanti dalla Garanzia Legale sopra
                     descritti, indipendentemente dalla sottoscrizione di altre garanzie di tipo convenzionale, gratuite o a pagamento.
                 </p>
                 <p><strong>6.3&nbsp;<u>Rimedi a disposizione del Cliente Consumatore</u></strong></p>
-                <p>In caso di sussistenza di un difetto di conformità, il Cliente Consumatore potrà richiedere, a sua
+                <p>In caso di sussistenza di un difetto di conformit&agrave;, il Cliente Consumatore potr&agrave; richiedere, a sua
                     scelta, la riparazione del prodotto ovvero la sua sostituzione, salvo che il rimedio richiesto sia oggettivamente
-                    impossibile o eccessivamente oneroso rispetto all’altro secondo le disposizioni dell’art. 130 comma 4
+                    impossibile o eccessivamente oneroso rispetto all&rsquo;altro secondo le disposizioni dell&rsquo;art. 130 comma 4
                     del Codice del Consumo.</p>
-                <p>In particolare, un rimedio è da considerarsi eccessivamente oneroso se impone al venditore spese irragionevoli
-                    in confronto all’altro, tenendo conto: (i) del valore che il bene avrebbe se non vi fosse difetto di
-                    conformità; (ii) dell’entità del difetto di conformità; (iii)
-                    dell’eventualità che il rimedio alternativo possa essere esperito senza notevoli inconvenienti per il
+                <p>In particolare, un rimedio &egrave; da considerarsi eccessivamente oneroso se impone al venditore spese irragionevoli
+                    in confronto all&rsquo;altro, tenendo conto: (i) del valore che il bene avrebbe se non vi fosse difetto di
+                    conformit&agrave;; (ii) dell&rsquo;entit&agrave; del difetto di conformit&agrave;; (iii)
+                    dell&rsquo;eventualit&agrave; che il rimedio alternativo possa essere esperito senza notevoli inconvenienti per il
                     Cliente Consumatore.</p>
                 <p>Unieuro, al fine di rendere il servizio di assistenza post-vendita di alto livello ed assolutamente trasparente, si
                     impegna, su base volontaria, a far eseguire la riparazione o a sostituire il prodotto difettoso entro 40 (quaranta)
-                    giorni dalla richiesta di assistenza in garanzia. In subordine, il Cliente Consumatore potrà richiedere, a
+                    giorni dalla richiesta di assistenza in garanzia. In subordine, il Cliente Consumatore potr&agrave; richiedere, a
                     sua scelta, una congrua riduzione del prezzo o la risoluzione del contratto, ove ricorra una delle seguenti
                     situazioni: (i) la riparazione o la sostituzione siano impossibili o eccessivamente onerose; (ii) Unieuro non abbia
                     provveduto alla riparazione o alla sostituzione del Prodotto entro il termine di 40 (quaranta) giorni; (iii) la
                     sostituzione o la riparazione precedentemente effettuata abbia recato notevoli inconvenienti. Un difetto di
-                    conformità di lieve entità per il quale non è stato possibile o è eccessivamente oneroso
-                    esperire i rimedi della riparazione o della sostituzione, non dà diritto alla risoluzione del contratto.</p>
-                <p>Dopo che Unieuro S.p.A. avrà ricevuto la denuncia del difetto di conformità, essa potrà offrire
+                    conformit&agrave; di lieve entit&agrave; per il quale non &egrave; stato possibile o &egrave; eccessivamente oneroso
+                    esperire i rimedi della riparazione o della sostituzione, non d&agrave; diritto alla risoluzione del contratto.</p>
+                <p>Dopo che Unieuro S.p.A. avr&agrave; ricevuto la denuncia del difetto di conformit&agrave;, essa potr&agrave; offrire
                     al Cliente Consumatore eventuali altri rimedi disponibili, con i seguenti effetti:</p>
-                <p>(i) qualora il Cliente Consumatore abbia già richiesto uno specifico rimedio, Unieuro resterà obbligata
+                <p>(i) qualora il Cliente Consumatore abbia gi&agrave; richiesto uno specifico rimedio, Unieuro rester&agrave; obbligata
                     ad attuarlo, con le necessarie conseguenze in ordine alla decorrenza del termine di 40 (quaranta) giorni di cui
                     sopra, salvo accettazione da parte del Cliente Consumatore del rimedio alternativo proposto;</p>
-                <p>(ii) qualora il Cliente Consumatore non abbia già richiesto uno specifico rimedio, questi potrà
+                <p>(ii) qualora il Cliente Consumatore non abbia gi&agrave; richiesto uno specifico rimedio, questi potr&agrave;
                     accettare la proposta o respingerla scegliendo un altro dei rimedi previsti dalla legge.</p>
                 <p><strong>&nbsp;</strong></p>
                 <ol start="6">
                     <li><strong>4&nbsp;<u>Casi di esclusione della Garanzia Legale</u></strong></li>
                 </ol>
-                <p>La Garanzia Legale sarà invece esclusa, in conformità alla legge applicabile, qualora:</p>
+                <p>La Garanzia Legale sar&agrave; invece esclusa, in conformit&agrave; alla legge applicabile, qualora:</p>
                 <p>(i) i prodotti siano stati riparati o alterati da persone diverse dal produttore, da Unieuro o da qualsiasi altro
                     soggetto autorizzato; e/o</p>
-                <p>(ii) il difetto di conformità del prodotto o dei prodotti si sia manifestato oltre il termine di 2 (due) anni
+                <p>(ii) il difetto di conformit&agrave; del prodotto o dei prodotti si sia manifestato oltre il termine di 2 (due) anni
                     dalla consegna del prodotto medesimo e/o la relativa richiesta di riparazione o sostituzione del prodotto difettoso
                     o dei prodotti difettosi sia stata inviata decorsi 2 (due) mesi dalla scoperta del difetto; e/o</p>
                 <p>(iii) i difetti siano dovuti (in tutto od in parte) a cattivo uso, improprio uso o conservazione o manutenzione o
@@ -1057,114 +1058,114 @@
                     autorizzato - ovvero inosservanza delle istruzioni fornite dal produttore od altra istruzione fornita da Unieuro
                     assieme ai Prodotti consegnati; e/o</p>
                 <p>(iv) al momento della conclusione del contratto, il Cliente Consumatore era a conoscenza del difetto e non poteva
-                    ignorarlo con l’ordinaria diligenza; e/o</p>
-                <p>(v) il difetto di conformità deriva da istruzioni o materiali forniti dal Cliente Consumatore.</p>
-                <p><strong>6.5&nbsp;<u>Modalità di attivazione della Garanzia Legale</u></strong></p>
-                <p>La Garanzia Legale dovrà essere fatta valere direttamente nei confronti di Unieuro, nel caso di vendita di
-                    prodotti acquistati attraverso Sito con consegna a domicilio. Il Cliente potrà far valere la Garanzia Legale
-                    telefonicamente contattando l’Assistenza Clienti al numero 02-97070680, via e-mail all’indirizzo&nbsp;<a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a>&nbsp;o inviando la propria richiesta
+                    ignorarlo con l&rsquo;ordinaria diligenza; e/o</p>
+                <p>(v) il difetto di conformit&agrave; deriva da istruzioni o materiali forniti dal Cliente Consumatore.</p>
+                <p><strong>6.5&nbsp;<u>Modalit&agrave; di attivazione della Garanzia Legale</u></strong></p>
+                <p>La Garanzia Legale dovr&agrave; essere fatta valere direttamente nei confronti di Unieuro, nel caso di vendita di
+                    prodotti acquistati attraverso Sito con consegna a domicilio. Il Cliente potr&agrave; far valere la Garanzia Legale
+                    telefonicamente contattando l&rsquo;Assistenza Clienti al numero 02-97070680, via e-mail all&rsquo;indirizzo&nbsp;<a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a>&nbsp;o inviando la propria richiesta
                     compilando il&nbsp;<a href="https://www.unieuro.it/online/assistenza-clienti">form</a>. Il personale addetto,
-                    provvederà a fornire al Cliente tutte le informazioni necessarie relativamente alle condizioni e alle
+                    provveder&agrave; a fornire al Cliente tutte le informazioni necessarie relativamente alle condizioni e alle
                     procedure per la fruizione della Garanzia Legale.</p>
                 <p>Al contrario, nel caso in cui Il Cliente abbia scelto di ritirare e acquistare i prodotti prenotati attraverso il
                     Sito presso uno dei Punti Vendita Unieuro e/o in uno dei Punti Vendita Affiliati indicati sul Sito, la garanzia
-                    potrà essere fatta valere esclusivamente nei confronti del gestore del Punto Vendita, sia esso Unieuro S.p.A.
-                    o altro soggetto terzo affiliato, a seconda di chi avrà agito quale venditore dei prodotti difettosi,
-                    così come indicato nello scontrino di vendita e/o nella fattura d’acquisto rilasciati dal Punto Vendita
-                    al momento dell’acquisto, secondo le procedure previste per il relativo acquisto.</p>
+                    potr&agrave; essere fatta valere esclusivamente nei confronti del gestore del Punto Vendita, sia esso Unieuro S.p.A.
+                    o altro soggetto terzo affiliato, a seconda di chi avr&agrave; agito quale venditore dei prodotti difettosi,
+                    cos&igrave; come indicato nello scontrino di vendita e/o nella fattura d&rsquo;acquisto rilasciati dal Punto Vendita
+                    al momento dell&rsquo;acquisto, secondo le procedure previste per il relativo acquisto.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 7 – DIRITTO DI RECESSO DEL CLIENTE CONSUMATORE</strong></p>
+                <p><strong>ARTICOLO 7 &mdash;  DIRITTO DI RECESSO DEL CLIENTE CONSUMATORE</strong></p>
                 <p><strong>7.1</strong>&nbsp;Ai sensi degli articoli 52 e ss. del Codice del Consumo, il Cliente Consumatore ha il
                     diritto di recedere dal Contratto entro il termine di 14 (quattrodici) giorni dal ricevimento del prodotto presso il
-                    proprio domicilio senza alcuna penalità e senza dover fornire alcuna motivazione.</p>
-                <p>Nel caso di consegna separata di più prodotti, ordinati dal Cliente Consumatore con un solo ordine, il termine
-                    di 14 (quattrodici) giorni per l’esercizio del diritto di recesso decorre dal giorno in cui è
-                    consegnato l’ultimo bene.</p>
-                <p><strong>7.2</strong>&nbsp;ll Cliente Consumatore deve comunicare la volontà di recedere dal contratto con una
-                    delle seguenti modalità:</p>
+                    proprio domicilio senza alcuna penalit&agrave; e senza dover fornire alcuna motivazione.</p>
+                <p>Nel caso di consegna separata di pi&ugrave; prodotti, ordinati dal Cliente Consumatore con un solo ordine, il termine
+                    di 14 (quattrodici) giorni per l&rsquo;esercizio del diritto di recesso decorre dal giorno in cui &egrave;
+                    consegnato l&rsquo;ultimo bene.</p>
+                <p><strong>7.2</strong>&nbsp;ll Cliente Consumatore deve comunicare la volont&agrave; di recedere dal contratto con una
+                    delle seguenti modalit&agrave;:</p>
                 <p>(a) via mail compilando il form di recesso presente nella sezione&nbsp;<a href="http://www.unieuro.it/online/assistenza-clienti">assistenza clienti</a>;</p>
                 <p>(b) ovvero via fax al numero 0543/725205 o a mezzo lettera raccomandata con avviso di ricevimento
-                    all’indirizzo:</p>
-                <p>Unieuro S.p.A.<br>Palazzo Hercolani - Via Piero Maroncelli 10<br>47122 - Forlì (FC).&nbsp;<br>Alla c.a. Ufficio Customer Care
+                    all&rsquo;indirizzo:</p>
+                <p>Unieuro S.p.A.<br>Palazzo Hercolani - Via Piero Maroncelli 10<br>47122 - Forl&igrave; (FC).&nbsp;<br>Alla c.a. Ufficio Customer Care
                 </p>
-                <p>(c) compilando e inviando il modulo standard conforme all’all. B del D.lgs. 21/2014 reperibile a&nbsp;<a href="http://www.unieuro.it/medias/sys_master/hc4/hf4/10404464033822/ModuloDiRecesso.pdf">questo
-                        link</a>&nbsp;in versione pdf ovvero una qualsiasi altra dichiarazione scritta che manifesti l’intenzione
+                <p>(c) compilando e inviando il modulo standard conforme all&rsquo;all. B del D.lgs. 21/2014 reperibile a&nbsp;<a href="http://www.unieuro.it/medias/sys_master/hc4/hf4/10404464033822/ModuloDiRecesso.pdf">questo
+                        link</a>&nbsp;in versione pdf ovvero una qualsiasi altra dichiarazione scritta che manifesti l&rsquo;intenzione
                     di voler recedere dal contratto.</p>
-                <p>&nbsp;<strong>7.3</strong>&nbsp;Unieuro confermerà al Cliente Consumatore senza indugio, via e-mail
-                    all’indirizzo di posta elettronica comunicato nel corso della procedura di acquisto sul Sito, il ricevimento
-                    della dichiarazione di recesso esercitato e fornirà al Cliente le istruzioni per procedere alla restituzione
+                <p>&nbsp;<strong>7.3</strong>&nbsp;Unieuro confermer&agrave; al Cliente Consumatore senza indugio, via e-mail
+                    all&rsquo;indirizzo di posta elettronica comunicato nel corso della procedura di acquisto sul Sito, il ricevimento
+                    della dichiarazione di recesso esercitato e fornir&agrave; al Cliente le istruzioni per procedere alla restituzione
                     del/i relativo/i prodotto/i.</p>
-                <p><strong>7.4</strong>&nbsp;In conformità a quanto previsto dall’articolo 59, lett. c) e d) del Codice del
-                    Consumo, il Cliente Consumatore non può esercitare il diritto di recesso per prodotti confezionati su misura
+                <p><strong>7.4</strong>&nbsp;In conformit&agrave; a quanto previsto dall&rsquo;articolo 59, lett. c) e d) del Codice del
+                    Consumo, il Cliente Consumatore non pu&ograve; esercitare il diritto di recesso per prodotti confezionati su misura
                     o chiaramente personalizzati o che rischiano di deteriorarsi o alterarsi rapidamente.</p>
-                <p><strong>7.5</strong>&nbsp;Il diritto di recesso non si applica inoltre né ai prodotti audiovisivi e ai
-                    prodotti software informatici originariamente sigillati e aperti dal consumatore, né ai beni sigillati che
+                <p><strong>7.5</strong>&nbsp;Il diritto di recesso non si applica inoltre n&eacute; ai prodotti audiovisivi e ai
+                    prodotti software informatici originariamente sigillati e aperti dal consumatore, n&eacute; ai beni sigillati che
                     non si prestano ad essere restituiti per motivi igienici o connessi alla protezione della salute che sono stati
                     aperti dopo la consegna.<br>Riguardo lo stato dei beni, essi devono risultare in un normale stato di
                     conservazione. Il consumatore risponde unicamente della diminuzione di valore risultante da una manipolazione
-                    diversa da quella “normale” e necessaria per verificare la natura, le caratteristiche e il funzionamento
+                    diversa da quella &ldquo;normale&rdquo; e necessaria per verificare la natura, le caratteristiche e il funzionamento
                     del bene.</p>
                 <p><strong>7.6</strong>&nbsp;I prodotti per cui viene esercitato il diritto di recesso devono essere restituiti entro 14
-                    giorni dal giorno in cui il Cliente Consumatore ha comunicato la volontà di recedere, sostanzialmente
+                    giorni dal giorno in cui il Cliente Consumatore ha comunicato la volont&agrave; di recedere, sostanzialmente
                     integri, nella loro confezione originale, completi degli accessori e degli eventuali manuali, senza alcuna mancanza,
-                    al seguente indirizzo: Unieuro S.p.A., Palazzo Hercolani - Via Piero Maroncelli, 10 47122 Forlì (FC).</p>
+                    al seguente indirizzo: Unieuro S.p.A., Palazzo Hercolani - Via Piero Maroncelli, 10 47122 Forl&igrave; (FC).</p>
                 <p><strong>7.7</strong>&nbsp;Le spese di trasporto per la restituzione dei prodotti sono a carico del Cliente, come
-                    previsto dall’articolo 57, comma 1, del Codice del Consumo.</p>
-                <p><strong>7.8</strong>&nbsp;Unieuro provvederà al rimborso del prezzo versato dal Cliente Consumatore entro 14
+                    previsto dall&rsquo;articolo 57, comma 1, del Codice del Consumo.</p>
+                <p><strong>7.8</strong>&nbsp;Unieuro provveder&agrave; al rimborso del prezzo versato dal Cliente Consumatore entro 14
                     giorni dal ricevimento dei prodotti restituiti e previa verifica dello stato dei medesimi, utilizzando lo stesso
-                    metodo di pagamento utilizzato dal Cliente Consumatore al momento dell’acquisto. Unieuro S.p.A. I tempi di
+                    metodo di pagamento utilizzato dal Cliente Consumatore al momento dell&rsquo;acquisto. Unieuro S.p.A. I tempi di
                     riaccredito della somma versata saranno quelli applicati dal circuito di pagamento utilizzato dal Cliente in fase di
                     ordinazione del prodotto.</p>
                 <p>&nbsp;</p>
-                <p><strong>7.9</strong>&nbsp;ll diritto di recesso è escluso e, pertanto, i paragrafi che precedono non trovano
+                <p><strong>7.9</strong>&nbsp;ll diritto di recesso &egrave; escluso e, pertanto, i paragrafi che precedono non trovano
                     applicazione con riguardo ai Contratti conclusi con Clienti Professionisti.</p>
-                <p><strong>ARTICOLO 8 – MODIFICHE E INVALIDITA’ PARZIALE</strong></p>
+                <p><strong>ARTICOLO 8 &mdash;  MODIFICHE E INVALIDITA&rsquo; PARZIALE</strong></p>
                 <p>Unieuro si riserva il diritto di apportare, in qualunque momento, a propria esclusiva discrezione, eventuali
                     modifiche, integrazioni e/o aggiornamenti nella misura in cui ritenuti necessari e/o, semplicemente, opportuni al
                     Sito, ai contenuti, ai programmi e/o agli altri materiali ivi contenuti e/o disponibili attraverso il Sito stesso
                     (ivi incluse le presenti Condizioni Generali).</p>
-                <p>Per chiarezza, ogni modifica e/o aggiornamento effettuata come sopra non avrà effetto sui Contratti già
-                    conclusi con Clienti prima dell’implementazione di tale modifica o aggiornamento.</p>
-                <p>Nel caso in cui venga dichiarata la nullità, invalidità o inefficacia, in tutto o in parte, di una
-                    disposizione del presente Contratto da parte di qualsiasi competente tribunale, autorità di controllo o
-                    autorità amministrativa, le restanti disposizioni del presente Contratto non ne saranno influenzate.</p>
+                <p>Per chiarezza, ogni modifica e/o aggiornamento effettuata come sopra non avr&agrave; effetto sui Contratti gi&agrave;
+                    conclusi con Clienti prima dell&rsquo;implementazione di tale modifica o aggiornamento.</p>
+                <p>Nel caso in cui venga dichiarata la nullit&agrave;, invalidit&agrave; o inefficacia, in tutto o in parte, di una
+                    disposizione del presente Contratto da parte di qualsiasi competente tribunale, autorit&agrave; di controllo o
+                    autorit&agrave; amministrativa, le restanti disposizioni del presente Contratto non ne saranno influenzate.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 9 – COMUNICAZIONI, CONTATTI E RECLAMI</strong></p>
+                <p><strong>ARTICOLO 9 &mdash;  COMUNICAZIONI, CONTATTI E RECLAMI</strong></p>
                 <p>Qui sotto trovate i recapiti di contatto ai quali indirizzare eventuali richieste, comunicazioni e/o reclami relativi
                     ai vostri ordini, alle presenti condizioni generali o, in generale, a qualsiasi contratto concluso con Unieuro
                     attraverso il Sito:</p>
                 <p>Responsabile e-Commerce</p>
                 <p>UNIEURO S.p.A.</p>
                 <p>Palazzo Hercolani - Via Piero Maroncelli 10</p>
-                <p>47122 – Forlì (Italia)</p>
+                <p>47122 &mdash;  Forl&igrave; (Italia)</p>
                 <p><a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a></p>
                 <p>&nbsp;</p>
-                <p>Per eventuale assistenza telefonica si prega di contattare il numero 02-97070680 dal lunedì alla domenica
+                <p>Per eventuale assistenza telefonica si prega di contattare il numero 02-97070680 dal luned&igrave; alla domenica
                     (festivi esclusi) dalle ore 9,00 alle ore 20,00.</p>
                 <p>&nbsp;</p>
-                <p><strong>ARTICOLO 10 – GIURISDIZIONE E FORO COMPETENTE CONTROVERSIE CLIENTE PROFESSIONISTA</strong></p>
-                <p><strong>10.1</strong>&nbsp;Il Contratto è disciplinato dalla legge italiana.</p>
-                <p><strong>10.2</strong>&nbsp;Per qualunque controversia relativa alla validità, efficacia, interpretazione o
-                    esecuzione di ciascun Contratto nonché, in generale, relativa alla navigazione sul Sito da parte del Cliente
-                    Professionista ovvero all’utilizzo di qualsiasi funzionalità messa a disposizione del Cliente
-                    Professionista medesimo attraverso il Sito, sarà competente in via esclusiva il Foro di Forlì.</p>
+                <p><strong>ARTICOLO 10 &mdash;  GIURISDIZIONE E FORO COMPETENTE CONTROVERSIE CLIENTE PROFESSIONISTA</strong></p>
+                <p><strong>10.1</strong>&nbsp;Il Contratto &egrave; disciplinato dalla legge italiana.</p>
+                <p><strong>10.2</strong>&nbsp;Per qualunque controversia relativa alla validit&agrave;, efficacia, interpretazione o
+                    esecuzione di ciascun Contratto nonch&eacute;, in generale, relativa alla navigazione sul Sito da parte del Cliente
+                    Professionista ovvero all&rsquo;utilizzo di qualsiasi funzionalit&agrave; messa a disposizione del Cliente
+                    Professionista medesimo attraverso il Sito, sar&agrave; competente in via esclusiva il Foro di Forl&igrave;.</p>
                 <p><strong><u>&nbsp;</u></strong></p>
-                <p><strong>ARTICOLO 11 – ADR, GIURISDIZIONE E FORO COMPETENTE CONTROVERSIE CLIENTE CONSUMATORE</strong></p>
-                <p><strong>11.1</strong>&nbsp;Qualunque controversia relativa alla validità, efficacia, interpretazione o
-                    esecuzione di ciascun Contratto nonché, in generale, relativa alla navigazione sul Sito da parte del
-                    Cliente-Consumatore ovvero all’utilizzo di qualsiasi funzionalità messa a disposizione del
-                    Cliente-Consumatore medesimo attraverso il sito, dovrà essere oggetto di un tentativo di conciliazione che si
-                    svolgerà tramite la piattaforma europea di “Online Dispute Resolution”(cd. ODR) consultabile
-                    all’indirizzo&nbsp;<a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>.
-                    Attraverso la piattaforma ODR il consumatore può inviare un reclamo relativo a un contratto concluso on-line
-                    con Unieuro S.p.A. e attivare così la procedura di risoluzione on-line della controversia. L’indirizzo
-                    e-mail del commerciante da inserire nel reclamo è&nbsp;<a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a></p>
-                <p><strong>11.2</strong>&nbsp;Qualora il tentativo di conciliazione fallisca, la controversia sarà devoluta
-                    all’autorità giudiziaria competente del foro di residenza o domicilio elettivo del Cliente-Consumatore.
+                <p><strong>ARTICOLO 11 &mdash;  ADR, GIURISDIZIONE E FORO COMPETENTE CONTROVERSIE CLIENTE CONSUMATORE</strong></p>
+                <p><strong>11.1</strong>&nbsp;Qualunque controversia relativa alla validit&agrave;, efficacia, interpretazione o
+                    esecuzione di ciascun Contratto nonch&eacute;, in generale, relativa alla navigazione sul Sito da parte del
+                    Cliente-Consumatore ovvero all&rsquo;utilizzo di qualsiasi funzionalit&agrave; messa a disposizione del
+                    Cliente-Consumatore medesimo attraverso il sito, dovr&agrave; essere oggetto di un tentativo di conciliazione che si
+                    svolger&agrave; tramite la piattaforma europea di &ldquo;Online Dispute Resolution&rdquo;(cd. ODR) consultabile
+                    all&rsquo;indirizzo&nbsp;<a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>.
+                    Attraverso la piattaforma ODR il consumatore pu&ograve; inviare un reclamo relativo a un contratto concluso on-line
+                    con Unieuro S.p.A. e attivare cos&igrave; la procedura di risoluzione on-line della controversia. L&rsquo;indirizzo
+                    e-mail del commerciante da inserire nel reclamo &egrave;&nbsp;<a href="mailto:servizioclienti@unieuro.com">servizioclienti@unieuro.com</a></p>
+                <p><strong>11.2</strong>&nbsp;Qualora il tentativo di conciliazione fallisca, la controversia sar&agrave; devoluta
+                    all&rsquo;autorit&agrave; giudiziaria competente del foro di residenza o domicilio elettivo del Cliente-Consumatore.
                 </p>
                 <p><strong>11.3</strong>&nbsp;Resta fermo, in ogni caso, il diritto del Cliente-Consumatore di adire il giudice
-                    competente del proprio foro di residenza o domicilio elettivo qualunque sia l’esito della procedura di
-                    mediazione. La competenza di tale foro è obbligatoria e non può essere in alcun modo derogata.
+                    competente del proprio foro di residenza o domicilio elettivo qualunque sia l&rsquo;esito della procedura di
+                    mediazione. La competenza di tale foro &egrave; obbligatoria e non pu&ograve; essere in alcun modo derogata.
                 </p>
             </div>
         </div>
@@ -1196,7 +1197,10 @@
                     </span>
                     <label for="indirizzoSalvato-{{contatore}}">
                         <span class="js-scelto">{{nome}} {{cognome}} {{nuovoCampo}}</span>
-                        <p><span class="riepilogoDati">{{indirizzo}}, {{nCivico}} {{cap}} {{citta}} ({{abbreviazione}})</span> {{indicazione}}</p>
+                        <p>
+                            <span class="riepilogoDati">{{indirizzo}}, {{nCivico}} {{cap}} {{citta}} ({{abbreviazione}}) </span>
+                            <span>{{indicazione}}</span>
+                        </p>
                     </label>
                 </div>
                 <div>

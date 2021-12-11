@@ -34,7 +34,7 @@ function chiudeBannerProdotti() {
 }
 
 function selezionaConsegnaRitiro(input) { 
-    var step = input.closest('.stepUno');
+    var step = input.closest('.step');
     step.querySelectorAll('.js-scelto').forEach(span => span.classList.remove('scelto'))
     if (input.checked) {
         var radioButton = input.closest('.radioButton');
@@ -59,14 +59,6 @@ function selezionaUtente(utente) {
         nuovoIndirizzo.closest('.radioButton').querySelector('p').style.color = '#3c4043';
         nuovoIndirizzo.closest('.radioButton').querySelector('.checkmark').style.border = 'none';
     }
-    nome = document.querySelector('.segnaposto input[name="nome"]').value;
-    cognome = document.querySelector('.segnaposto input[name="cognome"]').value;
-    telefono = document.querySelector('.segnaposto input[name="telefono"]').value;
-    citta = document.querySelector('.segnaposto input[name="citta"]').value;
-    indirizzo = document.querySelector('.segnaposto input[name="indirizzo"]').value;
-    nCivico = document.querySelector('.segnaposto input[name="nCivico"]').value;
-    provincia = document.querySelector('.segnaposto select[name="provincia"]').value;
-    cap = document.querySelector('.segnaposto input[name="cap"]').value;
 }
 
 function modificaDatiUtente(matita) {
@@ -110,13 +102,14 @@ function apriOpzioniFattura() {
 function selezionaScontrinoFattura(checked) {
     var radioButton = checked.closest('.radioButton');
     var opzioni = checked.closest('.selezionaOpzioniParticolari');
-    var allSpan = opzioni.querySelectorAll('.js-scelto');
+    var allSpan = opzioni.querySelectorAll('.js-checked');
     var allInput = opzioni.querySelectorAll('input[name="scontrinoFattura"]');
     var datiFatturazione = document.querySelectorAll('.datiFatturazione');
+
     opzioni.querySelector('.checkmark').style.border = "none";
     allSpan[0].classList.remove('segnalazione');
     allSpan.forEach(span => span.classList.remove('scelto'));
-    radioButton.querySelector('.js-scelto').classList.add('scelto');
+    radioButton.querySelector('.js-checked').classList.add('scelto');
     if (allInput[0].checked) {
         datiFatturazione[0].style.display='block';
         datiFatturazione[1].style.display='none';
@@ -134,16 +127,16 @@ function selezionaScontrinoFattura(checked) {
 function selezionaTipoCliente(input) {
     var datiFatturazione = input.closest('.datiFatturazione');
     if (input.value == 'privato') {
-        datiFatturazione.querySelector('.pIva').style.display='none';
-        datiFatturazione.querySelector('.ragioneSociale').style.display='none';
-        datiFatturazione.querySelector('.codiceFiscale').style.display='block';
-        datiFatturazione.querySelector('.nomeCognome').style.display='block';
+        datiFatturazione.querySelector('.pIva').classList.add('deselezionato');
+        datiFatturazione.querySelector('.ragioneSociale').classList.add('deselezionato');
+        datiFatturazione.querySelector('.codiceFiscale').classList.remove('deselezionato');
+        datiFatturazione.querySelector('.nomeCognome').classList.remove('deselezionato');
         datiFatturazione.querySelectorAll('.js-scelto')[1].classList.remove('scelto');
     } else  {
-        datiFatturazione.querySelector('.pIva').style.display='block';
-        datiFatturazione.querySelector('.ragioneSociale').style.display='block';
-        datiFatturazione.querySelector('.codiceFiscale').style.display='none';
-        datiFatturazione.querySelector('.nomeCognome').style.display='none';
+        datiFatturazione.querySelector('.pIva').classList.remove('deselezionato');
+        datiFatturazione.querySelector('.ragioneSociale').classList.remove('deselezionato');
+        datiFatturazione.querySelector('.codiceFiscale').classList.add('deselezionato');
+        datiFatturazione.querySelector('.nomeCognome').classList.add('deselezionato');
         datiFatturazione.querySelectorAll('.js-scelto')[0].classList.remove('scelto');
     }
     datiFatturazione.querySelectorAll('.errore').forEach(errore => errore.style.display = 'none');
@@ -197,6 +190,10 @@ function nascondiCondizioni() {
 function selezionaProvincia(select) {
     let i = 0;
     var collezioneNegozi = document.querySelectorAll('.itemContainer');
+    var negozio = document.querySelectorAll('input[name="negozio"]')
+    
+    negozio.forEach(input => input.checked = false);
+
     select.querySelectorAll('option').forEach(opzione => {
         if (opzione.selected) {
             collezioneNegozi[i].classList.remove('deselezionato');
@@ -207,263 +204,299 @@ function selezionaProvincia(select) {
         }
         i++;
     })
-    document.querySelectorAll('input[name="negozio"]').forEach(input => input.checked = false);
 }
 
-function unoCompletoProsegui() {
-    var percorsoConsegna =  document.querySelector('.stepColumn:first-child');
-    var percorsoRitiro =  document.querySelector('.stepColumn:nth-child(2)');
-    document.querySelector('div.stepUno').classList.add('completato');
-    document.querySelector('div.stepUno').style.display='none';
-    if (document.querySelectorAll('.stepUno .radioButton input')[0].checked) {
-        percorsoConsegna.classList.remove('deselezionato');
-        percorsoConsegna.classList.add('selezionato');
-        percorsoRitiro.classList.remove('selezionato');
-        percorsoRitiro.classList.add('deselezionato');
-        document.querySelector('div.stepN.uno').classList.remove('indicatore');
-        document.querySelector('div.stepN.uno').style.opacity = '1';
-        document.querySelector('.modifica').style.display = 'block';
-        modificaInMobile[0].classList.add('ricomparsa');
-        modificaInMobile[5].classList.remove('ricomparsa');
-        modificaInMobile[6].classList.remove('ricomparsa');
-        if(!(document.querySelector('div.stepDue').classList.contains('completato'))) {
-            document.querySelector('div.stepDue').style.display='block';
-            document.querySelector('div.stepN.due').classList.add('indicatore');
-        } else if (!document.querySelector('div.stepTre').classList.contains('completato')) {
-            document.querySelector('div.stepTre').style.display='block';
-            document.querySelector('div.stepN.tre').classList.add('indicatore');
-            modificaInMobile[1].classList.add('ricomparsa');
-        }else if (!document.querySelector('div.stepQuattro').classList.contains('completato')) {
-            document.querySelector('div.stepQuattro').style.display='block';
-            document.querySelector('div.stepN.quattro').classList.add('indicatore');
-            modificaInMobile[1].classList.add('ricomparsa');
-            modificaInMobile[2].classList.add('ricomparsa');
-        }else {
-            document.querySelector('div.stepCinque').style.display='block';
-            document.querySelector('div.stepN.cinque').classList.add('indicatore');
-            document.querySelectorAll('.modifica')[4].style.display = 'none';
-            modificaInMobile[1].classList.add('ricomparsa');
-            modificaInMobile[2].classList.add('ricomparsa');
-            modificaInMobile[3].classList.add('ricomparsa');
-        }
-    } else {
-        percorsoConsegna.classList.remove('selezionato');
-        percorsoConsegna.classList.add('deselezionato');
-        percorsoRitiro.classList.remove('deselezionato');
-        percorsoRitiro.classList.add('selezionato');
-        modificaInMobile.forEach(matita => matita.classList.remove('ricomparsa'));
-        document.querySelectorAll('div.stepN.uno')[1].classList.remove('indicatore');
-        document.querySelectorAll('div.stepN.uno')[1].style.opacity = '1';
-        document.querySelectorAll('.modifica')[5].style.display = 'block';
-        modificaInMobile[5].classList.add('ricomparsa');
-        if(!(document.querySelectorAll('div.stepDue')[1].classList.contains('completato'))) {
-            document.querySelectorAll('.stepDue')[1].style.display = 'block';
-            document.querySelectorAll('div.stepN.due')[1].classList.add('indicatore');
-        } else {
-            document.querySelectorAll('div.stepTre')[1].style.display = 'block';
-            document.querySelectorAll('div.stepN.tre')[1].classList.add('indicatore');
-            document.querySelectorAll('.modifica')[7].style.display = 'none';
-            modificaInMobile[6].classList.add('ricomparsa');
-        }
+var step = document.querySelectorAll('.step');
+var contatoreStep = document.querySelectorAll('.stepN');
+var modifica = document.querySelectorAll('.modifica');
+var modificaInMobile = document.querySelectorAll('.matitaModificaMobile');
+var continua = document.querySelectorAll('.continua');
+
+var percorsoConsegna =  document.querySelector('.stepColumn:first-child');
+var percorsoRitiro =  document.querySelector('.stepColumn:nth-child(2)');
+
+function changeFromRitiroToConsegna() {
+    percorsoConsegna.classList.remove('deselezionato');
+    percorsoConsegna.classList.add('selezionato');
+    percorsoRitiro.classList.remove('selezionato');
+    percorsoRitiro.classList.add('deselezionato');
+}
+
+function changeFromConsegnaToRitiro() {
+    percorsoConsegna.classList.remove('selezionato');
+    percorsoConsegna.classList.add('deselezionato');
+    percorsoRitiro.classList.remove('deselezionato');
+    percorsoRitiro.classList.add('selezionato');
+}
+
+function goToStepTwoConsegna(stepInCorso) {
+    stepInCorso.classList.add('completato');
+    stepInCorso.style.display='none';
+    contatoreStep[0].classList.remove('indicatore');
+    contatoreStep[0].style.opacity = '1';
+    modifica[0].style.display = 'block';
+    modificaInMobile[0].classList.add('ricomparsa');
+    modificaInMobile[5].classList.remove('ricomparsa');
+    modificaInMobile[6].classList.remove('ricomparsa');
+    if(!(step[1].classList.contains('completato'))) {
+        step[1].style.display='block';
+        contatoreStep[1].classList.add('indicatore');
+    } else if (!step[2].classList.contains('completato')) {
+        step[2].style.display='block';
+        contatoreStep[2].classList.add('indicatore');
+        modificaInMobile[1].classList.add('ricomparsa');
+    }else if (!step[3].classList.contains('completato')) {
+        step[3].style.display='block';
+        contatoreStep[3].classList.add('indicatore');
+        modificaInMobile[1].classList.add('ricomparsa');
+        modificaInMobile[2].classList.add('ricomparsa');
+    }else {
+        step[4].style.display='block';
+        contatoreStep[4].classList.add('indicatore');
+        modifica[4].style.display = 'none';
+        modificaInMobile[1].classList.add('ricomparsa');
+        modificaInMobile[2].classList.add('ricomparsa');
+        modificaInMobile[3].classList.add('ricomparsa');
     }
 }
+
+function goToStepThreeConsegna() {
+    step[1].classList.add('completato');
+    step[1].style.display = 'none';
+    contatoreStep[1].classList.remove('indicatore');
+    contatoreStep[1].style.opacity = '1';
+    modifica[1].style.display = 'block';
+    modificaInMobile[1].classList.add('ricomparsa');
+    if (!step[2].classList.contains('completato')) {
+        step[2].style.display = 'block';
+        contatoreStep[2].classList.add('indicatore');
+    } else if (!step[3].classList.contains('completato')) {
+        step[3].style.display = 'block';
+        contatoreStep[3].classList.add('indicatore');
+    } else {
+        step[4].style.display = 'block';
+        contatoreStep[4].classList.add('indicatore');
+        modifica[4].style.display = 'none';
+    }
+}
+
+function goToStepFourConsegna() {    
+    step[2].classList.add('completato');
+    step[2].style.display='none';
+    contatoreStep[2].classList.remove('indicatore');
+    contatoreStep[2].style.opacity = '1';
+    modifica[2].style.display = 'block';
+    modificaInMobile[2].classList.add('ricomparsa');
+    if (!step[3].classList.contains('completato')) {
+        step[3].style.display='block';
+        contatoreStep[3].classList.add('indicatore');
+    }else {
+        step[4].style.display='block';
+        contatoreStep[4].classList.add('indicatore');
+        modifica[4].style.display = 'none';
+    }
+}
+
+function goToStepFiveConsegna() {
+    step[3].classList.add('completato');
+    step[3].style.display='none';
+    step[4].style.display='block';
+    contatoreStep[3].classList.remove('indicatore');
+    contatoreStep[3].style.opacity = '1';
+    modifica[3].style.display = 'block';
+    modificaInMobile[3].classList.add('ricomparsa');
+    contatoreStep[4].classList.add('indicatore');
+    modifica[4].style.display = 'none';
+}
+
+function goToTheEndConsegna() {
+    step[4].classList.add('completato');
+    contatoreStep[4].classList.remove('indicatore');
+    contatoreStep[4].style.opacity = '1';
+    modifica[4].style.display = 'block';
+    modificaInMobile[4].classList.add('ricomparsa');
+    window.alert('Il tuo acquisto e\' andato a buon fine. \n Grazie per averti scelto!');
+}
+
+function goToStepTwoRitiro(stepInCorso) {
+    stepInCorso.classList.add('completato');
+    stepInCorso.style.display='none';
+    modificaInMobile.forEach(matita => matita.classList.remove('ricomparsa'));
+    contatoreStep[5].classList.remove('indicatore');
+    contatoreStep[5].style.opacity = '1';
+    modifica[5].style.display = 'block';
+    modificaInMobile[5].classList.add('ricomparsa');
+    if(!(step[5].classList.contains('completato'))) {
+        step[5].style.display = 'block';
+        contatoreStep[6].classList.add('indicatore');
+    } else {
+        step[6].style.display = 'block';
+        contatoreStep[7].classList.add('indicatore');
+        modifica[7].style.display = 'none';
+        modificaInMobile[6].classList.add('ricomparsa');
+    }
+}
+
+function goToStepThreeRitiro() {
+    step[5].classList.add('completato');
+    step[5].style.display='none';
+    step[6].style.display='block';
+    contatoreStep[6].classList.remove('indicatore');
+    contatoreStep[7].classList.add('indicatore');
+    contatoreStep[6].style.opacity = '1';
+    modifica[6].style.display = 'block';
+    modificaInMobile[6].classList.add('ricomparsa');
+}
+
+function goToTheEndRitiro() {
+    step[6].classList.add('completato');
+    contatoreStep[7].classList.remove('indicatore');
+    contatoreStep[7].style.opacity = '1';
+    modifica[7].style.display = 'block';
+    window.alert('Il tuo acquisto e\' andato a buon fine. \n Grazie per averti scelto!');
+}
+
+function unoCompletoProsegui(element) {
+    var stepInCorso = element.closest('.step');
+    var primoRadioButton = stepInCorso.querySelector('.js-input');
+    
+    if (primoRadioButton.checked) {
+        changeFromRitiroToConsegna();
+        goToStepTwoConsegna(stepInCorso)
+    } else {
+        changeFromConsegnaToRitiro();
+        goToStepTwoRitiro(stepInCorso)
+    }
+}
+
 function dueCompletoProsegui() {
+    let utente = false;
+    let isNotEmpty = true;
+    
     document.querySelectorAll('.segnaposto *[required]').forEach(input => {
         if (!input.value) {
             input.closest('div').querySelector('.errore').style.display = 'block';
             input.style.border = '1px solid #DD2727';
+            isNotEmpty = false;
         }
     })
-    if (document.querySelector('.segnaposto input[name="nome"]').value !== '') {
-        if (document.querySelector('.segnaposto input[name="cognome"]').value !== '') {
-            if (document.querySelector('.segnaposto input[name="telefono"]').value !== '') {
-                if (document.querySelector('.segnaposto input[name="citta"]').value !== '') {
-                    if (document.querySelector('.segnaposto input[name="indirizzo"]').value !== '') {
-                        if (document.querySelector('.segnaposto input[name="nCivico"]').value !== '') {
-                            if (document.querySelector('.segnaposto select[name="provincia"]').value !== '') {
-                                if (document.querySelector('.segnaposto input[name="cap"]').value !== '') {
-                                    nome = document.querySelector('.segnaposto input[name="nome"]').value;
-                                    cognome = document.querySelector('.segnaposto input[name="cognome"]').value;
-                                    telefono = document.querySelector('.segnaposto input[name="telefono"]').value;
-                                    citta = document.querySelector('.segnaposto input[name="citta"]').value;
-                                    indirizzo = document.querySelector('.segnaposto input[name="indirizzo"]').value;
-                                    nCivico = document.querySelector('.segnaposto input[name="nCivico"]').value;
-                                    provincia = document.querySelector('.segnaposto select[name="provincia"]').value;
-                                    cap = document.querySelector('.segnaposto input[name="cap"]').value;
-                                    // document.querySelector('.segnaposto').submit();
-                                    // document.querySelector('.segnaposto input[type="submit"]').dispatchEvent(new Event("click"));
-                                    document.querySelector('div.stepDue').classList.add('completato');
-                                    document.querySelector('div.stepDue').style.display = 'none';
-                                    document.querySelector('div.stepN.due').classList.remove('indicatore');
-                                    document.querySelector('div.stepN.due').style.opacity = '1';
-                                    document.querySelectorAll('.modifica')[1].style.display = 'block';
-                                    modificaInMobile[1].classList.add('ricomparsa');
-                                    if (!document.querySelector('div.stepTre').classList.contains('completato')) {
-                                        document.querySelector('div.stepTre').style.display = 'block';
-                                        document.querySelector('div.stepN.tre').classList.add('indicatore');
-                                    } else if (!document.querySelector('div.stepQuattro').classList.contains('completato')) {
-                                        document.querySelector('div.stepQuattro').style.display = 'block';
-                                        document.querySelector('div.stepN.quattro').classList.add('indicatore');
-                                    } else {
-                                        document.querySelector('div.stepCinque').style.display = 'block';
-                                        document.querySelector('div.stepN.cinque').classList.add('indicatore');
-                                        document.querySelectorAll('.modifica')[4].style.display = 'none';
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    document.querySelector('.nomeEcognome').innerHTML = nome + ' ' + cognome;
-    document.querySelector('.indirizzo').innerHTML = indirizzo + ', ' + nCivico;
-    document.querySelector('.citta').innerHTML = cap + ' ' + citta + ' (' + provincia + ')';
-    document.querySelector('#nomeEcognome-0').value = nome + ' ' + cognome;
-    document.querySelector('#ragioneSociale-0').value = nome + ' ' + cognome;
-    document.querySelector('#cittadina-0').value = citta;
-    document.querySelector('#via-0').value = indirizzo;
-    document.querySelector('#civico-0').value = nCivico;
-    document.querySelector('#prov-0').value = provincia;
-    document.querySelector('#CAP-0').value = cap;
-}
 
-function treCompletoProsegui() {    
-    document.querySelector('div.stepTre').classList.add('completato');
-    document.querySelector('div.stepTre').style.display='none';
-    document.querySelector('div.stepN.tre').classList.remove('indicatore');
-    document.querySelector('div.stepN.tre').style.opacity = '1';
-    document.querySelectorAll('.modifica')[2].style.display = 'block';
-    modificaInMobile[2].classList.add('ricomparsa');
-    if (!document.querySelector('div.stepQuattro').classList.contains('completato')) {
-        document.querySelector('div.stepQuattro').style.display='block';
-        document.querySelector('div.stepN.quattro').classList.add('indicatore');
-    }else {
-        document.querySelector('div.stepCinque').style.display='block';
-        document.querySelector('div.stepN.cinque').classList.add('indicatore');
-        document.querySelector('div.stepN.cinque .modifica').style.display = 'none';
+    document.querySelectorAll('.inserireDatiPersonali').forEach(form => {
+        if (form.classList.contains('segnaposto')) utente = true
+    })
+
+    if ((isNotEmpty)&&(utente)) goToStepThreeConsegna();
+    
+    if (utente) {
+        nome = document.querySelector('.segnaposto input[name="nome"]').value;
+        cognome = document.querySelector('.segnaposto input[name="cognome"]').value;
+        telefono = document.querySelector('.segnaposto input[name="telefono"]').value;
+        citta = document.querySelector('.segnaposto input[name="citta"]').value;
+        indirizzo = document.querySelector('.segnaposto input[name="indirizzo"]').value;
+        nCivico = document.querySelector('.segnaposto input[name="nCivico"]').value;
+        provincia = document.querySelector('.segnaposto select[name="provincia"]').value;
+        cap = document.querySelector('.segnaposto input[name="cap"]').value;
+        email = document.querySelector('.segnaposto input[name="email"]').value;
+    
+        document.querySelector('.nomeEcognome').innerHTML = nome + ' ' + cognome;
+        document.querySelector('.indirizzo').innerHTML = indirizzo + ', ' + nCivico;
+        document.querySelector('.citta').innerHTML = cap + ' ' + citta + ' (' + provincia + ')';
+    
+        document.querySelector('#nomeEcognome-0').value = nome + ' ' + cognome;
+        document.querySelector('#ragioneSociale-0').value = nome + ' ' + cognome;
+        document.querySelector('#cittadina-0').value = citta;
+        document.querySelector('#via-0').value = indirizzo;
+        document.querySelector('#civico-0').value = nCivico;
+        document.querySelector('#prov-0').value = provincia;
+        document.querySelector('#CAP-0').value = cap;
+    
+        document.querySelector('.riepilogoInfo').innerHTML = nome + ' ' + cognome + ' - ' + email;
+        document.querySelector('#recapito').value = telefono;
     }
 }
 
-function continua() {
-    document.querySelector('div.stepQuattro').classList.add('completato');
-    document.querySelector('div.stepQuattro').style.display='none';
-    document.querySelector('div.stepCinque').style.display='block';
-    document.querySelector('div.stepN.quattro').classList.remove('indicatore');
-    document.querySelector('div.stepN.quattro').style.opacity = '1';
-    document.querySelectorAll('.modifica')[3].style.display = 'block';
-    modificaInMobile[3].classList.add('ricomparsa');
-    document.querySelector('div.stepN.cinque').classList.add('indicatore');
-    document.querySelectorAll('.modifica')[4].style.display = 'none';
+function treCompletoProsegui() {
+    goToStepFourConsegna();
 }
 
-function quattroCompletoProsegui() {
-    if (document.querySelector('.selezionaOpzioniParticolari').style.display === 'block') {
-        if (document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton  input')[0].checked === false) {
-            if (document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton  input')[1].checked === false) {
-                if (document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton  input')[2].checked === false) {
-                    document.querySelector('.selezionaOpzioniParticolari > .radioButton  label span').classList.add('segnalazione');
-                    document.querySelector('.selezionaOpzioniParticolari > .radioButton  .checkmark').style.border = "1px solid #DD2727";
-                }
-            }
-        }
-        
+function quattroCompletoProsegui(element) {
+    var step = element.closest('.step');
+    var inputRequired = step.querySelectorAll('input[required]');
+    var opzioni = step.querySelector('.selezionaOpzioniParticolari');
+    var input = step.querySelectorAll('input[name="scontrinoFattura"]');
+
+    if ((opzioni.style.display === 'block') && (input[0].checked === false) && (input[1].checked === false) && (input[2].checked === false)) {
+        opzioni.querySelector('.js-checked').classList.add('segnalazione');
+        opzioni.querySelector('.checkmark').style.border = "1px solid #DD2727";
     }
-    if ((document.querySelector('.selezionaOpzioniParticolari').style.display !== 'block')||(document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton input')[2].checked === true)) {
-        continua();
+
+    if (input[0].checked) {
+        let isNotEmpty = true;
+        for (i = 0; i < inputRequired.length /2; i++) {
+            if ((!inputRequired[i].value)&&(!inputRequired[i].closest('.js-controllo').classList.contains('deselezionato'))) {
+                step.querySelectorAll('.errore')[i].style.display = 'block';
+                inputRequired[i].style.border = '1px solid #DD2727';
+                isNotEmpty = false;
+            }
+        }
+        if (isNotEmpty) goToStepFiveConsegna();
     }
-    if (document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton input')[0].checked === true) {
-        for (i = 0; i < (document.querySelectorAll('.datiFatturazione form input[required]').length /2); i++) {
-            if (!document.querySelectorAll('.datiFatturazione form input[required]')[i].value) {
-                document.querySelectorAll('.datiFatturazione form .errore')[i].style.display = 'block';
-                document.querySelectorAll('.datiFatturazione form input')[i].style.border = '1px solid #DD2727';
+
+    if (input[1].checked) {
+        let isNotEmpty = true;
+        for (i = inputRequired.length /2; i < inputRequired.length; i++) {
+            if ((!inputRequired[i].value)&&(!inputRequired[i].closest('.js-controllo').classList.contains('deselezionato'))) {
+                step.querySelectorAll('.errore')[i].style.display = 'block';
+                inputRequired[i].style.border = '1px solid #DD2727';
+                isNotEmpty = false;
             }
         }
-        if (((document.querySelector('#codiceFiscale-0').value !== '')&&(document.querySelectorAll('.pIva')[0].style.display !== 'block'))||((document.querySelector('#pIva-0').value !== '')&&(document.querySelectorAll('.codiceFiscale')[0].style.display !== 'block'))) {
-            if (((document.querySelector('#nomeEcognome-0').value !== '')&&(document.querySelectorAll('.ragioneSociale')[0].style.display !== 'block'))||((document.querySelector('#ragioneSociale-0').value !== '')&&(document.querySelectorAll('.nomeCognome')[0].style.display !== 'block'))) {
-                if (document.querySelector('#cittadina-0').value !== '') {
-                    if (document.querySelector('#via-0').value !== '') {
-                        if (document.querySelector('#civico-0').value !== '') {
-                            if (document.querySelector('#prov-0').value !== '') {
-                                if (document.querySelector('#CAP-0').value !== '') {
-                                    continua();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        if (isNotEmpty) goToStepFiveConsegna();
     }
-    if (document.querySelectorAll('.selezionaOpzioniParticolari > .radioButton input')[1].checked === true) {
-        for (i = document.querySelectorAll('.datiFatturazione form input[required]').length /2; i < document.querySelectorAll('.datiFatturazione form input[required]').length; i++) {
-            if (!document.querySelectorAll('.datiFatturazione form input[required]')[i].value) {
-                document.querySelectorAll('.datiFatturazione form .errore')[i].style.display = 'block';
-                document.querySelectorAll('.datiFatturazione form input[required]')[i].style.border = '1px solid #DD2727';
-            }
-        }
-        
-        if (((document.querySelector('#codiceFiscale-1').value !== '')&&(document.querySelectorAll('.pIva')[1].style.display !== 'block'))||((document.querySelector('#pIva-1').value !== '')&&(document.querySelectorAll('.codiceFiscale')[1].style.display !== 'block'))) {
-            if (((document.querySelector('#nomeEcognome-1').value !== '')&&(document.querySelectorAll('.ragioneSociale')[1].style.display !== 'block'))||((document.querySelector('#ragioneSociale-1').value !== '')&&(document.querySelectorAll('.nomeCognome')[1].style.display !== 'block'))) {
-                if (document.querySelector('#cittadina-1').value !== '') {
-                    if (document.querySelector('#via-1').value !== '') {
-                        if (document.querySelector('#civico-1').value !== '') {
-                            if (document.querySelector('#prov-1').value !== '') {
-                                if (document.querySelector('#CAP-1').value !== '') {
-                                    continua();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+
+    if ((opzioni.style.display !== 'block')||(input[2].checked === true)) {
+        goToStepFiveConsegna();
     }
 }
 
-function cinqueCompletoProsegui(){
-    if (((document.querySelectorAll('.pagamento input')[0].checked === true)||(document.querySelectorAll('.pagamento input')[1].checked === true))&&(document.querySelector('.stepCinque input[type="checkbox"]').checked)) {
-        document.querySelector('div.stepCinque').classList.add('completato');
-        document.querySelector('div.stepN.cinque').classList.remove('indicatore');
-        document.querySelector('div.stepN.cinque').style.opacity = '1';
-        document.querySelectorAll('.modifica')[4].style.display = 'block';
-        modificaInMobile[4].classList.add('ricomparsa');
+function cinqueCompletoProsegui(element){
+    var carta = document.querySelector('#pagamentoConCarta');
+    var paypal = document.querySelector('#pagamentoPaypal');
+    var checkBox = document.querySelector('#accettaCondizioni');
+    var errore = element.closest('.step').querySelectorAll('.js-errore');
+
+    if (((carta.checked)||(paypal.checked))&&(checkBox.checked)) {
+        goToTheEndConsegna();
     }
-    if ((document.querySelectorAll('.pagamento input')[0].checked === false)&&(document.querySelectorAll('.pagamento input')[1].checked === false)) {
-        document.querySelector('.pagamento + p').style.visibility='visible';
+    if ((carta.checked === false)&&(paypal.checked === false)) {
+        errore[0].style.visibility='visible';
     }
-    if (document.querySelector('.accettaCondizioni input').checked === false) {
-        document.querySelector('.accettaCondizioni + p').style.visibility='visible';
+    if (checkBox.checked === false) {
+        errore[1].style.visibility='visible';
     }
 }
 
 function dueBisCompletoProsegui () {
-    if (document.querySelector('#selezionareUnaProvincia').value !== '') {
-        document.querySelectorAll('.modifica')[7].style.display = 'none';
-        document.querySelectorAll('.itemContainer.selezionato input').forEach(input => {
-            if (input.checked) {
-                document.querySelectorAll('div.stepDue')[1].classList.add('completato');
-                document.querySelectorAll('div.stepDue')[1].style.display='none';
-                document.querySelectorAll('div.stepTre')[1].style.display='block';
-                document.querySelectorAll('div.stepN.due')[1].classList.remove('indicatore');
-                document.querySelectorAll('div.stepN.tre')[1].classList.add('indicatore');
-                document.querySelectorAll('div.stepN.due')[1].style.opacity = '1';
-                document.querySelectorAll('.modifica')[6].style.display = 'block';
-                modificaInMobile[6].classList.add('ricomparsa');
-                document.querySelector('.riepilogoInfo').innerHTML = document.querySelector('.segnaposto input[name="nome"]').value + ' ' + document.querySelector('.segnaposto input[name="cognome"]').value + ' - ' + document.querySelector('.segnaposto input[name="email"]').value;
-                document.querySelector('#recapito').placeholder = document.querySelector('.segnaposto input[name="telefono"]').value;
-            } 
-        }) 
-        
+    var provincia = document.querySelector('#selezionareUnaProvincia');
+    var negozio = document.querySelectorAll('.itemContainer.selezionato input');
+
+    if (provincia.value !== '') {
+        modifica[7].style.display = 'none';
+        negozio.forEach(input => {if (input.checked) goToStepThreeRitiro()}) 
     }
 }
 
-function treBisCompletoProsegui() {
-    document.querySelectorAll('div.stepTre')[1].classList.add('completato');
-    document.querySelectorAll('div.stepN.tre')[1].classList.remove('indicatore');
-    document.querySelectorAll('div.stepN.tre')[1].style.opacity = '1';
-    document.querySelectorAll('.modifica')[7].style.display = 'block';
+function treBisCompletoProsegui(element) {
+    var telefono = document.querySelector('#recapito');
+    var errore = element.closest('.step').querySelector('.errore');
+
+    if (!telefono.value) {
+        errore.style.display = 'block';
+        telefono.style.border = '1px solid #DD2727';
+    } else {
+        rimuoveErrore(telefono);
+        goToTheEndRitiro();
+    }
 }
 
 function modificaStepPrecedente(matita) {
@@ -478,17 +511,17 @@ function modificaStepPrecedente(matita) {
     for(i=0; i<5; i++){
         if (stepSelected == stepsN[i]) steps[i].style.display='block';
         if(steps[i].classList.contains('completato')) {
-            document.querySelectorAll('.modifica')[i].style.display = 'block';
+            modifica[i].style.display = 'block';
         }
     }
     if (stepSelected == stepsN[5]) steps[0].style.display='block';
     if(steps[0].classList.contains('completato')) {
-        document.querySelectorAll('.modifica')[5].style.display = 'block';
+        modifica[5].style.display = 'block';
     }
     for(i=6; i<stepsN.length; i++){
         if (stepSelected == stepsN[i]) steps[i-1].style.display='block';
         if(steps[i-1].classList.contains('completato')) {
-            document.querySelectorAll('.modifica')[i].style.display = 'block';
+            modifica[i].style.display = 'block';
         }
     }
     stepSelected.querySelector('.modifica').style.display = 'none';
@@ -500,30 +533,28 @@ function modificaStepPrecedente(matita) {
     stepSelected.classList.add('indicatore');
 }
 
-var modificaInMobile = document.querySelectorAll('.matitaModificaMobile');
-
 function modificaStepPrecedenteInMobile (matita) {
     document.querySelectorAll('div.step').forEach(step => step.style.display = 'none');
     document.querySelectorAll('div.stepN').forEach(contatore => contatore.classList.remove('indicatore'));
     var divMatita = matita.closest('.matitaModificaMobile');
     if ((divMatita == modificaInMobile[0])||(divMatita == modificaInMobile[5])) {
-        document.querySelector('div.stepN.uno').classList.add('indicatore');
-        document.querySelector('div.stepUno').style.display='block';
+        contatoreStep[0].classList.add('indicatore');
+        step[0].style.display='block';
     } else if (divMatita == modificaInMobile[1]) {
-        document.querySelector('div.stepN.due').classList.add('indicatore');
-        document.querySelector('div.stepDue').style.display='block';
+        contatoreStep[1].classList.add('indicatore');
+        step[1].style.display='block';
     } else if (divMatita == modificaInMobile[2]) {
-        document.querySelector('div.stepN.tre').classList.add('indicatore');
-        document.querySelector('div.stepTre').style.display='block';
+        contatoreStep[2].classList.add('indicatore');
+        step[2].style.display='block';
     } else if (divMatita == modificaInMobile[3]) {
-        document.querySelector('div.stepN.quattro').classList.add('indicatore');
-        document.querySelector('div.stepQuattro').style.display='block';
+        contatoreStep[3].classList.add('indicatore');
+        step[3].style.display='block';
     } else if (divMatita == modificaInMobile[4]) {
-        document.querySelector('div.stepN.cinque').classList.add('indicatore');
-        document.querySelector('div.stepCinque').style.display='block';
+        contatoreStep[4].classList.add('indicatore');
+        step[4].style.display='block';
     } else if (divMatita == modificaInMobile[6]) {
-        document.querySelectorAll('div.stepN.due')[1].classList.add('indicatore');
-        document.querySelectorAll('div.stepDue')[1].style.display='block';
+        contatoreStep[6].classList.add('indicatore');
+        step[5].style.display='block';
     }
 }
 
@@ -586,21 +617,21 @@ function bindEvents () {
 
     document.querySelector('#selezionareUnaProvincia').addEventListener("change", (e) => selezionaProvincia(e.target));
 
-    document.querySelector('.continua').addEventListener("click", () => unoCompletoProsegui());
+    continua[0].addEventListener("click", (e) => unoCompletoProsegui(e.target));
 
-    document.querySelectorAll('.continua')[1].addEventListener("click", () => dueCompletoProsegui());
+    continua[1].addEventListener("click", () => dueCompletoProsegui());
 
-    document.querySelectorAll('.continua')[2].addEventListener("click", () => treCompletoProsegui());
+    continua[2].addEventListener("click", () => treCompletoProsegui());
 
-    document.querySelectorAll('.continua')[3].addEventListener("click", () => quattroCompletoProsegui());
+    continua[3].addEventListener("click", (e) => quattroCompletoProsegui(e.target));
 
-    document.querySelectorAll('.continua')[4].addEventListener("click", () => cinqueCompletoProsegui());
+    continua[4].addEventListener("click", (e) => cinqueCompletoProsegui(e.target));
 
-    document.querySelectorAll('.continua')[5].addEventListener("click", () => dueBisCompletoProsegui());
+    continua[5].addEventListener("click", () => dueBisCompletoProsegui());
 
-    document.querySelectorAll('.continua')[6].addEventListener("click", () => treBisCompletoProsegui());
+    continua[6].addEventListener("click", (e) => treBisCompletoProsegui(e.target));
 
-    document.querySelectorAll('.modifica').forEach(matita => {
+    modifica.forEach(matita => {
         matita.addEventListener("click", (e) => modificaStepPrecedente(e.target));
     })
 

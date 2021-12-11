@@ -653,10 +653,6 @@ div.flexBox span:last-child {
   border-radius: 50%;
   background-color: transparent;
 }
-.pIva,
-.ragioneSociale {
-  display: none;
-}
 .doveInviareLaFattura {
   margin-bottom: 24px;
 }
